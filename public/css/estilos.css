@@ -1,0 +1,981 @@
+*{
+    transition: all 0.2s;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html, body , .bginicio{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+li{
+    list-style: none;
+}
+
+.bginicio{
+    background-image: url("../img/bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: absolute;
+    z-index: 0;
+    height: 800px;
+}
+
+/* ############## Menu ##############*/
+
+.menu{
+    width: 100%;
+    height: 50px;
+    background: #008077;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.menu *{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.buscdorMenu{
+    width: calc(100% - 83px);
+    height: 50px;
+    padding-top: 14px;
+    text-align: center;
+}
+
+.logoMin{
+    width: 118px;
+    vertical-align: middle;
+    margin-bottom: 15px;
+    margin-left: 23px;
+    cursor: pointer;
+}
+
+.logoMin img{
+    width: 100%;
+}
+
+.buscdorMenu input{
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #1db383;
+    color: #fff;
+    background: transparent;
+    margin-top: 0px;
+}
+
+.buscdorMenu input:focus{
+    background: #00a097;
+    border-bottom: 1px solid #1db383;
+}
+
+.buscdorMenu input::placeholder{
+    color: #fff;
+}
+.buscdorMenu input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #fff;
+}
+
+.buscdorMenu input::-ms-input-placeholder { /* Microsoft Edge */
+    color: #fff;
+}
+
+#buscarMenu{
+    color:#FFF;
+    font-size: 1.5em;
+    margin-top: -9px;
+    cursor: pointer;
+}
+
+.logoPatrocinadorMenu{
+    width: 56px;
+    margin-top: -17px;
+}
+
+.logoPatrocinadorMenu img{
+    width: 100%;
+    margin-top: 14px;
+}
+.menuDesplegable{
+    width: 300px;
+    height: 100%;
+    background: #28b5ab;
+    color: #fff;
+    position: fixed;
+    left: -300px;
+    top: 0;
+    z-index: 999;
+}
+
+.infoPerfil1{
+    text-align: center;
+    font-size: 1em;
+}
+
+.infoPerfil1 *{
+    display: inline-block;
+    vertical-align: middle;
+ }
+
+.fotoPerfilMenu{
+    width: 45px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+/* ########## Menu Inferior ######## */
+.menuInferior{
+    position: fixed;
+    height: 50px;
+    left: calc(100% - 517px);
+    background: #fff;
+    top: calc(100% - 50px);
+    z-index: 999;
+    border-top: 1px solid #008077;
+    border-left: 1px solid #008077;
+}
+
+.btnMenuInf{
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    height: 50px;
+}
+
+.btnMenuInf i , .btnMenuInf span{
+    color: #1db383;
+    display: block;
+}
+
+.btnMenuInf i{
+    margin-top: 5px;
+}
+.btnMenuInf span{
+    font-size: 0.83em;
+}
+
+.userChat{
+    position: relative;
+    width: 36px;
+    height: 36px;
+    padding-top: 7px;
+    margin-left: 31px;
+}
+
+.userChat img{
+    width: 100%;
+    border-radius: 100%;
+}
+
+.estadoChatMI{
+    position: absolute;
+    top: 7px;
+    left: 18px;
+    width: 10px !important;
+    height: 10px !important;
+}
+
+.coverNegro{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 995;
+    display: none;
+    background: rgba(0, 0, 0, 0.49);
+}
+
+.chatParteSuperior{
+    display: block;
+}
+
+/* ############## Home ##############*/
+.centroHome{
+    width: 400px;
+    height: 335px;
+    margin-left: calc(50% - 200px);
+    margin-top: 200px;
+    filter:  brightness(110%);
+}
+
+.logoHome{
+    width: 100%;
+
+}
+.btnsHome , .btnGenericoInline{
+    width: 150px;
+    height: 35px;
+    border-radius: 3px;
+    background: #008077;
+    color: #fff;
+    line-height: 35px;
+    text-align: center;
+    margin: 20px 0;
+    margin-left: calc(50% - 75px);
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#btnsLogin{
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#btnOlvideCuenta{float: left;text-decoration: none}
+#btnIniciarSesion{float: right;text-decoration: none}
+
+.btnGenericoInline{
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    padding: 0 22px;
+    margin: 0 0;
+}
+
+.btnsHome:hover{
+    background: #fff;
+    color: #008077;
+    transform: scale(1.1);
+}
+
+
+.contenidoModal .btnsHome:hover , .btnGenericoInline:hover{
+    color: #fff;
+    background:  rgba(0, 182, 173, 0.58);
+    transform: scale(1.1);
+}
+
+#btnsUsuario{
+    float: left;
+    height: 50px;
+    color: #FFF;
+}
+#downMenu{
+    font-size: 2em;
+    padding: 5px;
+    margin-left: 9px;
+    cursor: pointer;
+}
+
+.patrocinadores{
+    width: 100%;
+    height: 160px;
+    background: rgba(0, 0, 0, 0.51);
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    padding: 20px;
+}
+.pat-head{
+    font-size: 1.4em;
+    color: #FFF;
+    font-weight: bold;
+    width: 100%;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.51);
+    text-align: center;
+    line-height: 52px;
+}
+.pat-item{
+    height: 130px;
+    display: inline-block;
+    margin: 10px 5px;
+}
+
+.pat-item:hover{
+    transform: scale(1.05);
+}
+
+.pat-item img{
+    //width: 100%;
+    height: 100%;
+}
+
+.pat-list{
+    display: block;
+    width: 100%;
+    height: 35px;
+    background: rgba(0, 0, 0, 0.51);
+    text-align: center;
+    padding-top: 8px;
+}
+
+.pat-selector{
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    background: #2dbfb599;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.pat-elegidos{
+    background: #1fe7ae;
+    box-shadow: 0 0 15px #5dfdcf;
+}
+
+
+/* ############## Modal ##############*/
+#modalRegistro, #modalLogin {
+    width: 100%;
+    height: calc(100% - 50px);
+    position: fixed;
+    top: -100%;
+    left: 0;
+    z-index: 998;
+    background: #fff;
+    text-align: center;
+}
+
+.contenidoModal{
+    width: 500px;
+    height: calc(100% - 90px);
+    margin: 6px;
+    margin-left: calc(50% - 250px);
+    text-align: left;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 10px;
+}
+
+#modalLogin .contenidoModal{overflow: hidden}
+
+.contenidoModal::-webkit-scrollbar{
+    background: rgba(0, 182, 173, 0.18);
+}
+.contenidoModal::-webkit-scrollbar-thumb {
+    background: rgba(0, 182, 173, 0.58);
+}
+
+
+.tituloModal{
+    width: 100%;
+}
+
+.tituloModal h2 {
+    margin: 5px;
+}
+
+.lineaModal{
+    width: 250px;
+    height: 7px;
+    background: #008077;
+}
+
+.formModal{
+    display: block;
+}
+
+#fotoUsuario{
+    position: relative;
+}
+
+#fotoUsuario img{
+    width: 110px;
+    border-radius: 100%;
+    margin: 16px;
+    margin-left: calc(50% - 55px);
+    border: 3px solid #909090;
+    cursor: pointer;
+}
+
+#cambiarFotoRegistro{
+    position: absolute;
+    font-size: 2em;
+    top: 68%;
+    left: 54%;
+    cursor: pointer;
+}
+
+#cambiarFotoRegistro:hover , #fotoUsuario img:hover #cambiarFotoRegistro{
+    font-size: 2.3em;
+}
+.campoModal{
+    display: block;
+}
+
+.footerModal{
+    width: 100%;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.volverInicio{
+    width: 100%;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+
+.volverInicio:hover{
+    color: #dcca08;
+    font-size: 3em;
+}
+
+
+/* ############## perfil ##############*/
+
+.perfilPP{
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 400px;
+    height: 1045px;
+    background: rgb(40, 45, 60);
+}
+
+.imgPerfilPP {width: 100%;height: 572px;position: relative}
+
+.imgPerfilPP img{ width: 100%;height: 100%}
+
+.clasePersona{
+    position: absolute;
+    top: 270px;
+    left: calc(100% - 75px);
+    width: 150px;
+    height: 35px;
+    color: #FFF;
+    background: #1db383;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 35px;
+}
+
+.nombrePerfilPP{
+    display: block;
+    font-size: 1.4em;
+    width: 100%;
+    margin-left: 26px;
+    color: #fff;
+    margin: 12px;
+}
+
+.nombrePerfilPP i{
+    color: #73ef54;
+}
+
+.lineaNombrePP{
+    width: 94%;
+    height: 2px;
+    background: #1db383;
+    margin-left: 13px;
+    margin-top: -6px;
+}
+
+.descripcionPerfilCampo{
+    display: block;
+    height: 38px;
+}
+
+.descripcionPerfilCampo:first-child{
+    margin-top: 15px;
+}
+.perfilCampoDes{
+    color: #fff;
+    font-weight: bold;
+    margin-left: 22px;
+}
+
+.campoPerfil{
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.campoPerfil img{
+    width: 33px;
+}
+
+.campoPerfil span{
+    color: #ececec;
+}
+
+.descripcionPerfilCampo * , .campoPerfil *{
+    display: inline-block;
+}
+
+.contenidoPerfil{
+    width: calc(100% - 404px);
+    min-height: 1045px;
+    margin-left: 400px;
+}
+
+.followPerfil{
+    display: block;
+    width: 100%;
+    padding: 8px;
+    height: 370px;
+    padding-left: 25px;
+}
+
+.followPerfil *{
+    vertical-align: top;
+}
+
+.sobrePerfil{
+    width: calc(100% - 646px);
+    display: inline-block;
+}
+
+.perfilSocialOption{
+    padding-top: 42px;
+}
+
+.perfilSocialOption h3{
+    line-height: 0;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.perfilSocialOption *{ display: inline-block}
+
+.fotoPerfilPP{
+    width: 35px;
+    border-radius: 100%;
+}
+
+.btnOpcionFollow{
+    height: 35px;
+    border-radius: 3px;
+    background: #1dbd7b;
+    min-width: 100px;
+    color: #fff;
+    font-weight: bold;
+    line-height: 35px;
+    text-align: center;
+    cursor: pointer;
+    float: right;
+    margin-right: 14px;
+}
+
+.btnOpcionFollow:hover{
+    background: #648bc8;
+    transform: scale(1.1);
+}
+
+.aboutMe{
+    color: #b1b1b1;
+    font-size: 0.95em;
+    font-style: italic;
+    padding: 12px;
+    max-height: 126px;
+}
+
+.estadsiticasPerfil{
+    display: block;
+}
+
+.estadsiticasPerfil span{
+    margin: 20px;
+    color: #6f6f6f;
+}
+
+.videoPresentacion{
+    width: 590px;
+    display: inline-block;
+}
+
+.videoPresentacion video{
+    width: 100%;
+}
+.pubsUser , .tabsPubUser{
+    display: block;
+    width: 100%;
+}
+
+.pubsUser{
+    padding: 8px;
+    padding-left: 25px;
+}
+
+.tabPubUserOption , .tabPubUserOptionSelected {
+    display: inline-block;
+    padding: 5px 25px;
+    border-bottom: 1px solid #ececec;
+    color: #777;
+    cursor: pointer;
+}
+
+.tabPubUserOptionSelected{
+    border-bottom: 1px solid #1db383;
+    color: #000000;
+}
+
+.tabPubUserOption:hover , .tabPubUserOptionSelected:hover{
+    background: #1db383;
+    border-bottom: 1px solid #c6c6c6;
+    color: #fff;
+}
+
+.pubsContainer{
+    padding: 15px;
+    margin-bottom: 85px
+}
+
+.grid{
+    width: 100%;
+    opacity: 0.75;
+}
+
+.grid:hover{
+    opacity: 1;
+}
+.grid-item {
+    float: left;
+    width: 350px;
+    height: auto;
+    margin-bottom: 20px;
+    box-shadow:  0 0 10px #ececec;
+}
+
+.grid-contenido{
+    width: 100%;
+    padding-top: 6px;
+}
+
+.estadoPrep{
+    width: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+.estadoTxt{
+    position: relative;
+    width: calc(100% - 30px);
+    display: inline-block;
+    border-left: 1px solid #81afab;
+    padding-left: 11px;
+    padding-right: 15px;
+    margin-left: 10px;
+    margin-top: 1px;
+    color: #353535;
+}
+
+
+.estadoPrep_a{
+    position: absolute;
+    left: 3px;
+    color: #19b3a8;
+    font-size: 2.5em;
+    font-family: sans-serif;
+}
+
+.hashTags{
+    display: block;
+    padding: 8px;
+    text-align: center;
+}
+
+.hashTagPub{
+    color: #1db383;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.hashTagPub:hover{
+    color: #2e6da4;
+}
+
+.perfilPub , .btnAccionesPub{
+    display: block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.perfilPub *{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.perfilPub h3{
+    margin-left: 7px;
+}
+
+.btnFollowPub{
+    margin-top: 15px;
+}
+
+.btnAccionPub{
+    display: inline-block;
+    width: 32%;
+    height: 55px;
+}
+
+.btnAccionPub:hover{
+    background: #ceffeb;
+}
+
+.btnAccionPub *{
+    display: block;
+}
+
+.btnAccionPub i{
+    font-size: 2em;
+    color: #2db388;
+}
+
+
+.btnAccionPub span{
+    font-size: 0.85em;
+    color: #5e5e5e;
+    opacity: 0;
+    display: none;
+}
+
+
+.bordeBtnAccionPub{
+    border-right: 1px solid #00a097;
+}
+
+.pubImg , .pubVid{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.pubImg img , .pubVid video{
+    width: 100%;
+}
+
+/* ############## Chat ##############*/
+
+.circulosChat{
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    margin-left: 10px;
+
+}
+
+.conectado{
+    background: #a2ff67;
+    box-shadow: 0 0 13px #89ff17;
+}
+.ausente{
+    background: #ffc81a;
+    box-shadow: 0 0 13px #ffe500;
+}
+.ocupado{
+    background: #ff2300;
+    box-shadow: 0 0 13px #ff4300;
+}
+.especial{
+    background: #b500ff;
+    box-shadow: 0 0 13px #f700ff;
+}
+.desconectado{
+    background: #244246;
+}
+
+.colorPP{color: #008077;}
+
+.chatsDesplegables{
+    position: fixed;
+    top: calc(100% - 50px);
+    left: 0;
+    height: 50px;
+    background: rgba(0, 128, 119, 0.52);
+    width: calc(100% - 517px);
+    z-index: 999;
+}
+
+.menuChatDerecho{
+    width: 300px;
+    height: calc(100% - 50px);
+    background: #ffffff;
+    color: #fff;
+    position: fixed;
+    left: calc(100%);
+    top: 0;
+    z-index: 999;
+    border-left: 1px solid #008077;
+}
+
+.chatParteSuperior{
+    display: block;
+    color: #008077;
+    padding: 8px;
+}
+
+.chatParteSuperior i{
+    font-size: 1.5em;
+}
+
+.eligeEstado{
+    width: 85%;
+    text-align: right;
+}
+.eligeEstado , .eligeEstado *{
+    display: inline-block;
+}
+.eligeEstado span{
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.filtradoChat{
+    display: block;
+    text-align: center;
+    margin-left: 9%;
+}
+
+.buscarContacto{
+    display: block;
+    width: 80%;
+    margin-left: 10%;
+}
+
+#cerrarChatDerecho:hover{
+    cursor: pointer;
+    font-size: 1.6em;
+    color: #24c1b6;
+}
+
+.contactoChat{
+    display: block;
+    padding: 7px 0;
+}
+
+.contactoChat:hover{
+    background: #eff9f6;
+    cursor: pointer;
+}
+
+.contactoChat .userChat , .userChatInfo{ display: inline-block;     vertical-align: middle;}
+
+.userChatInfo{
+    height: 45px;
+    width: 70%;
+}
+
+.userChatInfo p{
+    margin: 4px 0 4px 10px;
+    color: #565656;
+}
+
+.tipoUser{
+    font-size: 0.75em;
+    background: #1db383;
+    color: #fff;
+    margin: 0;
+    margin-left: 10px;
+    padding: 2px 5px;
+    width: 72px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.contactoChat .userChat{
+    width: 48px;
+    height: 48px;
+}
+
+.estadoChatcontacto {
+    position: absolute;
+    top: 10px;
+    left: 28px;
+    width: 10px !important;
+    height: 10px !important;
+}
+
+/* ################ Partes genericas ############ */
+
+.contenedotGeneral{
+    width: 100%;
+    min-height: 750px;
+    background: #ffffff;
+    padding-top: 50px;
+}
+
+
+/* ############## Formulario genericos ##############*/
+
+.inputGenerico{
+    border: none;
+    border-bottom: 1px solid #5e5e5e;
+    width: 99%;
+    outline: 0;
+    margin: 6px 2px;
+    font-size: 0.98em;
+}
+
+.inputGenerico:focus{
+    color: #172242;
+    background: #fafafa;
+    border-bottom: 1px solid #008077;
+}
+
+.inputTextDoble{
+    width: calc(50% - 10px);
+    margin-right: 4px;
+}
+
+.selectGenerico{
+    width: 45%;
+    margin: 2%;
+    outline: 0;
+    height: 35px;
+    color: #247b75;
+    border: 1px solid #008077;
+
+}
+
+.boxes {
+    margin: 13px;
+}
+
+/*Checkboxes styles*/
+input[type="checkbox"] { display: none; }
+
+input[type="checkbox"] + label {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 20px;
+    font: 14px/20px 'Open Sans', Arial, sans-serif;
+    color: #575757;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+input[type="checkbox"] + label:last-child { margin-bottom: 0; }
+
+input[type="checkbox"] + label:before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #00a097;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: .6;
+    -webkit-transition: all .12s, border-color .08s;
+    transition: all .12s, border-color .08s;
+}
+
+input[type="checkbox"]:checked + label:before {
+    width: 10px;
+    top: -5px;
+    left: 5px;
+    border-radius: 0;
+    opacity: 1;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
