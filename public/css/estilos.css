@@ -377,6 +377,84 @@ li{
     font-size: 2.6em;
 }
 
+.formTarjeta{
+    padding: 10px 0;
+}
+
+.labelTarjeta{
+    width: 100px;
+    color: #008077;
+    display: inline-block;
+    font-weight: bold;
+    text-align: right;
+}
+
+.montoBox{
+    display: block;
+}
+
+.montoApagar{
+    text-align: center;
+    font-size: 2.5em;
+    color: #16a79c;
+}
+
+#confirmarTarjeta{
+    width: 200px;
+    margin-left: calc(50% - 100px);
+}
+
+.formasDePago , .formaDePago{
+    display: none;
+}
+
+.btnPaypal{
+    padding: 5px;
+    background: #166cd6;
+    color: #fff;
+    font-size: 1.4em;
+    text-align: center;
+    width: 200px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: calc(50% - 100px);
+    margin-top: 20px;
+    opacity: 0.8;
+}
+
+.btnPaypal:hover{
+    color: #fff819;
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.pagoPorCaja{
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+}
+
+.pagoPorCaja img{
+    width: 150px;
+    height: 150px;
+
+}
+
+.pagoPorCaja:hover{
+    transform: scale(1.05);
+}
+
+
+.tituloPD{
+    color: #58d0c9eb;;
+    font-size: 1.4em;
+    text-align: center;
+    font-weight: bold;
+}
+
+#pagoConDinero{
+    text-align: center;
+}
 
 /* ############## Modal ##############*/
 #modalRegistro, #modalLogin {
@@ -979,11 +1057,6 @@ li{
     font-size: 0.98em;
 }
 
-.inputGenerico:focus{
-    color: #172242;
-    background: #fafafa;
-    border-bottom: 1px solid #008077;
-}
 
 .inputTextDoble{
     width: calc(50% - 10px);
@@ -1002,6 +1075,26 @@ li{
 
 .boxes {
     margin: 13px;
+}
+
+.numGenerico-2 , .numGenerico-4{
+    border: none;
+    border-bottom: 1px solid #5e5e5e;
+    width: 40px;
+    outline: 0;
+    margin: 6px 2px;
+    font-size: 0.98em;
+    display: inline-block;
+}
+.numGenerico-4{ width: 80px}
+
+.txtCenter{text-align: center}
+
+
+.inputGenerico:focus , .focusGenerico:focus{
+    color: #172242;
+    background: #fafafa;
+    border-bottom: 1px solid #008077;
 }
 
 /*Checkboxes styles*/

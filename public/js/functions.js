@@ -146,3 +146,8 @@ function initCropper(){
 		$('#modalCropperAvatar').modal('hide');
   	});
 }
+
+function montoAPagar() {
+	var _val = $('#planDePago').val();
+	return 'U$D ' + (_val * 5) + ',00';
+}

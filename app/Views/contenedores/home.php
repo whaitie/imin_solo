@@ -263,13 +263,62 @@
                 </div>
             </form>
 
-            <form class="formModal formasDePago">
+            <div class="formModal formasDePago">
                 <div class="tabsPubUser tabsMetodos">
-                    <div class="tabPubUserOptionSelected"><i class="icon-credit-card-alt"></i></div>
-                    <div class="tabPubUserOption"><i class="icon-paypal"></i></div>
-                    <div class="tabPubUserOption"><i class="icon-money-1"></i></div>
+                    <div class="tabPubUserOption tabPubUserOptionSelected" target="Tarjeta"><i class="icon-credit-card-alt"></i></div>
+                    <div class="tabPubUserOption" target="Paypal"><i class="icon-paypal"></i></div>
+                    <div class="tabPubUserOption" target="Dinero"><i class="icon-money-1"></i></div>
                 </div>
-            </form>
+                <div class="suscripcionEleccion">
+                    <span class="labelTarjeta">Plan: </span>
+                    <select class="selectGenerico" id="planDePago">
+                        <option value="1" selected>1 mes</option>
+                        <option value="3" >3 meses</option>
+                        <option value="6" >6 meses</option>
+                        <option value="12" >12 meses</option>
+                        <option value="24" >24 meses</option>
+                        <option value="100" >Permanente</option>
+                    </select>
+                    <div class="montoBox">
+                        <div class="montoApagar">
+                            $0,00
+                        </div>
+                    </div>
+                </div>
+                <form class="formTarjeta formaDePago" id="pagoConTarjeta">
+                    <input type="text" class="inputGenerico" placeholder="Numero de la tarjeta" name="num_tarjeta">
+                    <input type="text" class="inputGenerico" placeholder="Nombre completo en tarjeta" name="nombre_tarjeta">
+                    <span class="labelTarjeta">Vencimiento: </span>
+                    <input type="number" class="numGenerico-2 txtCenter focusGenerico" placeholder="mm"><input type="number" class="numGenerico-2 txtCenter focusGenerico" placeholder="YY">
+                    <br>
+                    <span class="labelTarjeta">CCV: </span>
+                    <input type="number" class="numGenerico-4 txtCenter focusGenerico" placeholder="xxx">
+                    <div class="btnsHome " id="confirmarTarjeta">Pagar suscripción</div>
+                </form>
+
+                <div class="formaDePago" id="pagoConPaypal">
+                    <div class="btnPaypal">
+                        Pagar con paypal
+                    </div>
+                </div>
+
+                <div class="formaDePago" id="pagoConDinero">
+                    <h3 class="tituloPD">Pagos por caja</h3>
+                    <a href="https://google.com.ar" class="pagoPorCaja">
+                        <img src="<?=base_url('img/metodosdepago/pagofacil.png') ?>" alt="">
+                    </a>
+                    <a href="https://google.com.ar" class="pagoPorCaja">
+                        <img src="<?=base_url('img/metodosdepago/rapipago.png') ?>" alt="">
+                    </a>
+                    <a href="https://google.com.ar" class="pagoPorCaja">
+                        <img src="<?=base_url('img/metodosdepago/wester.png') ?>" alt="">
+                    </a>
+                    <h3 class="tituloPD">Metodos especiales</h3>
+                    <a href="https://google.com.ar" class="pagoPorCaja">
+                        <img src="<?=base_url('img/metodosdepago/mercadopago.png') ?>" alt="">
+                    </a>
+                </div>
+            </div>
 
         </div>
         <div class="footerModal">

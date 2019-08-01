@@ -166,6 +166,22 @@
                         $('.formasDePago').show(250);
                     });
 
+                    $('.montoApagar').text(montoAPagar());
+
+                    $('#planDePago').change(function () {
+                        $('.montoApagar').text(montoAPagar());
+                    });
+
+                    $('#pagoConTarjeta').show();
+
+                    $('.tabPubUserOption').on('click', function () {
+                        var target = $(this).attr('target');
+                        $('.tabPubUserOption').attr('class','tabPubUserOption');
+                        $(this).addClass('tabPubUserOptionSelected');
+                        $('.formaDePago').hide();
+                        $('#pagoCon' + target).show(250);
+                    });
+
                 break;
                 case 'register':
 
