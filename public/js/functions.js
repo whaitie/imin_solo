@@ -98,6 +98,9 @@ function cargar_inpu_deportes(msj){
 
 	remplazar_y_renderizar(data_deporte, 'option_deporte');
 	$('#contenedor_option_deporte').prepend('<option value="" SELECTED>Elíge tu Deporte</option>');
+
+	var $options = $("#contenedor_option_deporte > option").clone();
+	$('#contenedor_option_deporte_club').append($options);
 }
 
 function cargar_inpu_paises(msj){
@@ -105,6 +108,10 @@ function cargar_inpu_paises(msj){
 
 	remplazar_y_renderizar(data_paises, 'option_nacionalidad');
 	$('#contenedor_option_nacionalidad').prepend('<option value="" SELECTED>Nacionalidad</option>');
+
+	var $options = $("#contenedor_option_nacionalidad > option").clone();
+	$('#contenedor_option_nacionalidad_club , #contenedor_option_nacionalidad_empresa').append($options);
+
 
 	remplazar_y_renderizar(data_paises, 'option_residencia');
 	$('#contenedor_option_residencia').prepend('<option value="" SELECTED>País de Residencia</option>');

@@ -327,6 +327,56 @@ li{
     box-shadow: 0 0 15px #5dfdcf;
 }
 
+.eligeTipoCuenta{
+    display: block;
+    padding-top: 40px;
+}
+
+.item-tipo-cuenta{
+    display: inline-block;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+    padding: 15px;
+    border: 1px solid #1cada3;
+    margin: 20px;
+    border-radius: 100%;
+    padding-top: 37px;
+}
+.item-tipo-cuenta i {
+    color: #1cada3;
+    font-size: 2.5em;
+
+}
+.item-tipo-cuenta span {
+    display: block
+}
+
+.item-tipo-cuenta:hover{
+    cursor: pointer;
+    background: #1cada3;
+    transform: scale(1.05);
+}
+
+.item-tipo-cuenta:hover  .l-itc{
+    color: #fff;
+}
+
+.formRegistro h2{
+    color: #1db383;
+}
+
+#volverTipoRegistro{
+    display: none;
+    font-size: 2.2em;
+    color: #07756d;
+    cursor: pointer;
+}
+
+#volverTipoRegistro:hover{
+    font-size: 2.6em;
+}
+
 
 /* ############## Modal ##############*/
 #modalRegistro, #modalLogin {
@@ -376,7 +426,7 @@ li{
 }
 
 .formModal{
-    display: block;
+    display: none;
 }
 
 #fotoUsuario{
@@ -423,6 +473,24 @@ li{
     color: #dcca08;
     font-size: 3em;
 }
+
+.tabsMetodos{
+    margin-top: 10px;
+}
+
+.tabsMetodos .tabPubUserOptionSelected , .tabsMetodos .tabPubUserOption{
+    width: 32.5%;
+    text-align: center;
+}
+
+.tabsMetodos .tabPubUserOptionSelected i {
+    font-size: 2em;
+    color: #008077;
+}
+.tabsMetodos .tabPubUserOptionSelected:hover .tabPubUserOptionSelected i{
+    color: #fff;
+}
+.tabsMetodos .tabPubUserOption i {font-size: 2em;}
 
 
 /* ############## perfil ##############*/

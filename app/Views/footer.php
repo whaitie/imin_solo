@@ -129,6 +129,43 @@
                         }, 1000);
                     });
 
+                    $('.formRegistro').hide();
+
+                    $('.item-tipo-cuenta').on('click', function () {
+                        var showForm = $(this).attr('target');
+                        $('.eligeTipoCuenta').hide();
+                        $('#volverTipoRegistro').css('display', 'block');
+                        var _tipo = $(this).attr('type');
+                        $('#headerReg').text("Registrar " + _tipo);
+                        $('#registroEspecial').attr('tipo' , _tipo);
+                        $('#'+ showForm).show(250);
+                    });
+
+                    $('#volverTipoRegistro').on('click', function () {
+                        var loc = $(this).attr('loc');
+                        if(loc == "menu"){
+                            $('.formRegistro').hide();
+                            $(this).hide();
+                            $('#headerReg').text('Registrar cuenta');
+                            $('.eligeTipoCuenta').show(250);
+                        }
+                        else {
+                            $('.formasDePago').hide();
+                            $('#headerReg').text('Registrar ' + loc);
+                            $(this).attr('loc','menu');
+                            $('#registro' + loc).show(250);
+                        }
+                        //console.log(_loc);
+                    });
+
+                    $('.btnRegistarCuenta').on('click', function () {
+                        var _loc = $(this).attr('tipo');
+                        $('#volverTipoRegistro').attr('loc', _loc);
+                        $('.formModal').hide();
+                        $('#headerReg').text('Metodos de pago');
+                        $('.formasDePago').show(250);
+                    });
+
                 break;
                 case 'register':
 
