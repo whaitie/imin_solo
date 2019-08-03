@@ -332,7 +332,7 @@
                 <h2 class="colorPP">Login</h2>
                 <div class="lineaModal"></div>
             </div>
-            <form class="formModal" style="margin-top: 20px">
+            <form class="formLogin" style="margin-top: 20px">
                 <input type="text" class="inputGenerico " placeholder="Usuario / E-mail">
                 <input type="password" class="inputGenerico " placeholder="Contraseña">
                 <div class="boxes">
@@ -372,6 +372,14 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="modalCentral animated jackInTheBox fadeIn">
+        <div class="simbolo">
+            <i class="icon-ok-circled modalC-ok"></i>
+        </div>
+        <p>Soy un texto de prueba</p>
+        <div class="btnModalCentral" id="btnCerrarModal">Ok</div>
     </div>
     <!--// Modal Cropper Avatar -->
 </content>

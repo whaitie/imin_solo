@@ -213,7 +213,7 @@ li{
     width: 100%;
 
 }
-.btnsHome , .btnGenericoInline{
+.btnsHome , .btnGenericoInline , .btnModalCentral{
     width: 150px;
     height: 35px;
     border-radius: 3px;
@@ -255,6 +255,12 @@ li{
 .contenidoModal .btnsHome:hover , .btnGenericoInline:hover{
     color: #fff;
     background:  rgba(0, 182, 173, 0.58);
+    transform: scale(1.1);
+}
+
+.btnModalCentral:hover{
+    color: #fff;
+    background: rgba(0, 212, 203, 0.58);
     transform: scale(1.1);
 }
 
@@ -1096,6 +1102,30 @@ li{
     background: #fafafa;
     border-bottom: 1px solid #008077;
 }
+
+/* ############## Modal central ##############*/
+.modalCentral{
+    min-width: 475px;
+    position: fixed;
+    top: calc(50% - 175px);
+    left: calc(50% - 237px);
+    background: #fff;
+    z-index: 1000;
+    box-shadow: 0 0 15px #858586;
+    text-align: center;
+    display: none;
+}
+
+.simbolo i{
+    font-size: 4em;
+}
+
+.modalC-ok{color: #04bc3e}
+.modalC-error{color: #db1300}
+.modalC-alerta{color: #ece82c}
+.modalC-neutro{color: #00afd1}
+
+
 
 /*Checkboxes styles*/
 input[type="checkbox"] { display: none; }

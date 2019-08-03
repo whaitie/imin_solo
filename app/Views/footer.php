@@ -182,6 +182,18 @@
                         $('#pagoCon' + target).show(250);
                     });
 
+                    $('#btnCerrarModal').on('click', function () {
+                        $('.modalCentral').removeClass('jackInTheBox fadeIn').addClass('fadeOut').one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
+                            $(this).css('display', 'none');
+                        });
+                    });
+
+                    $('#btnOlvideCuenta').on('click', function () {
+                        $('.modalCentral').stop().removeClass('fadeOut').addClass('jackInTheBox fadeIn').show().one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
+                            $(this).css('display', 'block');
+                        });;
+                    });
+
                 break;
                 case 'register':
 
