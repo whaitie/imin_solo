@@ -206,11 +206,39 @@
         }
 
         function ordenarGrid(){
-            $('.grid').masonry({
-                // options
-                itemSelector: '.grid-item',
-                columnWidth: 350,
-                gutter: 15
+            if($(window).width > 1024){
+                $('.grid').masonry({
+                    itemSelector: '.grid-item',
+                    columnWidth: 350,
+                    gutter: 15
+                });
+            }
+            else{
+                $('.grid').masonry({
+                    itemSelector: '.grid-item',
+                    columnWidth: 350,
+                    gutter: 15,
+                    fitWidth: true
+                });
+            }
+
+        }
+
+        function opcionesBuscador() {
+            $('.buscdorMenu').on('click', function(){
+                console.log("holaaaa");
+                $('.especBuscador').css('top','50px');
+            });
+
+            $(document).mouseup(function(e)
+            {
+                var container = $(".buscdorMenu , .especBuscador");
+
+                // if the target of the click isn't the container nor a descendant of the container
+                if (!container.is(e.target) && container.has(e.target).length === 0)
+                {
+                    $('.especBuscador').css('top','0');
+                }
             });
         }
 
@@ -229,6 +257,8 @@
                         var datos = { url: base_url + 'paises' };
                         ajax_call('cargar_inpu_paises', datos);
                     }, 2000);
+
+                    opcionesBuscador();
 
                     //Carrusel de patrocinadores
                     var _patrocinadores = $('.patrocinadores').width();
@@ -335,6 +365,9 @@
 
                     ordenarGrid();
 
+                    opcionesBuscador();
+
+
                     $('.menuInferior , .chatsDesplegables').show();
 
                     var userScroll = 0;
@@ -343,19 +376,20 @@
                     $(window).on('scroll', function() {
                         var newScroll = $(document).scrollTop();
                         var _height = $('.perfilPP').height() - 740;
-                        if(userScroll - newScroll > _height || newScroll - userScroll > _height){
-                            $('.perfilPP').css('transform', 'translateX(-400px)');
-                            $('.contenidoPerfil').css('margin-left','0').css('width','100%');
-                            _perfilHide = true;
-                            ordenarGrid();
+                        if($( window ).width() > 1024){
+                            if(userScroll - newScroll > _height || newScroll - userScroll > _height){
+                                $('.perfilPP').css('transform', 'translateX(-400px)');
+                                $('.contenidoPerfil').css('margin-left','0').css('width','100%');
+                                _perfilHide = true;
+                                ordenarGrid();
+                            }
+                            else if(_perfilHide){
+                                $('.contenidoPerfil').css('margin-left','400px').css('width','calc(100% - 404px)');
+                                $('.perfilPP').css('transform', 'translateX(0px)');
+                                _perfilHide = false;
+                                ordenarGrid();
+                            }
                         }
-                        else if(_perfilHide){
-                            $('.contenidoPerfil').css('margin-left','400px').css('width','calc(100% - 404px)');
-                            $('.perfilPP').css('transform', 'translateX(0px)');
-                           _perfilHide = false;
-                            ordenarGrid();
-                        }
-
                         var scrollHeight = $(document).height();
                         var scrollPosition = $(window).height() + $(window).scrollTop();
                         if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
@@ -363,6 +397,10 @@
                             $('.grid').append(pubs).masonry( 'appended', pubs );
                         }
                     });
+
+                    var _alturaContatos = $(window).height() - 220;
+
+                    $('.listaDeContactos').height(_alturaContatos);
 
                     $('#downMenu').on('click', function(){
                         if($(this).hasClass('icon-menu')){

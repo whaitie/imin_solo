@@ -5,12 +5,22 @@
             <img src="img/logo_min2.png" alt="">
         </a>
         <div class="buscdorMenu">
-            <input type="search" placeholder="Buscar" class="inputGenerico">
+            <input type="search" placeholder="Buscar" class="inputGenerico" id="buscadorTop">
             <i class="icon-search" id="buscarMenu"></i>
         </div>
         <div class="logoPatrocinadorMenu">
             <img src="img/adidas_b.png" alt="">
         </div>
+    </div>
+    <div class="especBuscador">
+        <select name="" id="" class="selectGenerico">
+            <option value="" selected>Todos</option>
+            <option value="">Deportista</option>
+            <option value="">Procurador</option>
+            <option value="">Periodista</option>
+            <option value="">Club</option>
+            <option value="">Empresa</option>
+        </select>
     </div>
 
     <div class="contenedotGeneral moverDer">
