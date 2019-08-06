@@ -20,6 +20,7 @@
     <!-- Cropper -->
     <link rel="stylesheet" href="<?= base_url('plugins/cropper/cropper.min.css') ?>" />
 
+
     <title>Imin</title>
 </head>
 <style>
@@ -28,5 +29,6 @@
     }
 </style>
 <body class="contenedor_general">
+<div class="coverNegro"></div>
 
  

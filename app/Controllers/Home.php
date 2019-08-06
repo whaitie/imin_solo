@@ -30,19 +30,6 @@ class Home extends BaseController
         }
     }
 
-    public function perfil($username)
-    {
-        if($this->request->isAJAX()){
-            $this->failUnauthorized('No puedes acceder via AJAX aqui');
-        } else {
-            if (!session()->has('ingresado')) {
-                return redirect()->to('/');
-            } else {
-                $this->web_view(array('seccion' => 'perfil'));
-            }
-        }
-    }
-
     public function register() {
 
         if($this->request->isAJAX()){

@@ -70,14 +70,17 @@ $routes->setAutoRoute(true);
  * --------------------------------------------------------------------
  */
 
-// We get a performance increase by specifying the default
-// route since we don't have to scan directories.
+// Home
 $routes->get('/', 'Home::index');
 
 $routes->add('/registro/(:any)', 'Registro::$1');
 $routes->add('/login/(:any)', 'Login::$1');
 $routes->add('/logout', 'Login::logout');
 $routes->add('/resetpassword/(:any)/(:any)', 'Login::actualizar_password/$1/$2');
+
+//Perfil
+
+$routes->add('/perfil', 'Perfil::index');
 
 /** RUTA POR DEFECTO , en caso de migracion comentar la linea siguiente **/
 $routes->add('/(:any)', 'Home::$1');

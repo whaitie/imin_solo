@@ -1,4 +1,130 @@
     <div class="modal-loading"></div>
+    <div class="menuInferior">
+        <div class="btnMenuInf">
+            <i class="icon-pencil"></i>
+            <span>Publicar</span>
+        </div>
+
+        <div class="btnMenuInf">
+            <i class="icon-home"></i>
+            <span>Home</span>
+        </div>
+
+        <div class="btnMenuInf">
+            <i class="icon-bell"></i>
+            <span>Notificaciones</span>
+        </div>
+
+        <div class="btnMenuInf">
+            <i class="icon-cog"></i>
+            <span>Configuración</span>
+        </div>
+
+        <div class="btnMenuInf btnOpenMychat" id="toggleChatUser">
+            <div class="userChat">
+                <img src="img/perfil1.jpg" alt="">
+                <div class="circulosChat conectado estadoChatMI"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="menuDesplegable">
+        <div class="infoPerfil1">
+            <div>
+                <img src="img/perfil1.jpg" alt="" class="fotoPerfilMenu">
+            </div>
+            <h3>Stefanee cryff</h3>
+            <div class="circulosChat conectado"></div>
+        </div>
+    </div>
+
+
+    <div class="chatsDesplegables">
+        <div class="userChat">
+            <img src="img/perfil2.jpg" alt="">
+            <div class="circulosChat ocupado estadoChatMI"></div>
+        </div>
+    </div>
+
+    <div class="menuChatDerecho">
+        <div class="chatParteSuperior">
+            <i class="icon-cancel" id="cerrarChatDerecho"></i>
+            <div class="eligeEstado">
+                <span>Estoy: </span>
+                <select class="selectGenerico">
+                    <option value="conectado">Conectado</option>
+                    <option value="conectado">Ocupado</option>
+                    <option value="conectado">Ausente</option>
+                    <option value="conectado">Auto-mensaje</option>
+                    <option value="conectado">Desconectado</option>
+                </select>
+            </div>
+            <div class="buscarContacto">
+                <input type="text" class="inputGenerico " placeholder="Buscar contacto" style="text-align: center">
+            </div>
+
+            <div class="eligeEstado filtradoChat">
+                <span>Filtrar por: </span>
+                <select class="selectGenerico">
+                    <option value="conectado" selected>Todos</option>
+                    <option value="conectado">Deportista</option>
+                    <option value="conectado">Procurador</option>
+                    <option value="conectado">Periodista</option>
+                    <option value="conectado">Club</option>
+                </select>
+            </div>
+
+            <div class="listaDeContactos">
+                <div class="contactoChat">
+                    <div class="userChat">
+                        <img src="img/perfil2.jpg" alt="">
+                        <div class="circulosChat ocupado estadoChatcontacto"></div>
+                    </div>
+                    <div class="userChatInfo">
+                        <p>Steven Prob</p>
+                        <div class="tipoUser">Procurador</div>
+                    </div>
+                </div>
+
+                <div class="contactoChat">
+                    <div class="userChat">
+                        <img src="img/perfil3.jpg" alt="">
+                        <div class="circulosChat conectado estadoChatcontacto"></div>
+                    </div>
+                    <div class="userChatInfo">
+                        <p>Charles Mickels</p>
+                        <div class="tipoUser">Deportista</div>
+                    </div>
+                </div>
+
+                <div class="contactoChat">
+                    <div class="userChat">
+                        <img src="img/perfil4.jpg" alt="">
+                        <div class="circulosChat especial estadoChatcontacto"></div>
+                    </div>
+                    <div class="userChatInfo">
+                        <p>Sebastian Vignolo</p>
+                        <div class="tipoUser">Periodista</div>
+                    </div>
+                </div>
+
+                <div class="contactoChat">
+                    <div class="userChat">
+                        <img src="img/perfil5.png" alt="">
+                        <div class="circulosChat desconectado estadoChatcontacto"></div>
+                    </div>
+                    <div class="userChatInfo">
+                        <p>Newell's Old Boys</p>
+                        <div class="tipoUser">Club</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     </body>
 
     <!-- jQuery -->
@@ -23,6 +149,8 @@
     <!-- BASIC FUNCTIONS -->
     <script type="application/javascript" src="<?= base_url('js/functions.js') ?>"></script>
 
+    <script type="application/javascript" src="<?= base_url('js/masonry.js') ?>"></script>
+
     <script type="text/javascript">
         var base_url = '<?= base_url() ?>';
         var $body = $("body");
@@ -35,15 +163,6 @@
         function menus_iniciales() {
             //$('.btnsUsuario, .buscdorMenu').css('display', 'none');
 
-            $('.contenedor_general').unbind('click').click(function() {
-                if(notificaciones_open || chats_menu_open || menu_open){
-                    console.log('se van a ocultar los menus');
-                    css_translate('.btnsUsuario' , '0px');
-                    css_translate('.buscdorMenu' ,'0px');
-                    css_blur( '.contenedor , .contenedor_superior', 0 );
-                    menu_open, chats_menu_open , notificaciones_open = false;
-                }
-            });
 
             $('.close_alerts').unbind('click').on('click', function () {
                 notificaciones_open = false;
@@ -86,6 +205,15 @@
             });
         }
 
+        function ordenarGrid(){
+            $('.grid').masonry({
+                // options
+                itemSelector: '.grid-item',
+                columnWidth: 350,
+                gutter: 15
+            });
+        }
+
         function cargar_seccion( _seccion ) {
 
             console.log('estas en la seccion ' + _seccion);
@@ -93,12 +221,12 @@
             switch (_seccion){
                 case 'home':
                     setTimeout(function(){
-                        var datos = { url: base_url + '/deportes' };
+                        var datos = { url: base_url + 'deportes' };
                         ajax_call('cargar_inpu_deportes', datos);
                     }, 1000);
 
                     setTimeout(function(){
-                        var datos = { url: base_url + '/paises' };
+                        var datos = { url: base_url + 'paises' };
                         ajax_call('cargar_inpu_paises', datos);
                     }, 2000);
 
@@ -204,6 +332,100 @@
                 case 'perfil':
                     //slider
                     animarItemMouseEnter('.imgPerfilAnimated' , 'rubberBand');
+
+                    ordenarGrid();
+
+                    $('.menuInferior , .chatsDesplegables').show();
+
+                    var userScroll = 0;
+                    var _perfilHide = false;
+
+                    $(window).on('scroll', function() {
+                        var newScroll = $(document).scrollTop();
+                        var _height = $('.perfilPP').height() - 740;
+                        if(userScroll - newScroll > _height || newScroll - userScroll > _height){
+                            $('.perfilPP').css('transform', 'translateX(-400px)');
+                            $('.contenidoPerfil').css('margin-left','0').css('width','100%');
+                            _perfilHide = true;
+                            ordenarGrid();
+                        }
+                        else if(_perfilHide){
+                            $('.contenidoPerfil').css('margin-left','400px').css('width','calc(100% - 404px)');
+                            $('.perfilPP').css('transform', 'translateX(0px)');
+                           _perfilHide = false;
+                            ordenarGrid();
+                        }
+
+                        var scrollHeight = $(document).height();
+                        var scrollPosition = $(window).height() + $(window).scrollTop();
+                        if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
+                            pubs = $('.grid-item').not('.cloned').clone().addClass('cloned');
+                            $('.grid').append(pubs).masonry( 'appended', pubs );
+                        }
+                    });
+
+                    $('#downMenu').on('click', function(){
+                        if($(this).hasClass('icon-menu')){
+                            $(this).removeClass('icon-menu').addClass( 'icon-cancel-2');
+                            $('.contenedor').css('filter', 'blur(10px) brightness(50%)');
+                            $('.moverDer , .menuDesplegable').css('transform', 'translateX(300px)');
+                        }
+                        else{
+                            $(this).removeClass('icon-cancel-2').addClass( 'icon-menu');
+                            $('.moverDer , .menuDesplegable').css('transform', 'translateX(0)');
+                            $('.contenedor').css('filter', 'blur(0) brightness(100%)');
+                        }
+                    });
+
+                    var chatMenuAbierto = false;
+
+                    $('#toggleChatUser').on('click', function(){
+                        if(!chatMenuAbierto){
+                            console.log("Abierto");
+                            $('#contenedor_perfil , .perfilPP , .contenidoPerfil , .pubsUser').css('filter', 'blur(10px)');
+                            $('.moverDer').css('transform', 'translateX(-300px)');
+                            $('.menuChatDerecho').css('left','calc(100% - 300px)');
+                            $('.coverNegro').css('display','block');
+                            chatMenuAbierto = true;
+                        }
+                        else{
+                            cerrarChat();
+                        }
+                    });
+
+                    $('#cerrarChatDerecho').on('click', function(){cerrarChat();});
+
+                function cerrarChat(){
+                    $('.moverDer , .menuChatDerecho').css('transform', 'translateX(0)');
+                    $('#contenedor_perfil  , .perfilPP , .contenidoPerfil, .pubsUser').css('filter', 'blur(0)');
+                    $('.menuChatDerecho').css('left','calc(100% + 300px)');
+                    $('.coverNegro').css('display','none');
+                    chatMenuAbierto = false;
+                }
+
+                    $('.btnAccionesPub ').mouseover(function () {
+                        var padre = $(this).parent('.grid-contenido');
+                        padre.find('.btnAccionPub').css('height','84px');
+                        padre.find('.btnAccionPub span').css('display', 'block').css('opacity', '1');
+                    });
+
+                    $('.btnAccionesPub ').mouseout(function () {
+                        var padre = $(this).parent('.grid-contenido');
+                        padre.find('.btnAccionPub').css('height','55px');
+                        padre.find('.btnAccionPub span').css('display', 'none').css('opacity', '0');
+                    });
+
+                    $('.btnMenuInf').mouseover(function () {
+                        $(this).css('background','#1db383');
+                        $(this).children('span').css('color','#fff');
+                        $(this).children('i').css('color','#fff');
+                    });
+
+                    $('.btnMenuInf').mouseout(function () {
+                        $(this).css('background','#fff');
+                        $(this).children('span').css('color','#1db383');
+                        $(this).children('i').css('color','#1db383');
+                    });
                 break;
                 default:
                     console.log('se hace default');

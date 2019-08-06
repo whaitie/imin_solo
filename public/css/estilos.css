@@ -47,9 +47,9 @@ li{
 }
 
 .buscdorMenu{
-    width: calc(100% - 83px);
+    width: calc(100% - 220px);
     height: 50px;
-    padding-top: 14px;
+    padding-top: 12px;
     text-align: center;
 }
 
@@ -59,6 +59,7 @@ li{
     margin-bottom: 15px;
     margin-left: 23px;
     cursor: pointer;
+    padding-top: 7px;
 }
 
 .logoMin img{
@@ -104,7 +105,7 @@ li{
 
 .logoPatrocinadorMenu img{
     width: 100%;
-    margin-top: 14px;
+    margin-top: 7px;
 }
 .menuDesplegable{
     width: 300px;
@@ -198,6 +199,10 @@ li{
 
 .chatParteSuperior{
     display: block;
+}
+
+.menuInferior , .chatsDesplegables {
+    display: none;
 }
 
 /* ############## Home ##############*/
@@ -697,7 +702,7 @@ li{
     border-radius: 100%;
 }
 
-.btnOpcionFollow{
+.btnOpcionFollow , .btnTimeline{
     height: 35px;
     border-radius: 3px;
     background: #1dbd7b;
@@ -714,6 +719,17 @@ li{
 .btnOpcionFollow:hover{
     background: #648bc8;
     transform: scale(1.1);
+}
+
+.btnTimeline{
+    width: 275px;
+    margin-top: 39px;
+    background: #008077;
+}
+
+.btnTimeline:hover{
+    transform: scale(1.05);
+    background: rgba(0, 179, 170, 0.74);
 }
 
 .aboutMe{
@@ -787,7 +803,7 @@ li{
     float: left;
     width: 350px;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     box-shadow:  0 0 10px #ececec;
 }
 
@@ -795,6 +811,21 @@ li{
     width: 100%;
     padding-top: 6px;
 }
+
+.cargandoItems{
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+#loadingGrid{
+    width: 80px;
+}
+
+.cargandoItems span{
+    color: #54afa8;}
+
+.cargandoItems span , #loadingGrid {vertical-align: middle}
 
 .estadoPrep{
     width: 10px;
@@ -853,6 +884,13 @@ li{
 
 .perfilPub h3{
     margin-left: 7px;
+}
+
+.fechaPub{
+    display: block;
+    font-size: 1em;
+    color: #5e5e5e;
+    text-align: center;
 }
 
 .btnFollowPub{
@@ -986,6 +1024,7 @@ li{
 .buscarContacto{
     display: block;
     width: 80%;
+    margin: 20px 0;
     margin-left: 10%;
 }
 
@@ -1170,3 +1209,81 @@ input[type="checkbox"]:checked + label:before {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+    /* STYLES GO HERE */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+    /* STYLES GO HERE */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+    /* STYLES GO HERE */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+    /* STYLES GO HERE */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+    /* STYLES GO HERE */
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+    /* STYLES GO HERE */
+}
+
+/* iPhone 5 (portrait &amp; landscape)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px) {
+    /* STYLES GO HERE */
+}
+
+/* iPhone 5 (landscape)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : landscape) {
+    /* STYLES GO HERE */
+}
+
+/* iPhone 5 (portrait)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : portrait) {
+    /* STYLES GO HERE */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+    /* STYLES GO HERE */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+    /* STYLES GO HERE */
+}
+

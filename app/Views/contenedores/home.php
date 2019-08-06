@@ -1,10 +1,14 @@
 <div class="contenedor_superior">
     <div class="menu moverDer">
+        <div class="logoMin">
+            <img src="img/logo_min2.png" alt="">
+        </div>
         <div class="buscdorMenu">
             <input type="search" placeholder="Buscar" class="inputGenerico">
+            <i class="icon-search" id="buscarMenu"></i>
         </div>
         <div class="logoPatrocinadorMenu">
-            <img src="<?= base_url('img/adidas_b.png') ?>" alt="">
+            <img src="img/adidas_b.png" alt="">
         </div>
     </div>
 </div>
@@ -341,7 +345,7 @@
                 </div>
                 <div id="btnsLogin">
                     <div class="btnGenericoInline" id="btnOlvideCuenta">Olvide la contraseña</div>
-                    <a class="btnGenericoInline" id="btnIniciarSesion" href="perfil.html">Login</a>
+                    <a class="btnGenericoInline" id="btnIniciarSesion" href="perfil">Login</a>
                 </div>
 
             </form>
