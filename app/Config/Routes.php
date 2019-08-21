@@ -81,7 +81,7 @@ $routes->add('/resetpassword/(:any)/(:any)', 'Login::actualizar_password/$1/$2')
 //Perfil
 
 $routes->add('/perfil', 'Perfil::index');
-$routes->add('/scout', 'scout::index');
+$routes->add('/scout', 'Scout::index');
 
 /** RUTA POR DEFECTO , en caso de migracion comentar la linea siguiente **/
 $routes->add('/(:any)', 'Home::$1');
