@@ -961,6 +961,7 @@
             seccion_actual = '<?= $seccion ?>';
             menus_iniciales();
             cargar_seccion(seccion_actual);
+            $('#toolbarContainer').remove();
         });
 
         window.addEventListener('popstate', function(event) {
