@@ -97,6 +97,9 @@ function ajax_link() {
     $('.link_asinc').off('click').on('click', function (event) {
         event.preventDefault();
         var html = $(this).attr("href");
+        if($(this).attr('redirect','on')){
+            window.location.href = html;
+        }
         history.pushState({}, '', html);
         window.location.target = html;
         seccion_actual = $(this).attr('seccion');

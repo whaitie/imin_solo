@@ -132,12 +132,15 @@ li{
     position: fixed;
     left: -300px;
     top: 0;
-    z-index: 999;
+    z-index: 1000;
 }
 
 .infoPerfil1{
     text-align: center;
     font-size: 1em;
+    margin-top: 10px;
+    width: 80%;
+    display: inline-block;
 }
 
 .infoPerfil1 *{
@@ -149,6 +152,230 @@ li{
     width: 45px;
     border-radius: 100%;
     margin-right: 10px;
+}
+
+#cerrarMenuPP{
+    display: inline-block;
+    font-size: 1.6em;
+    vertical-align: middle;
+}
+
+#cerrarMenuPP:hover{
+    cursor: pointer;
+    font-size: 1.8em;
+}
+
+.btnsMenuIz{
+    display: block;
+    margin-top: 17px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100% - 164px);
+    vertical-align: top;
+}
+
+
+.btnsMenuIz::-webkit-scrollbar{
+    background: #1c4c49;
+}
+.btnsMenuIz::-webkit-scrollbar-thumb {
+    background: #40cbc8;
+}
+
+.btnMenuIz{
+    width: 100%;
+    padding: 7px;
+    padding-left: 30px;
+}
+
+
+.btnMenuIz i{   font-size: 1.3em;}
+.btnMenuIz span{    font-size: 1.2em;}
+
+.btnMenuIz:hover{
+    background: #3acece;
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #30a2a2;
+}
+
+
+.btnMenuIzDestacado{
+    background: #46dc97;
+}
+
+.cerrarCuenta:hover{
+    background: #c53a29 !important;
+    box-shadow: 0 0 15px #30a2a2;
+}
+
+.btnMenuIzDonar{
+    background: #95a73f;
+    margin: 20px 0;
+}
+
+.btnMenuIzDestacado:hover , .btnMenuIzDonar{
+    background: #c6dc4f ;
+    box-shadow: 0 0 15px #30a2a2;
+}
+
+.btnMenuIzSelected{
+    background: #3acece;
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #30a2a2;
+}
+
+.tiempoRestanteCuenta{
+    font-size: 1em;
+    text-align: center;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.btnExtenderMembresia{
+    width: 200px;
+    border-radius: 3px;
+    background: #2fdaa3;
+    text-align: center;
+    padding: 6px;
+    margin-left: 51px;
+    cursor: pointer;
+}
+
+.btnExtenderMembresia:hover{
+    transform: scale(1.05);
+    background: #3ef8be;
+    color: #5e859c;
+    font-weight: bold;
+    box-shadow: 0 0 15px #30a2a2;
+}
+
+.modalPerfil{
+    width: calc(100% - 300px);
+    height: calc(100% - 100px);
+    background: #fff;
+    position: fixed;
+    top: 50px;
+    left: -100%;
+    z-index: 999;
+
+}
+
+.contModalOptons{
+    position: relative;
+    width: 100%;
+    height: calc(100% - 90px);
+    margin: 6px;
+    text-align: left;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px;
+}
+
+.contModalOptonsB{
+
+}
+
+.cerrarMoldaPerfil{
+    position: absolute;
+    left: calc(100% - 65px);
+    top: 17px;
+}
+
+.cerrarMoldaPerfil i{
+    color: #008077;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.cerrarMoldaPerfil i:hover{
+    font-size: 2.5em;
+    color: #00c6bd;
+}
+
+.objetivosAsks{
+    width: 450px;
+    margin-top: 10px;
+}
+.objetivosAsks * {
+    display: inline-block;
+}
+
+.monedaPretenciones{
+    font-size: 1.3em;
+    color: #53cc35;
+    font-weight: bold;
+}
+
+.objetivosAsks span{
+    color: #1db383;
+    font-weight: bold;
+}
+
+.objCarrera{
+    display: block;
+    width: 422px;
+    margin: 0px 26.9688px 0px 0px;
+    height: 145px;
+    outline: 0;
+    resize: none;
+}
+
+.clubesSelection{
+    display: block;
+}
+
+.clubSelector{
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.clubLegible{
+    display: inline-block;
+    width: 150px;
+    height: 230px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-left: 11px;
+    margin-top: 6px;
+}
+
+.clubLegible:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0  15px #b7b7b7;
+}
+
+.clubLegible span{
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+.contCLBimg{
+    width: 125px;
+    margin: 12px;
+}
+
+.contCLBimg img{
+    width: 125px;
+    height: 125px;
+}
+
+.elegido{
+    display: block;
+    text-align: center;
+}
+
+.boxNeutro{
+    font-size: 1.5em;
+    color: #19a79d;
+}
+
+.boxElegido{
+    font-size: 1.5em;
+    color: #71ffbe;
 }
 
 /* ########## Menu Inferior ######## */
@@ -170,6 +397,19 @@ li{
     display: inline-block;
     vertical-align: top;
     height: 50px;
+    position: relative;
+}
+
+.circuloNot{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #c6c62a;
+    color: #fff;
+    left: 66%;
+    top: -21%;
+    border-radius: 100%;
+    line-height: 25px;
 }
 
 .btnMenuInf i , .btnMenuInf span{
@@ -375,6 +615,7 @@ li{
     margin: 20px;
     border-radius: 100%;
     padding-top: 37px;
+    vertical-align: top;
 }
 .item-tipo-cuenta i {
     color: #1cada3;
@@ -738,7 +979,7 @@ li{
     margin-right: 14px;
 }
 
-.btnOpcionFollow:hover{
+.btnOpcionFollow:hover {
     background: #648bc8;
     transform: scale(1.1);
 }
@@ -961,6 +1202,118 @@ li{
     width: 100%;
 }
 
+/* ############## Notificaciones ##############*/
+
+.notificaciones{
+    position: fixed;
+    width: 400px;
+    top: 100%;
+    left: calc(100% - 450px);
+    max-height: calc(100% - 98px);
+    background: #fff;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: auto;
+    z-index: 999;
+}
+
+.notificaciones::-webkit-scrollbar{
+    background: rgba(0, 182, 173, 0.18);
+}
+.notificaciones::-webkit-scrollbar-thumb {
+    background: rgba(0, 182, 173, 0.58);
+}
+
+.notificacion{
+    display: block;
+    padding: 5px 0;
+    border-bottom: 1px solid #b3d2d0;
+}
+
+.notificacion:hover{
+    background: #ddeceb;
+    cursor: pointer;
+    transform: scale(1.02);
+    box-shadow: 0 0 15px #1a948b;
+}
+
+.userNotify{
+    color: #1db383;
+    cursor: pointer;
+}
+
+.imgNotify{
+    vertical-align: top;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    margin: 10px;
+}
+
+.imgNotify img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+.contNotify{
+    vertical-align: middle;
+    display: inline-block;
+    width: calc(100% - 68px);
+    padding: 10px 0;
+
+}
+
+.contNotify p{
+    vertical-align: middle;
+    padding: 0 5px;
+}
+
+.btnsNotify{
+    display: block;
+    text-align: center;
+}
+
+.btnNotify , .btnNotifyRojo{
+    display: inline-block;
+    width: auto;
+    height: 35px;
+    border-radius: 3px;
+    background: #1dbd7b;
+    color: #fff;
+    font-weight: bold;
+    line-height: 35px;
+    text-align: center;
+    cursor: pointer;
+    margin-right: 14px;
+    padding: 0 10px;
+}
+
+.btnNotifyRojo{
+    background: #85242f;
+}
+
+.btnNotify:hover , .btnNotifyRojo:hover{
+    background: #648bc8;
+    transform: scale(1.1);
+}
+
+.fechaNotify{
+    display: block;
+    font-size: 0.85em;
+    color: #5e5e5e;
+    text-align: right;
+    font-style: italic;
+    margin: 7px 11px;
+}
+
+.notifyVista{
+    opacity: 0.5;
+}
+
+.notifyVista:hover{
+    opacity: 1;
+}
+
 /* ############## Chat ##############*/
 
 .circulosChat{
@@ -1103,6 +1456,79 @@ li{
     height: 10px !important;
 }
 
+/* ################ Scouting ############ */
+
+.filtrosScout{
+    display: block;
+}
+
+.filtrosScout * , .filtroUnCont * ,.sliderInputs , .filtroSlider{
+    display: inline-block;
+}
+
+.filtroUnCont {
+    width: 242px;
+    vertical-align: middle;
+}
+
+.filtroSlider{
+    padding-top: 13px;
+}
+
+.sliderInputs{
+    width: 200px;
+    vertical-align: top;
+}
+
+.pretencionSlider{
+    color: #008077;
+    display: inline-block;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 20px;
+    margin-left: 22px;
+}
+
+.labelFilter{
+    color: #008077;
+    display: inline-block;
+    font-weight: bold;
+    text-align: right;
+    margin-left: 10px;
+}
+
+.rangeWrap {
+    width: 40%;
+}
+.rangeWrap input {
+    width: 100%;
+    margin: 0;
+}
+.rangeWrap .ticks {
+    display: flex;
+    justify-content: space-between;
+    height: 6px;
+    margin: -1.5em 5px 0 6px;
+    font: 10px Arial;
+    counter-reset: count -1;
+}
+.rangeWrap .ticks > div {
+    height: 100%;
+    width: 1px;
+    background: silver;
+    counter-increment: count 1;
+}
+.rangeWrap .ticks > div:nth-child(5n - 4) {
+    height: 200%;
+}
+.rangeWrap .ticks > div:nth-child(5n - 4)::before {
+    display: block;
+    content: counter(count,decimal);
+    transform: translate(-50%, 100%);
+    text-align: center;
+    width: 16px;
+}
+
 /* ################ Partes genericas ############ */
 
 .contenedotGeneral{
@@ -1186,7 +1612,10 @@ li{
 .modalC-alerta{color: #ece82c}
 .modalC-neutro{color: #00afd1}
 
-
+.w150{width: 150px!important;}
+.w200{width: 150px!important;}
+.w250{width: 150px!important;}
+.w300{width: 150px!important;}
 
 /*Checkboxes styles*/
 input[type="checkbox"] { display: none; }

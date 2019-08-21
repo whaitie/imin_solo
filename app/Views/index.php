@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="<?= base_url('plugins/sweetalert/sweetalert.css') ?>" />
     <!-- Cropper -->
     <link rel="stylesheet" href="<?= base_url('plugins/cropper/cropper.min.css') ?>" />
+    <!-- Range slider -->
+    <link rel="stylesheet" href="<?= base_url('css/ion.rangeSlider.css') ?>" />
 
 
     <title>Imin</title>

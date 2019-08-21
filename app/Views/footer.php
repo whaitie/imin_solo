@@ -10,14 +10,17 @@
             <span>Home</span>
         </div>
 
-        <div class="btnMenuInf">
+        <div class="btnMenuInf" id="btnNotificaciones">
+            <div class="circuloNot">
+                10
+            </div>
             <i class="icon-bell"></i>
             <span>Notificaciones</span>
         </div>
 
-        <div class="btnMenuInf">
-            <i class="icon-cog"></i>
-            <span>Configuración</span>
+        <div class="btnMenuInf" id="btnMenuIz">
+            <i class="icon-menu"></i>
+            <span>Menu</span>
         </div>
 
         <div class="btnMenuInf btnOpenMychat" id="toggleChatUser">
@@ -28,16 +31,350 @@
         </div>
     </div>
 
+    <div class="notificaciones">
+        <div class="notificacion">
+            <div class="imgNotify">
+                <img src="<?= base_url('img/perfil4.jpg')?>" alt="">
+            </div>
+            <div class="contNotify">
+                <p> El periodista <span class="userNotify">Sebastian Vignolo</span> empezo a seguirte.</p>
+                <div class="fechaNotify">
+                    5 de junio 2019 10:42 am
+                </div>
+            </div>
+        </div>
+
+
+        <div class="notificacion">
+            <div class="imgNotify">
+                <img src="<?= base_url('img/perfil3.jpg')?>" alt="">
+            </div>
+            <div class="contNotify">
+                <p> El scout <span class="userNotify">Pablo Dominguez</span> empezo a hacerte scouting.</p>
+                <div class="fechaNotify">
+                    5 de junio 2019 14:30 pm
+                </div>
+            </div>
+        </div>
+
+        <div class="notificacion">
+            <div class="imgNotify">
+                <img src="<?= base_url('img/perfil3.jpg')?>" alt="">
+            </div>
+            <div class="contNotify">
+                <p> El scout <span class="userNotify">Pablo Dominguez</span> quiere agregarte como contacto.</p>
+                <div class="btnsNotify">
+                    <div class="btnNotify">Aceptar</div>
+                    <div class="btnNotifyRojo">Rechazar</div>
+                </div>
+                <div class="fechaNotify">
+                    5 de junio 2019 14:31 pm
+                </div>
+            </div>
+        </div>
+
+        <div class="notificacion">
+            <div class="imgNotify">
+                <img src="<?= base_url('img/perfil5.png')?>" alt="">
+            </div>
+            <div class="contNotify">
+                <p> El club <span class="userNotify">Newell's Old Boys</span> te ha enviado una propuesta para unirse a su club.</p>
+                <div class="fechaNotify">
+                    5 de junio 2019 15:12 pm
+                </div>
+            </div>
+        </div>
+
+        <div class="notificacion">
+            <div class="imgNotify">
+                <img src="<?= base_url('img/perfil2.jpg')?>" alt="">
+            </div>
+            <div class="contNotify">
+                <p><span class="userNotify">Steven Prob</span> te ha sugerido participar de un evento.</p>
+                <div class="fechaNotify">
+                    5 de junio 2019 15:12 pm
+                </div>
+            </div>
+        </div>
+
+        <div class="notificacion">
+            <div class="imgNotify">
+                <img src="<?= base_url('img/adidasnegro.jpg')?>" alt="">
+            </div>
+            <div class="contNotify">
+                <p><span class="userNotify">Adidas</span> quiere ser tu patrocinador.</p>
+                <div class="fechaNotify">
+                    5 de junio 2019 17:39 pm
+                </div>
+            </div>
+        </div>
+
+        <div class="notificacion">
+            <div class="imgNotify">
+                <img src="<?= base_url('img/perfil4.jpg')?>" alt="">
+            </div>
+            <div class="contNotify">
+                <p> El periodista <span class="userNotify">Sebastian Vignolo</span> empezo a seguirte.</p>
+                <div class="fechaNotify">
+                    5 de junio 2019 10:42 am
+                </div>
+            </div>
+        </div>
+
+
+        <div class="notificacion">
+            <div class="imgNotify">
+                <img src="<?= base_url('img/perfil3.jpg')?>" alt="">
+            </div>
+            <div class="contNotify">
+                <p> El scout <span class="userNotify">Pablo Dominguez</span> empezo a hacerte scouting.</p>
+                <div class="fechaNotify">
+                    5 de junio 2019 14:30 pm
+                </div>
+            </div>
+        </div>
+
+        <div class="notificacion">
+            <div class="imgNotify">
+                <img src="<?= base_url('img/perfil3.jpg')?>" alt="">
+            </div>
+            <div class="contNotify">
+                <p> El scout <span class="userNotify">Pablo Dominguez</span> quiere agregarte como contacto.</p>
+                <div class="btnsNotify">
+                    <div class="btnNotify">Aceptar</div>
+                    <div class="btnNotifyRojo">Rechazar</div>
+                </div>
+                <div class="fechaNotify">
+                    5 de junio 2019 14:31 pm
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+    <i class="icon-cog"></i>
+            <span>Configuración</span>
+            -->
+
 
 
 
     <div class="menuDesplegable">
-        <div class="infoPerfil1">
+        <div class="infoPerfil1" id="">
             <div>
                 <img src="img/perfil1.jpg" alt="" class="fotoPerfilMenu">
             </div>
-            <h3>Stefanee cryff</h3>
+            <h4>Stefanee cryff</h4>
             <div class="circulosChat conectado"></div>
+        </div>
+
+        <i class="icon-cancel" id="cerrarMenuPP"></i>
+
+        <div class="tiempoRestanteCuenta">
+            Te quedan 3 meses y 5 días de menbrecia
+        </div>
+
+        <div class="btnExtenderMembresia">
+            Extender membresia
+        </div>
+
+
+        <div class="btnsMenuIz">
+            <div class="btnMenuIz" target="modalObjetivos">
+                <i class="icon-star-3"></i>
+                <span>Mis objetivos</span>
+            </div>
+            <div class="btnMenuIz" target="modalCracteristicas">
+                <i class="icon-chart-1"></i>
+                <span>Mis caracteristicas</span>
+            </div>
+            <div class="btnMenuIz">
+                <i class="icon-back-in-time"></i>
+                <span>Mi Time-line</span>
+            </div>
+
+            <div class="btnMenuIz">
+                <i class="icon-bookmark"></i>
+                <span>Mis favoritos</span>
+            </div>
+
+            <div class="btnMenuIz" target="modalConfiguracion">
+                <i class="icon-cog"></i>
+                <span>Configuración</span>
+            </div>
+
+            <div class="btnMenuIz cerrarCuenta">
+                <i class="icon-user-delete"></i>
+                <span>Cerrar cuenta</span>
+            </div>
+
+            <div class="btnMenuIz">
+                <i class="icon-chart-alt"></i>
+                <span>Estadisticas</span>
+            </div>
+
+            <div class="btnMenuIz">
+                <i class="icon-chat-2"></i>
+                <span>Reportes y Sugerencias</span>
+            </div>
+
+            <div class="btnMenuIz btnMenuIzDestacado">
+                <i class="icon-crown-plus"></i>
+                <span>Destacar</span>
+            </div>
+
+            <div class="btnMenuIz btnMenuIzDonar">
+                <i class="icon-credit-card-alt"></i>
+                <span>Donar</span>
+            </div>
+
+            <div class="btnMenuIz link_asinc" href="<?= base_url() ?>" redirect="on">
+                <i class="icon-logout-3"></i>
+                <span>Salir</span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modalPerfil" id="modalConfiguracion">
+        <div class="contModalOptons">
+            <div class="tituloModal">
+                <i class="icon-angle-circled-left" id="volverTipoRegistro" loc="menu"></i>
+                <h2 class="colorPP" id="headerReg"> <i class="icon-cog"></i>Configuración</h2>
+                <div class="lineaModal"></div>
+            </div>
+            <div class="cerrarMoldaPerfil">
+                <i class="icon-cancel"></i>
+            </div>
+            <div class="contModalOptonsB">
+                <div class="item-tipo-cuenta" target="registroDeportista" type="Deportista">
+                    <i class="icon-lock-open-1 l-itc"></i>
+                    <span class="l-itc">Cambiar contraseña</span>
+                </div>
+                <div class="item-tipo-cuenta" target="registroDeportista" type="Periodista">
+                    <i class="icon-eye l-itc"></i>
+                    <span class="l-itc">Privacidad</span>
+                </div>
+                <div class="item-tipo-cuenta" target="registroClub" type="Club">
+                    <i class="icon-language l-itc"></i>
+                    <span class="l-itc">Idioma</span>
+                </div>
+                <div class="item-tipo-cuenta" target="registroDeportista" type="Procurador">
+                    <i class="icon-bell l-itc"></i>
+                    <span class="l-itc">Notificaciónes</span>
+                </div>
+                <div class="item-tipo-cuenta" target="registroDeportista" type="Procurador">
+                    <i class="icon-soccer-ball l-itc"></i>
+                    <span class="l-itc">Deporte elegido</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modalPerfil" id="modalObjetivos">
+        <div class="contModalOptons">
+            <div class="tituloModal">
+                <i class="icon-angle-circled-left" id="volverTipoRegistro" loc="menu"></i>
+                <h2 class="colorPP" id="headerReg"> <i class="icon-star-3"></i>Mis objetivos</h2>
+                <div class="lineaModal"></div>
+            </div>
+            <div class="cerrarMoldaPerfil">
+                <i class="icon-cancel"></i>
+            </div>
+            <div class="contModalOptonsB">
+                <div class="objetivosAsks">
+                    <span>Pretención economica anual:</span>
+                    <div class="monedaPretenciones">U$D</div>
+                    <input type="number" class="inputGenerico w150">
+                </div>
+                
+                <div class="objetivosAsks">
+                    <span>Objetivos de tu carrera:</span>
+                    <textarea class="objCarrera" cols="30" rows="10" maxlength="250" placeholder="Describe en 250 caracteres tus objetivos principales y por que deben tenerte en cuenta"></textarea>
+                </div>
+                <div class="clubesSelection">
+                    <div class="objetivosAsks">
+                        <span>Elije los clubes a los que aspiras:</span>
+                        <select class="selectGenerico" style="display: block">
+                            <option>Todas las ligas</option>
+                        </select>
+                    </div>
+                    <div class="clubSelector">
+                        <div class="clubLegible" elegido="false" clubid="1">
+                            <div class="contCLBimg">
+                                <img src="<?= base_url('img/clubes/barcelona.png')?>" alt="">
+                            </div>
+                            <span id="nombreClub-1">Barcelona</span>
+                            <div class="elegido">
+                                <i class="icon-check-empty boxNeutro" id="check-1"></i>
+                            </div>
+                        </div>
+
+                        <div class="clubLegible" elegido="false" clubid="2">
+                            <div class="contCLBimg">
+                                <img src="<?= base_url('img/clubes/realmadrid.png')?>" alt="">
+                            </div>
+                            <span id="nombreClub-2">Real Madrid</span>
+                            <div class="elegido">
+                                <i class="icon-check-empty boxNeutro" id="check-2"></i>
+                            </div>
+                        </div>
+
+                        <div class="clubLegible" elegido="false" clubid="3">
+                            <div class="contCLBimg">
+                                <img src="<?= base_url('img/clubes/juventus.png')?>" alt="">
+                            </div>
+                            <span id="nombreClub-3">Juventus</span>
+                            <div class="elegido">
+                                <i class="icon-check-empty boxNeutro" id="check-3"></i>
+                            </div>
+                        </div>
+
+                        <div class="clubLegible" elegido="false" clubid="4">
+                            <div class="contCLBimg">
+                                <img src="<?= base_url('img/clubes/manchester.png')?>" alt="">
+                            </div>
+                            <span id="nombreClub-4">Manchester United</span>
+                            <div class="elegido">
+                                <i class="icon-check-empty boxNeutro" id="check-4"></i>
+                            </div>
+                        </div>
+
+                        <div class="clubLegible" elegido="false" clubid="5">
+                            <div class="contCLBimg">
+                                <img src="<?= base_url('img/clubes/paris-saint-germain.png')?>" alt="">
+                            </div>
+                            <span id="nombreClub-5">Paris Saint Germain</span>
+                            <div class="elegido">
+                                <i class="icon-check-empty boxNeutro" id="check-5"></i>
+                            </div>
+                        </div>
+
+                        <div class="clubLegible" elegido="false" clubid="6">
+                            <div class="contCLBimg">
+                                <img src="<?= base_url('img/clubes/borusia-dortmund.png')?>" alt="">
+                            </div>
+                            <span id="nombreClub-6">Borusia Dortmund</span>
+                            <div class="elegido">
+                                <i class="icon-check-empty boxNeutro" id="check-6"></i>
+                            </div>
+                        </div>
+
+                        <div class="clubLegible" elegido="false" clubid="7">
+                            <div class="contCLBimg">
+                                <img src="<?= base_url('img/clubes/atletico-de-madrid.png')?>" alt="">
+                            </div>
+                            <span id="nombreClub-7">Atletico de Madrid</span>
+                            <div class="elegido">
+                                <i class="icon-check-empty boxNeutro" id="check-7"></i>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 
@@ -146,6 +483,10 @@
     <!-- Autosize -->
     <script type="application/javascript" src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
 
+    <!-- ion slider -->
+    <script type="application/javascript" src="<?= base_url('js/ion.rangeSlider.min.js') ?>"></script>
+
+
     <!-- BASIC FUNCTIONS -->
     <script type="application/javascript" src="<?= base_url('js/functions.js') ?>"></script>
 
@@ -157,8 +498,13 @@
         var logged = '<?= session()->ingresado ?>';
         var registroAbierto = false;
         var notificaciones_open = false;
+        /*
         var chats_menu_open = false;
-        var menu_open = false;
+        var menu_open = false;*/
+
+        var chatMenuAbierto = false;
+        var menuPP = false;
+        var notificacionesAbierto = false;
 
         function menus_iniciales() {
             //$('.btnsUsuario, .buscdorMenu').css('display', 'none');
@@ -224,10 +570,47 @@
 
         }
 
+        function cerrarChat(){
+            $('.moverDer , .menuChatDerecho').css('transform', 'translateX(0)');
+            $('#contenedor_perfil  , .perfilPP , .contenidoPerfil, .pubsUser , .blurerItem').css('filter', 'blur(0)');
+            $('.menuChatDerecho').css('left','calc(100% + 300px)');
+            $('.coverNegro').css('display','none');
+            chatMenuAbierto = false;
+        }
+
+        function cerrarMenuPP(){
+            $('.moverDer , .menuChatDerecho').css('transform', 'translateX(0)');
+            $('#contenedor_perfil  , .perfilPP , .contenidoPerfil, .pubsUser, .blurerItem').css('filter', 'blur(0)');
+            $('.menuDesplegable').css('left','-300px');
+            $('.coverNegro').css('display','none');
+            $('.modalPerfil').css('left','-100%');
+            deselecionarBtnsMenuIz();
+            menuPP = false;
+        }
+
+        function cerrarNotificaciones(){
+            $('.moverDer , .menuChatDerecho').css('transform', 'translateX(0)');
+            $('#contenedor_perfil  , .perfilPP , .contenidoPerfil, .pubsUser, .blurerItem').css('filter', 'blur(0)');
+            $('.menuChatDerecho').css('left','calc(100% + 300px)');
+            $('.coverNegro').css('display','none');
+            if(notificacionesAbierto)
+            {
+                $('.notificacion').addClass('notifyVista');
+            }
+            $('.notificaciones').css('top','100%');
+            notificacionesAbierto = false;
+        }
+
+        function deselecionarBtnsMenuIz() {
+            $('.btnMenuIz').removeClass('btnMenuIzSelected');
+        }
+
         function opcionesBuscador() {
             $('.buscdorMenu').on('click', function(){
-                console.log("holaaaa");
-                $('.especBuscador').css('top','50px');
+                if(!menuPP && !chatMenuAbierto){
+                    $('.especBuscador').css('top','50px');
+                }
+
             });
 
             $(document).mouseup(function(e)
@@ -238,6 +621,155 @@
                 if (!container.is(e.target) && container.has(e.target).length === 0)
                 {
                     $('.especBuscador').css('top','0');
+                }
+
+                if(menuPP){
+                    container = $('.menuDesplegable, .modalPerfil');
+                    if (!container.is(e.target) && container.has(e.target).length === 0)
+                    {
+                        cerrarMenuPP();
+                    }
+                }
+
+                if(chatMenuAbierto){
+                    container = $('.menuChatDerecho ');
+                    if (!container.is(e.target) && container.has(e.target).length === 0)
+                    {
+                        cerrarChat();
+                    }
+                }
+
+                if(notificacionesAbierto){
+                    container = $('.notificaciones ');
+                    if (!container.is(e.target) && container.has(e.target).length === 0)
+                    {
+                        cerrarNotificaciones();
+                    }
+                }
+            });
+        }
+
+        function  menusYchatPP() {
+
+            $('.menuInferior , .chatsDesplegables').show();
+
+            var userScroll = 0;
+            var _perfilHide = false;
+
+            $(window).on('scroll', function() {
+                var newScroll = $(document).scrollTop();
+                var _height = $('.perfilPP').height() - 740;
+                if($( window ).width() > 1024){
+                    if(userScroll - newScroll > _height || newScroll - userScroll > _height){
+                        $('.perfilPP').css('transform', 'translateX(-400px)');
+                        $('.contenidoPerfil').css('margin-left','0').css('width','100%');
+                        _perfilHide = true;
+                        ordenarGrid();
+                    }
+                    else if(_perfilHide){
+                        $('.contenidoPerfil').css('margin-left','400px').css('width','calc(100% - 404px)');
+                        $('.perfilPP').css('transform', 'translateX(0px)');
+                        _perfilHide = false;
+                        ordenarGrid();
+                    }
+                }
+                var scrollHeight = $(document).height();
+                var scrollPosition = $(window).height() + $(window).scrollTop();
+                if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
+                    pubs = $('.grid-item').not('.cloned').clone().addClass('cloned');
+                    $('.grid').append(pubs).masonry( 'appended', pubs );
+                }
+            });
+
+            var _alturaContatos = $(window).height() - 220;
+
+            $('.listaDeContactos').height(_alturaContatos);
+
+
+            $('#toggleChatUser').on('click', function(){
+                if(!chatMenuAbierto){
+                    cerrarMenuPP();
+                    cerrarNotificaciones();
+                    $('#contenedor_perfil , .perfilPP , .contenidoPerfil , .pubsUser, .blurerItem').css('filter', 'blur(10px)');
+                    $('.moverDer').css('transform', 'translateX(-300px)');
+                    $('.menuChatDerecho').css('left','calc(100% - 300px)');
+                    $('.coverNegro').css('display','block');
+                    chatMenuAbierto = true;
+                }
+            });
+
+
+            $('#btnMenuIz').on('click', function(){
+                if(!menuPP){
+                    cerrarChat();
+                    cerrarNotificaciones();
+                    $('#contenedor_perfil , .perfilPP , .contenidoPerfil , .pubsUser, .blurerItem').css('filter', 'blur(10px)');
+                    $('.moverDer').css('transform', 'translateX(300px)');
+                    $('.menuDesplegable').css('left','0');
+                    $('.coverNegro').css('display','block');
+                    menuPP = true;
+                }
+            });
+
+            $('#btnNotificaciones').on('click', function(){
+                if(!notificacionesAbierto){
+                    cerrarChat();
+                    cerrarMenuPP();
+                    $('#contenedor_perfil , .perfilPP , .contenidoPerfil , .pubsUser, .blurerItem').css('filter', 'blur(10px)');
+                    $('.coverNegro').css('display','block');
+                    $('.circuloNot').css('display','none');
+                    var h = window.innerHeight - 50;
+                    var _top = h - $('.notificaciones').height() + 2;
+
+                    $('.notificaciones').css('top', _top + 'px');
+                    notificacionesAbierto = true;
+                }
+            });
+
+            $('#cerrarChatDerecho').on('click', function(){cerrarChat();});
+            $('#cerrarMenuPP').on('click', function(){cerrarMenuPP();});
+
+
+            $('.btnMenuInf').mouseover(function () {
+                $(this).css('background','#1db383');
+                $(this).children('span').css('color','#fff');
+                $(this).children('i').css('color','#fff');
+            });
+
+            $('.btnMenuInf').mouseout(function () {
+                $(this).css('background','#fff');
+                $(this).children('span').css('color','#1db383');
+                $(this).children('i').css('color','#1db383');
+            });
+
+            $('.btnMenuIz').on('click', function () {
+                $('.btnMenuIzSelected').removeClass('btnMenuIzSelected');
+                $(this).addClass('btnMenuIzSelected');
+            });
+
+            $('.btnMenuIz').on('click', function () {
+                var target =   $(this).attr('target');
+                $('.modalPerfil').css("left","-100%");
+                $('#' + target).css("left","300px");
+            });
+
+            $('.cerrarMoldaPerfil').on('click',function () {
+                $(this).parents('.modalPerfil').css('left','-100%');
+                deselecionarBtnsMenuIz();
+            });
+
+            $('.clubLegible').on('click', function () {
+                var elegido = $(this).attr('elegido');
+                var id =  $(this).attr('clubid');
+                if(elegido == 'false'){
+                    $(this).attr('elegido', true).css('border',' 1px solid #008077;').css('background','#41a29c');
+                    $('#check-' + id).attr('class','icon-check boxElegido');
+                    $('#nombreClub-' + id).css({"color": "#fff"});
+                }
+                else if (elegido == 'true'){
+                    $(this).attr('elegido', false).css('border',' 1px solid #ccc;').css('background','#fff');
+                    $('#check-' + id).attr('class','icon-check-empty boxNeutro');
+                    $('#nombreClub-' + id).css({"color": "#000"});
                 }
             });
         }
@@ -356,90 +888,12 @@
                 case 'register':
 
                 break;
-                case 'app':
-
-                break;
                 case 'perfil':
                     //slider
                     animarItemMouseEnter('.imgPerfilAnimated' , 'rubberBand');
-
                     ordenarGrid();
-
                     opcionesBuscador();
-
-
-                    $('.menuInferior , .chatsDesplegables').show();
-
-                    var userScroll = 0;
-                    var _perfilHide = false;
-
-                    $(window).on('scroll', function() {
-                        var newScroll = $(document).scrollTop();
-                        var _height = $('.perfilPP').height() - 740;
-                        if($( window ).width() > 1024){
-                            if(userScroll - newScroll > _height || newScroll - userScroll > _height){
-                                $('.perfilPP').css('transform', 'translateX(-400px)');
-                                $('.contenidoPerfil').css('margin-left','0').css('width','100%');
-                                _perfilHide = true;
-                                ordenarGrid();
-                            }
-                            else if(_perfilHide){
-                                $('.contenidoPerfil').css('margin-left','400px').css('width','calc(100% - 404px)');
-                                $('.perfilPP').css('transform', 'translateX(0px)');
-                                _perfilHide = false;
-                                ordenarGrid();
-                            }
-                        }
-                        var scrollHeight = $(document).height();
-                        var scrollPosition = $(window).height() + $(window).scrollTop();
-                        if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
-                            pubs = $('.grid-item').not('.cloned').clone().addClass('cloned');
-                            $('.grid').append(pubs).masonry( 'appended', pubs );
-                        }
-                    });
-
-                    var _alturaContatos = $(window).height() - 220;
-
-                    $('.listaDeContactos').height(_alturaContatos);
-
-                    $('#downMenu').on('click', function(){
-                        if($(this).hasClass('icon-menu')){
-                            $(this).removeClass('icon-menu').addClass( 'icon-cancel-2');
-                            $('.contenedor').css('filter', 'blur(10px) brightness(50%)');
-                            $('.moverDer , .menuDesplegable').css('transform', 'translateX(300px)');
-                        }
-                        else{
-                            $(this).removeClass('icon-cancel-2').addClass( 'icon-menu');
-                            $('.moverDer , .menuDesplegable').css('transform', 'translateX(0)');
-                            $('.contenedor').css('filter', 'blur(0) brightness(100%)');
-                        }
-                    });
-
-                    var chatMenuAbierto = false;
-
-                    $('#toggleChatUser').on('click', function(){
-                        if(!chatMenuAbierto){
-                            console.log("Abierto");
-                            $('#contenedor_perfil , .perfilPP , .contenidoPerfil , .pubsUser').css('filter', 'blur(10px)');
-                            $('.moverDer').css('transform', 'translateX(-300px)');
-                            $('.menuChatDerecho').css('left','calc(100% - 300px)');
-                            $('.coverNegro').css('display','block');
-                            chatMenuAbierto = true;
-                        }
-                        else{
-                            cerrarChat();
-                        }
-                    });
-
-                    $('#cerrarChatDerecho').on('click', function(){cerrarChat();});
-
-                function cerrarChat(){
-                    $('.moverDer , .menuChatDerecho').css('transform', 'translateX(0)');
-                    $('#contenedor_perfil  , .perfilPP , .contenidoPerfil, .pubsUser').css('filter', 'blur(0)');
-                    $('.menuChatDerecho').css('left','calc(100% + 300px)');
-                    $('.coverNegro').css('display','none');
-                    chatMenuAbierto = false;
-                }
+                    menusYchatPP();
 
                     $('.btnAccionesPub ').mouseover(function () {
                         var padre = $(this).parent('.grid-contenido');
@@ -453,18 +907,51 @@
                         padre.find('.btnAccionPub span').css('display', 'none').css('opacity', '0');
                     });
 
-                    $('.btnMenuInf').mouseover(function () {
-                        $(this).css('background','#1db383');
-                        $(this).children('span').css('color','#fff');
-                        $(this).children('i').css('color','#fff');
+                break;
+
+                case 'scout':
+                    opcionesBuscador();
+                    menusYchatPP();
+
+                    $("#pretencionEconomicaFiltro").ionRangeSlider({
+                        type: "double",
+                        grid: false,
+                        hide_min_max: false,
+                        hide_from_to: false,
+                        min: 0,
+                        max: 50000,
+                        from: 0,
+                        to: 15000,
+                        prefix: "$"
                     });
 
-                    $('.btnMenuInf').mouseout(function () {
-                        $(this).css('background','#fff');
-                        $(this).children('span').css('color','#1db383');
-                        $(this).children('i').css('color','#1db383');
+                    $("#edadDeportista").ionRangeSlider({
+                        type: "double",
+                        grid: false,
+                        hide_min_max: false,
+                        hide_from_to: false,
+                        min: 13,
+                        max: 50,
+                        from: 13,
+                        to: 21,
+                        postfix: " Años"
                     });
-                break;
+
+                    $("#distanciaDeportista").ionRangeSlider({
+                        type: "double",
+                        grid: false,
+                        hide_min_max: false,
+                        hide_from_to: false,
+                        min: 0,
+                        max: 2000,
+                        from: 0,
+                        to: 150,
+                        postfix: " Km"
+                    });
+
+
+
+                    break;
                 default:
                     console.log('se hace default');
             }

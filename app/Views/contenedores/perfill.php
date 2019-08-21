@@ -23,7 +23,10 @@
         </select>
     </div>
 
+
+
     <div class="contenedotGeneral moverDer">
+
         <div class="perfilPP">
             <div class="imgPerfilPP">
                 <div class="clasePersona">

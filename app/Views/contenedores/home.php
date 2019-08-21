@@ -81,6 +81,7 @@
         </div>
     </div>
 
+
     <div class="modalPantallaCompleta" id="modalRegistro">
         <div class="contenidoModal">
             <div class="tituloModal">
