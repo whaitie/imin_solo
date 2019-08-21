@@ -98,7 +98,7 @@
                     Deporte:
                 </div>
                 <div class="campoPerfil">
-                    <img src="img/deportes/futbol_b.png" alt="">
+                    <img src="<?= base_url('img/Deportes/futbol_b.png')?>" alt="">
                 </div>
                 <div class="campoPerfil">
                     <span>Futbol</span>
