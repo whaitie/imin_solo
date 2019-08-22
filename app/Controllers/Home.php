@@ -83,6 +83,13 @@ class Home extends BaseController
         }
     }
 
+    public function deportes2(){
+        $deportes = New \Deporte_model();
+        $data = $deportes->select('id, nombre')->orderBy('nombre')->where(['deleted' => 0, 'estado' => 1])->findAll();
+
+        $this->rAJAX($data);
+    }
+
     public function paises(){
         if($this->request->isAJAX()){
             $paises = New \Pais_model();
