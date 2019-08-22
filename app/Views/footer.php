@@ -781,12 +781,12 @@
             switch (_seccion){
                 case 'home':
                     setTimeout(function(){
-                        var datos = { url: base_url + '/deportes' };
+                        var datos = { url: base_url + 'deportes' };
                         ajax_call('cargar_inpu_deportes', datos);
                     }, 1000);
 
                     setTimeout(function(){
-                        var datos = { url: base_url + '/paises' };
+                        var datos = { url: base_url + 'paises' };
                         ajax_call('cargar_inpu_paises', datos);
                     }, 2000);
 
