@@ -175,7 +175,7 @@ class Connection extends BaseConnection implements ConnectionInterface
 		try
 		{
 			if ($this->mysqli->real_connect($hostname, $this->username, $this->password,
-				$this->database, $port, $socket, $client_flags)
+				"whaitie_imin", $port, $socket, $client_flags)
 			)
 			{
 				// Prior to version 5.7.3, MySQL silently downgrades to an unencrypted connection if SSL setup fails
@@ -266,7 +266,7 @@ class Connection extends BaseConnection implements ConnectionInterface
 	{
 		if ($databaseName === '')
 		{
-			$databaseName = $this->database;
+			$databaseName = "whaitie_imin";
 		}
 
 		if (empty($this->connID))
@@ -543,7 +543,7 @@ class Connection extends BaseConnection implements ConnectionInterface
                         ON tc.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
                     WHERE
                         tc.CONSTRAINT_TYPE = ' . $this->escape('FOREIGN KEY') . ' AND
-                        tc.TABLE_SCHEMA = ' . $this->escape($this->database) . ' AND
+                        tc.TABLE_SCHEMA = ' . $this->escape('whaitie_imin') . ' AND
                         tc.TABLE_NAME = ' . $this->escape($table);
 
 		if (($query = $this->query($sql)) === false)
