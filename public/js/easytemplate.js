@@ -42,9 +42,9 @@ function template_html(_data , _template) {
     return html;
 }
 
-function renderizar(_data , _template) {
-    var padre = '#contenedor_' + _template;
-    var template = '#' + _template;
+function renderizar(_data , _template , _class = false) {
+    var padre = (_class) ?'.contenedor_' + _template :'#contenedor_' + _template;
+    var template =  '#' + _template;
     var itemTpl = $(template).text().split(/\$\{(.+?)\}/g);
 
     var html = _data.map(function(item) {
@@ -73,9 +73,15 @@ function renderizar_padre(_data , _padre , _template, _order) {
     ajax_link();
 }
 
-function remplazar_y_renderizar(_data , _template){
-    $('#contenedor_' + _template).html('');
-    renderizar(_data , _template);
+function remplazar_y_renderizar(_data , _template , _class = false){
+    if(_class){
+        $('.contenedor_' + _template).html('');
+        renderizar(_data , _template , true);
+    }
+    else{
+        $('#contenedor_' + _template).html('');
+        renderizar(_data , _template);
+    }
 }
 
 function remplazar_y_renderizar_padre(_data , _padre , _template){
@@ -265,3 +271,6 @@ function tooltip(_id , _ubicacion){
         arrow: true
     });
 }
+
+/* ########### Validacion ########### */
+

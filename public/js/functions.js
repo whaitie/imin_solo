@@ -1,9 +1,4 @@
 /*** REGISTER ***/
-$(document).on('click', '#btnRegistarCuenta', function(e){
-	$body.addClass("loading");
-	var datos = { url: base_url + '/register' , form: $('#registerForm').serialize() };
-	ajax_call('registro_crear', datos);
-});
 
 function registro_crear(msj){
 	var error = '';
@@ -96,8 +91,8 @@ function login_verificar(msj){
 function cargar_inpu_deportes(msj){
 	var data_deporte = msj.responseJSON;
 
-	remplazar_y_renderizar(data_deporte, 'option_deporte');
-	$('#contenedor_option_deporte').prepend('<option value="" SELECTED>Elíge tu Deporte</option>');
+	remplazar_y_renderizar(data_deporte, 'option_deporte' , true);
+	$('.contenedor_option_deporte').prepend('<option value="" SELECTED>Elíge tu Deporte</option>');
 
 	var $options = $("#contenedor_option_deporte > option").clone();
 	$('#contenedor_option_deporte_club').append($options);
@@ -106,15 +101,14 @@ function cargar_inpu_deportes(msj){
 function cargar_inpu_paises(msj){
 	var data_paises = msj.responseJSON;
 
-	remplazar_y_renderizar(data_paises, 'option_nacionalidad');
-	$('#contenedor_option_nacionalidad').prepend('<option value="" SELECTED>Nacionalidad</option>');
+	remplazar_y_renderizar(data_paises, 'option_nacionalidad', true);
+	$('.contenedor_option_nacionalidad').prepend('<option value="" SELECTED>Nacionalidad</option>');
 
 	var $options = $("#contenedor_option_nacionalidad > option").clone();
 	$('#contenedor_option_nacionalidad_club , #contenedor_option_nacionalidad_empresa').append($options);
 
-
-	remplazar_y_renderizar(data_paises, 'option_residencia');
-	$('#contenedor_option_residencia').prepend('<option value="" SELECTED>País de Residencia</option>');
+	remplazar_y_renderizar(data_paises, 'option_residencia', true);
+	$('.contenedor_option_residencia').prepend('<option value="" SELECTED>País de Residencia</option>');
 }
 
 /*** CAMBIAR IMAGEN ***/
@@ -130,6 +124,7 @@ function readURL(input) {
 }
 
 function initCropper(){
+	/*
   	var image = document.getElementById('image-avatar');
   	var cropper = new Cropper(image, {
     	aspectRatio: 1 / 1,
@@ -144,7 +139,7 @@ function initCropper(){
 
       	$("#imagenAvatar").attr("src", imagen_base64);
 		$('#modalCropperAvatar').modal('hide');
-  	});
+  	});*/
 }
 
 function montoAPagar() {

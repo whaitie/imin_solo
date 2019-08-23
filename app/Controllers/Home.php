@@ -30,7 +30,7 @@ class Home extends BaseController
         }
     }
 
-    public function register() {
+    public function registrar_usuario() {
 
         if($this->request->isAJAX()){
             $data = $this->request->getPost();

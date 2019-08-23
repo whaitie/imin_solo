@@ -884,8 +884,19 @@
                         });;
                     });
 
-                break;
-                case 'register':
+                    /* ######### Funciones registro ######### */
+
+                    $('.btnRegistarCuenta').on('click',function () {
+                        var _tipo = $(this).attr('tipo');
+                        if(_tipo == "Deportista"){
+                            console.log($('#registroDeportista').serialize());
+                            /*
+                            var datos = { url: base_url + '/registrar_usuario' , form: $('#registroDeportista').serialize() };
+                            ajax_call('registro_crear', datos);*/
+                        }
+
+                    });
+
 
                 break;
                 case 'perfil':

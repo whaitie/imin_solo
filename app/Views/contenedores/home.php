@@ -114,26 +114,24 @@
 
             <form class="formModal formRegistro" id="registroDeportista">
                 <div class="campoModal" id="fotoUsuario">
-                    <a data-dismiss="modal" href="#" data-target="#modalCropperAvatar" data-toggle="modal">
-                        <img src="img/no-profile.png" alt="" id="imagenAvatar">
-                        <i class="icon-plus-circled-1 colorPP" id="cambiarFotoRegistro"></i>
-                    </a>
+                    <img src="img/no-profile.png" alt="" id="imagenAvatar">
+                    <i class="icon-plus-circled-1 colorPP" id="cambiarFotoRegistro"></i>
                 </div>
                 <div class="campoModal">
                     <input type="text" class="inputGenerico inputTextDoble" placeholder="Nombres" name="nombre">
                     <input type="text" class="inputGenerico inputTextDoble" placeholder="Apellidos" name="apellido">
                     <input type="text" class="inputGenerico" placeholder="DNI" name="dni">
                     <input type="date" class="inputGenerico" placeholder="Fecha de Nacimiento" name="fecha_nacimiento">
-                    <select class="selectGenerico" name="genero" id="genero">
+                    <select class="selectGenerico" name="genero">
                         <option value="" SELECTED>Sexo</option>
                         <option value="1">Hombre</option>
                         <option value="2">Mujer</option>
                     </select>
-                    <select class="selectGenerico" name="id_deporte" id="contenedor_option_deporte">
+                    <select class="selectGenerico contenedor_option_deporte" name="id_deporte" >
                     </select>
-                    <select class="selectGenerico" name="id_pais_nac" id="contenedor_option_nacionalidad">
+                    <select class="selectGenerico contenedor_option_nacionalidad" name="id_pais_nac" >
                     </select>
-                    <select class="selectGenerico" name="id_pais_res" id="contenedor_option_residencia">
+                    <select class="selectGenerico contenedor_option_residencia" name="id_pais_res" >
                     </select>
                     <input type="text" class="inputGenerico inputTextDoble" placeholder="Provincia" name="provincia">
                     <input type="text" class="inputGenerico inputTextDoble" placeholder="Calle" name="calle">
@@ -142,32 +140,30 @@
                     <input type="text" class="inputGenerico " placeholder="Usuario" name="usuario">
                     <input type="password" class="inputGenerico " placeholder="Contraseña" name="password">
                     <input type="password" class="inputGenerico " placeholder="Repite Contraseña" name="confirm_password">
-                    <div class="btnsHome btnRegistarCuenta" tipo="Deportista" id="registroEspecial">Registrarse</div>
+                    <div class="btnsHome btnRegistarCuenta" tipo="Deportista" >Registrarse</div>
                 </div>
             </form>
 
             <form class="formModal formRegistro" id="registroPeriodista">
                 <div class="campoModal" id="fotoUsuario">
-                    <a data-dismiss="modal" href="#" data-target="#modalCropperAvatar" data-toggle="modal">
                         <img src="img/no-profile.png" alt="" id="imagenAvatar">
                         <i class="icon-plus-circled-1 colorPP" id="cambiarFotoRegistro"></i>
-                    </a>
                 </div>
                 <div class="campoModal">
                     <input type="text" class="inputGenerico inputTextDoble" placeholder="Nombres" name="nombre">
                     <input type="text" class="inputGenerico inputTextDoble" placeholder="Apellidos" name="apellido">
                     <input type="text" class="inputGenerico" placeholder="DNI" name="dni">
                     <input type="date" class="inputGenerico" placeholder="Fecha de Nacimiento" name="fecha_nacimiento">
-                    <select class="selectGenerico" name="genero" id="genero">
+                    <select class="selectGenerico" name="genero">
                         <option value="" SELECTED>Sexo</option>
                         <option value="1">Hombre</option>
                         <option value="2">Mujer</option>
                     </select>
-                    <select class="selectGenerico" name="id_deporte" id="contenedor_option_deporte">
+                    <select class="selectGenerico contenedor_option_deporte" name="id_deporte" >
                     </select>
-                    <select class="selectGenerico" name="id_pais_nac" id="contenedor_option_nacionalidad">
+                    <select class="selectGenerico contenedor_option_nacionalidad" name="id_pais_nac" >
                     </select>
-                    <select class="selectGenerico" name="id_pais_res" id="contenedor_option_residencia">
+                    <select class="selectGenerico contenedor_option_residencia" name="id_pais_res" >
                     </select>
                     <input type="text" class="inputGenerico inputTextDoble" placeholder="Provincia" name="provincia">
                     <input type="text" class="inputGenerico inputTextDoble" placeholder="Calle" name="calle">
@@ -176,32 +172,30 @@
                     <input type="text" class="inputGenerico " placeholder="Usuario" name="usuario">
                     <input type="password" class="inputGenerico " placeholder="Contraseña" name="password">
                     <input type="password" class="inputGenerico " placeholder="Repite Contraseña" name="confirm_password">
-                    <div class="btnsHome btnRegistarCuenta" tipo="Deportista" id="registroEspecial">Registrarse</div>
+                    <div class="btnsHome btnRegistarCuenta" tipo="Deportista" >Registrarse</div>
                 </div>
             </form>
 
             <form class="formModal formRegistro" id="registroProcurador">
                 <div class="campoModal" id="fotoUsuario">
-                    <a data-dismiss="modal" href="#" data-target="#modalCropperAvatar" data-toggle="modal">
-                        <img src="img/no-profile.png" alt="" id="imagenAvatar">
-                        <i class="icon-plus-circled-1 colorPP" id="cambiarFotoRegistro"></i>
-                    </a>
+                    <img src="img/no-profile.png" alt="" id="imagenAvatar">
+                    <i class="icon-plus-circled-1 colorPP" id="cambiarFotoRegistro"></i>
                 </div>
                 <div class="campoModal">
                     <input type="text" class="inputGenerico inputTextDoble" placeholder="Nombres" name="nombre">
                     <input type="text" class="inputGenerico inputTextDoble" placeholder="Apellidos" name="apellido">
                     <input type="text" class="inputGenerico" placeholder="DNI" name="dni">
                     <input type="date" class="inputGenerico" placeholder="Fecha de Nacimiento" name="fecha_nacimiento">
-                    <select class="selectGenerico" name="genero" id="genero">
+                    <select class="selectGenerico" name="genero">
                         <option value="" SELECTED>Sexo</option>
                         <option value="1">Hombre</option>
                         <option value="2">Mujer</option>
                     </select>
-                    <select class="selectGenerico" name="id_deporte" id="contenedor_option_deporte">
+                    <select class="selectGenerico contenedor_option_deporte" name="id_deporte" >
                     </select>
-                    <select class="selectGenerico" name="id_pais_nac" id="contenedor_option_nacionalidad">
+                    <select class="selectGenerico contenedor_option_nacionalidad" name="id_pais_nac" >
                     </select>
-                    <select class="selectGenerico" name="id_pais_res" id="contenedor_option_residencia">
+                    <select class="selectGenerico contenedor_option_residencia" name="id_pais_res" >
                     </select>
                     <input type="text" class="inputGenerico inputTextDoble" placeholder="Provincia" name="provincia">
                     <input type="text" class="inputGenerico inputTextDoble" placeholder="Calle" name="calle">
@@ -210,16 +204,14 @@
                     <input type="text" class="inputGenerico " placeholder="Usuario" name="usuario">
                     <input type="password" class="inputGenerico " placeholder="Contraseña" name="password">
                     <input type="password" class="inputGenerico " placeholder="Repite Contraseña" name="confirm_password">
-                    <div class="btnsHome btnRegistarCuenta" tipo="Deportista" id="registroEspecial">Registrarse</div>
+                    <div class="btnsHome btnRegistarCuenta" tipo="Deportista" >Registrarse</div>
                 </div>
             </form>
 
             <form class="formModal formRegistro" id="registroClub">
                 <div class="campoModal" id="fotoUsuario">
-                    <a data-dismiss="modal" href="#" data-target="#modalCropperAvatar" data-toggle="modal">
                         <img src="img/no-profile.png" alt="" id="imagenAvatar">
                         <i class="icon-plus-circled-1 colorPP" id="cambiarFotoRegistro"></i>
-                    </a>
                 </div>
                 <div class="campoModal">
                     <input type="text" class="inputGenerico" placeholder="Nombre" name="nombre">
@@ -243,10 +235,8 @@
 
             <form class="formModal formRegistro" id="registroEmpresa">
                 <div class="campoModal" id="fotoUsuario">
-                    <a data-dismiss="modal" href="#" data-target="#modalCropperAvatar" data-toggle="modal">
                         <img src="img/no-profile.png" alt="" id="imagenAvatar">
                         <i class="icon-plus-circled-1 colorPP" id="cambiarFotoRegistro"></i>
-                    </a>
                 </div>
                 <div class="campoModal">
                     <input type="text" class="inputGenerico" placeholder="Nombre empresa" name="nombre">
