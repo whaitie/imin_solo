@@ -787,11 +787,13 @@ li{
 
 #fotoUsuario img{
     width: 110px;
+    height: 110px;
     border-radius: 100%;
     margin: 16px;
     margin-left: calc(50% - 55px);
     border: 3px solid #909090;
     cursor: pointer;
+    object-fit: cover;
 }
 
 #cambiarFotoRegistro{
@@ -1602,6 +1604,11 @@ li{
     text-align: center;
     display: none;
 }
+.modalCentral p{
+    max-width: 475px;
+    padding: 10px;
+    text-align: center;
+}
 
 .simbolo i{
     font-size: 4em;
@@ -1616,6 +1623,34 @@ li{
 .w200{width: 150px!important;}
 .w250{width: 150px!important;}
 .w300{width: 150px!important;}
+
+/* ########## cargando AJAX ########### */
+
+.cargandoAjax{
+    position: fixed;
+    top: calc(100% - 150px);
+    left: 100%;//calc(100% - 200px);
+    width: 180px;
+    text-align: center;
+    z-index: 999;
+    background: #008077;
+    color: #fff;
+    padding: 7px 10px;
+}
+
+.imgCargandoAjax{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+
+}
+
+.imgCargandoAjax img{
+    width: 100%;
+    height: 100%;
+}
+
+.cargandoAjax span{display: inline-block;margin-left: 5px}
 
 /*Checkboxes styles*/
 input[type="checkbox"] { display: none; }

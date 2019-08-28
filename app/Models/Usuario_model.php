@@ -24,6 +24,7 @@ class Usuario_model extends Model
             'nombre' => $data['nombre'],
             'apellido' => $data['apellido'],
             'dni' => $data['dni'],
+            'avatar' => $data['avatar'],
             'genero' => $data['genero'],
             'fecha_nacimiento' => $data['fecha_nacimiento'],
             'id_pais_nac' => $data['id_pais_nac'],

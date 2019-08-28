@@ -1,4 +1,18 @@
 /*** REGISTER ***/
+function modalImin(_msj , _tipo){
+	if(_tipo == 'exito'){
+		$('.simbolo i').attr('class','icon-ok-circled modalC-ok');
+	}
+	else if(_tipo == 'error'){
+		$('.simbolo i').attr('class','icon-cancel-circled modalC-error');
+	}
+	$('.modalCentral p').text(_msj);
+
+	$('.modalCentral').stop().removeClass('fadeOut').addClass('jackInTheBox fadeIn').show().one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
+		$(this).css('display', 'block');
+	});
+}
+
 
 function registro_crear(msj){
 	var error = '';
@@ -7,28 +21,45 @@ function registro_crear(msj){
 			for (var aux in msj.responseJSON) {
 				error += (eval('msj.responseJSON.' + aux)) + '\n';
 			}
-		} else {
-			error = msj.responseJSON;
-		}
+			var contador = 0;
+			for (var key in msj.responseJSON) {
+				contador++;
+			}
+			if(contador == 1){
+				if(msj.responseText.includes("usuario field must contain a unique value")){
+					error = "Ya existe un usuario con ese nombre";
+				}
+				else if(msj.responseText.includes("email field must contain a unique value")){
+					error = "Ya existe un usuario con ese e-mail";
+				}
+				else{
+					error = 'El campo ' + Object.keys(msj.responseJSON)[0] + " esta incompleto o mal escrito";
+				}
 
-		swal({
-			title: 'Error!',
-			text: error,
-			type: 'error',
-			animation: false,
-			customClass: 'animated tada'
-		});
-		$body.removeClass("loading");
+			}
+			else{
+				error = 'Los campos ';
+				for (var key in msj.responseJSON) {
+					switch (key) {
+						case 'fecha_nacimiento': error += "Fecha de Nacimiento , "; break;
+						case 'id_deporte': error += "Deporte , "; break;
+						case 'id_pais_nac': error += "Nacionalidad , "; break;
+						case 'tipo_cuenta': error += "Tipo de Cuenta , "; break;
+						case 'id_pais_res': error += "Residencia , "; break;
+						case 'password': error += "Contraseña , "; break;
+						case 'confirm_password': error += "Confirmar contraseña , "; break;
+						default: error += capitalize(key) + " , ";break;
+					}
+				}
+				error += ' estan incompletos o mal escritos';
+			}
+		} else {
+			error = "Error 015687";
+		}
+		modalImin(error , 'error');
 	} else {
-		swal({
-			title: 'Hecho!',
-			text: msj.responseJSON.mensaje,
-			type: 'success',
-		}).then(function(isConfirm){
-            console.log(msj.responseJSON.id);
-			var datos = { url: base_url + '/login/login' , form: {usuario: msj.responseJSON.usuario, password: msj.responseJSON.password} };
-			ajax_call('login_verificar' , datos);
-		});
+		var datos = { url: base_url + '/login/login' , form: {usuario: msj.responseJSON.usuario, password: msj.responseJSON.password} };
+		ajax_call('login_verificar' , datos);
 	}
 }
 
@@ -75,16 +106,11 @@ function login_verificar(msj){
 		} else {
 			error = msj.responseJSON;
 		}
-		swal({
-			title: 'Error!',
-			text: error,
-			type: 'error',
-			animation: true,
-			customClass: 'animated tada'
-		});
+		modalImin('Ocurrio un error al iniciar sesion en la cuenta nueva','error');
 		$body.removeClass("loading");
 	} else {
-   		location.reload();
+
+   		window.location.href = "perfil";
 	}
 }
 

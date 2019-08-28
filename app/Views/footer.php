@@ -1,3 +1,9 @@
+    <div class="cargandoAjax">
+        <div class="imgCargandoAjax">
+            <img src="<?= base_url('img/loader.svg')?>" alt="">
+        </div>
+        <span>Cargando...</span>
+    </div>
     <div class="modal-loading"></div>
     <div class="menuInferior">
         <div class="btnMenuInf">
@@ -228,7 +234,7 @@
                 <span>Donar</span>
             </div>
 
-            <div class="btnMenuIz link_asinc" href="<?= base_url() ?>" redirect="on">
+            <div class="btnMenuIz link_asinc" href="<?= base_url('logout') ?>" redirect="on">
                 <i class="icon-logout-3"></i>
                 <span>Salir</span>
             </div>
@@ -681,6 +687,21 @@
                 }
             });
 
+            function registroExitoso(_msj) {
+                console.log(_msj);
+                /*
+                if(_){
+
+                }
+                *  var _loc = $(this).attr('tipo');
+                        $('#volverTipoRegistro').attr('loc', _loc);
+                        $('.formModal').hide();
+                        $('#headerReg').text('Metodos de pago');
+                        $('.formasDePago').show(250);
+                *
+                * */
+            }
+
             var _alturaContatos = $(window).height() - 220;
 
             $('.listaDeContactos').height(_alturaContatos);
@@ -792,6 +813,14 @@
 
                     opcionesBuscador();
 
+                    $('#fotoUsuario').on('click',function () {
+                        $('#foto_deportista').click();
+                    });
+
+                    $(".fotoPerfil").change(function() {
+                        previsualizarIMGinputFile(this);
+                    });
+
                     //Carrusel de patrocinadores
                     var _patrocinadores = $('.patrocinadores').width();
                     var _totalSelectores = 0;
@@ -848,13 +877,6 @@
                         //console.log(_loc);
                     });
 
-                    $('.btnRegistarCuenta').on('click', function () {
-                        var _loc = $(this).attr('tipo');
-                        $('#volverTipoRegistro').attr('loc', _loc);
-                        $('.formModal').hide();
-                        $('#headerReg').text('Metodos de pago');
-                        $('.formasDePago').show(250);
-                    });
 
                     $('.montoApagar').text(montoAPagar());
 
@@ -879,9 +901,7 @@
                     });
 
                     $('#btnOlvideCuenta').on('click', function () {
-                        $('.modalCentral').stop().removeClass('fadeOut').addClass('jackInTheBox fadeIn').show().one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
-                            $(this).css('display', 'block');
-                        });;
+                        alert('se redirecionaria a cambiar contraseña')
                     });
 
                     /* ######### Funciones registro ######### */
@@ -889,10 +909,10 @@
                     $('.btnRegistarCuenta').on('click',function () {
                         var _tipo = $(this).attr('tipo');
                         if(_tipo == "Deportista"){
-                            console.log($('#registroDeportista').serialize());
-                            /*
-                            var datos = { url: base_url + '/registrar_usuario' , form: $('#registroDeportista').serialize() };
-                            ajax_call('registro_crear', datos);*/
+                            ///console.log($('#registroDeportista').serialize());
+                            $('#foto_deportista_base64').val($('#imagenAvatar').attr('src'));
+                            var datos = { url: base_url + 'registrar_usuario' , form: $('#registroDeportista').serialize() };
+                            ajax_call('registro_crear', datos);
                         }
 
                     });
@@ -959,9 +979,11 @@
                         to: 150,
                         postfix: " Km"
                     });
+                    
+                    break;
 
-
-
+                case 'logout':
+                    window.location.href = '/logout'
                     break;
                 default:
                     console.log('se hace default');

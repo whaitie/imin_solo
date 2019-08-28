@@ -123,6 +123,7 @@ function cargar_contenido(_seccion){
 function ajax_call(_nombre_metodo , _argumentos) {
     var data = {};
     var url = '';
+    var error = false;
     console.log(_argumentos);
 
     if (typeof _argumentos.form !== 'undefined') {
@@ -147,6 +148,9 @@ function ajax_call(_nombre_metodo , _argumentos) {
             return debug_msj(true , 'La URL no es valida');
         }
     }
+
+    var ajax = $('.cargandoAjax');
+    ajax.css('left','calc(100% - 200px)');
     //console.log(data);
     $.ajax({
         type: 'POST',
@@ -155,10 +159,14 @@ function ajax_call(_nombre_metodo , _argumentos) {
         cache: false,
         dataType: 'json',
         error: function(msj) {
+            error = true;
             console.log(msj);
         },
         complete: function (msj) {
-            console.log(msj);
+            ajax.css('left','100% ');
+            if(!error){
+                console.log(msj);
+            }
             window[_nombre_metodo](msj);
         }
     });
@@ -270,6 +278,22 @@ function tooltip(_id , _ubicacion){
         duration: 500,
         arrow: true
     });
+}
+
+function previsualizarIMGinputFile(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $('.fotoPerfilActual').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+
+    }
+}
+
+const capitalize = (s) => {
+    if (typeof s !== 'string') return ''
+    return s.charAt(0).toUpperCase() + s.slice(1)
 }
 
 /* ########### Validacion ########### */

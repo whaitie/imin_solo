@@ -114,7 +114,7 @@
 
             <form class="formModal formRegistro" id="registroDeportista">
                 <div class="campoModal" id="fotoUsuario">
-                    <img src="img/no-profile.png" alt="" id="imagenAvatar">
+                    <img src="img/no-profile.png" alt="" id="imagenAvatar" class="fotoPerfilActual">
                     <i class="icon-plus-circled-1 colorPP" id="cambiarFotoRegistro"></i>
                 </div>
                 <div class="campoModal">
@@ -123,7 +123,7 @@
                     <input type="text" class="inputGenerico" placeholder="DNI" name="dni">
                     <input type="date" class="inputGenerico" placeholder="Fecha de Nacimiento" name="fecha_nacimiento">
                     <select class="selectGenerico" name="genero">
-                        <option value="" SELECTED>Sexo</option>
+                        <option value="" selected>Sexo</option>
                         <option value="1">Hombre</option>
                         <option value="2">Mujer</option>
                     </select>
@@ -140,9 +140,13 @@
                     <input type="text" class="inputGenerico " placeholder="Usuario" name="usuario">
                     <input type="password" class="inputGenerico " placeholder="Contraseña" name="password">
                     <input type="password" class="inputGenerico " placeholder="Repite Contraseña" name="confirm_password">
+                    <input type="number" name="tipo_cuenta" value="1" class="hidden">
+                    <input type="text" name="avatar" class="hidden" id="foto_deportista_base64">
                     <div class="btnsHome btnRegistarCuenta" tipo="Deportista" >Registrarse</div>
                 </div>
             </form>
+            <input type="file" class="hidden fotoPerfil" id="foto_deportista" accept="image/x-png,image/gif,image/jpeg">
+
 
             <form class="formModal formRegistro" id="registroPeriodista">
                 <div class="campoModal" id="fotoUsuario">
