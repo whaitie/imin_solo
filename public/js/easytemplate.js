@@ -172,6 +172,65 @@ function ajax_call(_nombre_metodo , _argumentos) {
     });
 }
 
+function datos_ajax(_argumentos) {
+    var data = {};
+    var url = '';
+    var error = false;
+    console.log(_argumentos);
+
+    if (typeof _argumentos.form !== 'undefined') {
+        data = _argumentos.form;
+    }
+    else if(typeof _argumentos.data !== 'undefined'){
+        data = _argumentos.data;
+    }
+    else{
+        msj_desarrollo('Advertencia: El form del JSON esta vacio, se pasa sin parametros via POST.');
+    }
+
+
+    if (typeof _argumentos.url == 'undefined') {
+        return debug_msj(true , 'La URL esta vacia');
+    }
+    else{
+        if(url_valida(_argumentos.url)){
+            url = _argumentos.url;
+        }
+        else{
+            return debug_msj(true , 'La URL no es valida');
+        }
+    }
+
+    cargando_ajax();
+    //console.log(data);
+    $.ajax({
+        type: 'POST',
+        url: url ,
+        data: data ,
+        cache: false,
+        dataType: 'json',
+        error: function(msj) {
+            error = true;
+            console.log(msj);
+        },
+        success: function (msj) {
+            carga_completa();
+            console.log(msj);
+            return msj;
+        }
+    });
+}
+
+function cargando_ajax() {
+    var ajax = $('.cargandoAjax');
+    ajax.css('left','calc(100% - 200px)');
+}
+
+function carga_completa() {
+    var ajax = $('.cargandoAjax');
+    ajax.css('left','100%');
+}
+
 function css_translate(_item , _cantidad){
     $(_item).css('-webkit-transform', 'translate(' + _cantidad +')');
     $(_item).css('-moz-transform',  'translate(' + _cantidad +')');

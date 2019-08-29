@@ -854,7 +854,7 @@ li{
     left: 0;
     top: 50px;
     width: 400px;
-    height: 1045px;
+    height: 1245px;
     background: rgb(40, 45, 60);
 }
 
@@ -1002,7 +1002,7 @@ li{
     font-size: 0.95em;
     font-style: italic;
     padding: 12px;
-    max-height: 126px;
+    height: 126px;
 }
 
 .estadsiticasPerfil{
@@ -1016,11 +1016,26 @@ li{
 
 .videoPresentacion{
     width: 590px;
+    min-height: 300px;
     display: inline-block;
 }
 
 .videoPresentacion video{
     width: 100%;
+}
+
+.sinVideoMarco{
+    width: 589px;
+    height: 300px;
+    position: relative;
+    border: 2px solid #ccc;
+}
+
+.sinVideoMarco p{
+    text-align: center;
+    line-height: 281px;
+    color: #8a8989;
+    font-size: 1.5em;
 }
 .pubsUser , .tabsPubUser{
     display: block;
@@ -1081,6 +1096,12 @@ li{
     display: block;
     text-align: center;
     width: 100%;
+}
+
+.sinPubs{
+    margin: 10px;
+    color: #3c3c3c;
+    font-size: 1.2em;
 }
 
 #loadingGrid{

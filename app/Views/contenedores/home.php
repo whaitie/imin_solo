@@ -1,14 +1,14 @@
 <div class="contenedor_superior">
     <div class="menu moverDer">
         <a class="logoMin" href="<?= base_url() ?>">
-            <img src="img/logo_min2.png" alt="">
+            <img src="<?= base_url('img/logo_min2.png')?>" alt="">
         </a>
         <div class="buscdorMenu">
             <input type="search" placeholder="Buscar" class="inputGenerico" id="buscadorTop">
             <i class="icon-search" id="buscarMenu"></i>
         </div>
         <div class="logoPatrocinadorMenu">
-            <img src="img/adidas_b.png" alt="">
+            <img src="<?= base_url('img/adidas_b.png')?>" alt="">
         </div>
     </div>
 </div>
@@ -134,6 +134,7 @@
                     <select class="selectGenerico contenedor_option_residencia" name="id_pais_res" >
                     </select>
                     <input type="text" class="inputGenerico inputTextDoble" placeholder="Provincia" name="provincia">
+                    <input type="text" class="inputGenerico inputTextDoble" placeholder="Ciudad" name="ciudad">
                     <input type="text" class="inputGenerico inputTextDoble" placeholder="Calle" name="calle">
                     <input type="text" class="inputGenerico inputTextDoble" placeholder="Número" name="numero">
                     <input type="text" class="inputGenerico " placeholder="E-mail" name="email">
@@ -341,16 +342,16 @@
                 <h2 class="colorPP">Login</h2>
                 <div class="lineaModal"></div>
             </div>
-            <form class="formLogin" style="margin-top: 20px">
-                <input type="text" class="inputGenerico " placeholder="Usuario / E-mail">
-                <input type="password" class="inputGenerico " placeholder="Contraseña">
+            <form class="formLogin" style="margin-top: 20px" id="inputsLogin">
+                <input type="text" class="inputGenerico " placeholder="Usuario / E-mail" name="usuario">
+                <input type="password" class="inputGenerico " placeholder="Contraseña"name="password">
                 <div class="boxes">
-                    <input type="checkbox" id="box-1">
-                    <label for="box-1">Recordar cuenta</label>
+                    <input type="checkbox" id="box-1" name="recordar">
+                    <label for="box-1">Mantener sesion abierta</label>
                 </div>
                 <div id="btnsLogin">
                     <div class="btnGenericoInline" id="btnOlvideCuenta">Olvide la contraseña</div>
-                    <a class="btnGenericoInline" id="btnIniciarSesion" href="perfil">Login</a>
+                    <div class="btnGenericoInline " id="btnIniciarSesion" >Login</div>
                 </div>
 
             </form>

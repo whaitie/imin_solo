@@ -96,6 +96,8 @@ $('#login-btn').on('click', function(e){
 	ajax_call('login_verificar', datos);
 });
 
+
+
 function login_verificar(msj){
 	var error = '';
 	if (msj.statusText == 'Error'){
@@ -106,11 +108,11 @@ function login_verificar(msj){
 		} else {
 			error = msj.responseJSON;
 		}
-		modalImin('Ocurrio un error al iniciar sesion en la cuenta nueva','error');
+		modalImin('Los datos para iniciar sesión son erroneos.','error');
 		$body.removeClass("loading");
 	} else {
-
-   		window.location.href = "perfil";
+		console.log(msj);
+   		window.location.href = "miperfil";
 	}
 }
 

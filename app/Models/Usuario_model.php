@@ -9,7 +9,11 @@ class Usuario_model extends Model
     protected $returnType = 'array';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['usuario', 'password', 'email', 'nombre', 'apellido', 'dni', 'avatar', 'genero', 'fecha_nacimiento', 'id_pais_nac', 'id_pais_res', 'provincia', 'calle', 'numero', 'id_deporte', 'tipo_cuenta', 'estado', 'ultimo_logueo'];
+    protected $allowedFields = [
+        'usuario', 'password', 'email', 'nombre', 'apellido', 'dni', 'avatar',
+        'cuerpo_completo','presentacion','presentacion_likes','presentacion_visitas','video','genero', 'fecha_nacimiento',
+        'id_pais_nac', 'id_pais_res','provincia','ciudad', 'calle', 'numero','verificado', 'id_deporte',
+        'tipo_cuenta', 'estado','verificado','altura','peso','liga','club','goles','partidos','ultimo_logueo'];
 
     protected $useTimestamps = true;
     protected $dateFormat = 'datetime';
@@ -24,6 +28,7 @@ class Usuario_model extends Model
             'nombre' => $data['nombre'],
             'apellido' => $data['apellido'],
             'dni' => $data['dni'],
+            'dni' => $data['ciudad'],
             'avatar' => $data['avatar'],
             'genero' => $data['genero'],
             'fecha_nacimiento' => $data['fecha_nacimiento'],
@@ -59,7 +64,7 @@ class Usuario_model extends Model
     }
 
     public function data_usuario($username){
-        $query = $this->select('id, usuario, email, nombre')->Where('usuario', $username)->orWhere('email', $username)->first();
+        $query = $this->select('*')->Where('usuario', $username)->orWhere('email', $username)->first();
         return $query;
     }
 }

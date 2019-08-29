@@ -10,7 +10,7 @@ class Home extends BaseController
             $this->failUnauthorized('No puedes acceder via AJAX aqui');
         } else {
             if (session()->has('ingresado')) {
-            	return redirect()->to('/perfil');
+            	return redirect()->to('/miperfil');
             } else {
                 $this->web_view(array('seccion' => 'home'));
             }

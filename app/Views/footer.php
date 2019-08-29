@@ -31,7 +31,7 @@
 
         <div class="btnMenuInf btnOpenMychat" id="toggleChatUser">
             <div class="userChat">
-                <img src="img/perfil1.jpg" alt="">
+                <img src="<?= base_url('img/no-profile.png')?>" alt="" id="imgMyChat">
                 <div class="circulosChat conectado estadoChatMI"></div>
             </div>
         </div>
@@ -168,9 +168,9 @@
     <div class="menuDesplegable">
         <div class="infoPerfil1" id="">
             <div>
-                <img src="img/perfil1.jpg" alt="" class="fotoPerfilMenu">
+                <img src="img/no-profile.png" alt="" class="fotoPerfilMenu">
             </div>
-            <h4>Stefanee cryff</h4>
+            <h4>Sin nombre</h4>
             <div class="circulosChat conectado"></div>
         </div>
 
@@ -387,7 +387,7 @@
 
     <div class="chatsDesplegables">
         <div class="userChat">
-            <img src="img/perfil2.jpg" alt="">
+            <img src="<?= base_url('img/perfil2.jpg')?>" alt="">
             <div class="circulosChat ocupado estadoChatMI"></div>
         </div>
     </div>
@@ -423,7 +423,7 @@
             <div class="listaDeContactos">
                 <div class="contactoChat">
                     <div class="userChat">
-                        <img src="img/perfil2.jpg" alt="">
+                        <img src="<?= base_url('img/perfil2.jpg') ?>" alt="">
                         <div class="circulosChat ocupado estadoChatcontacto"></div>
                     </div>
                     <div class="userChatInfo">
@@ -434,7 +434,7 @@
 
                 <div class="contactoChat">
                     <div class="userChat">
-                        <img src="img/perfil3.jpg" alt="">
+                        <img src="<?= base_url('img/perfil3.jpg') ?>" alt="">
                         <div class="circulosChat conectado estadoChatcontacto"></div>
                     </div>
                     <div class="userChatInfo">
@@ -445,7 +445,7 @@
 
                 <div class="contactoChat">
                     <div class="userChat">
-                        <img src="img/perfil4.jpg" alt="">
+                        <img src="<?= base_url('img/perfil4.jpg') ?>" alt="">
                         <div class="circulosChat especial estadoChatcontacto"></div>
                     </div>
                     <div class="userChatInfo">
@@ -456,7 +456,7 @@
 
                 <div class="contactoChat">
                     <div class="userChat">
-                        <img src="img/perfil5.png" alt="">
+                        <img src="<?= base_url('img/perfil5.png') ?>" alt="">
                         <div class="circulosChat desconectado estadoChatcontacto"></div>
                     </div>
                     <div class="userChatInfo">
@@ -511,6 +511,8 @@
         var chatMenuAbierto = false;
         var menuPP = false;
         var notificacionesAbierto = false;
+
+        var datosPerfil = [{}];
 
         function menus_iniciales() {
             //$('.btnsUsuario, .buscdorMenu').css('display', 'none');
@@ -687,22 +689,7 @@
                 }
             });
 
-            function registroExitoso(_msj) {
-                console.log(_msj);
-                /*
-                if(_){
-
-                }
-                *  var _loc = $(this).attr('tipo');
-                        $('#volverTipoRegistro').attr('loc', _loc);
-                        $('.formModal').hide();
-                        $('#headerReg').text('Metodos de pago');
-                        $('.formasDePago').show(250);
-                *
-                * */
-            }
-
-            var _alturaContatos = $(window).height() - 220;
+          var _alturaContatos = $(window).height() - 220;
 
             $('.listaDeContactos').height(_alturaContatos);
 
@@ -793,6 +780,65 @@
                     $('#nombreClub-' + id).css({"color": "#000"});
                 }
             });
+        }
+
+        function formatearPerfil(datosPerfil) {
+            cargando_ajax();
+            perfil = datosPerfil.responseJSON;
+
+            if(perfil.usuario == "undefined"){
+                modalImin('El usuario no existe!','error');
+            }
+
+            $('#tituloPPperfil , .nombrePerfilPP , .infoPerfil1 h4').text(perfil.nombre + " " + perfil.apellido);
+            $('.fotoPerfilPP , #imgMyChat ,.fotoPerfilMenu').attr('src', base_url + perfil.avatar);
+            $('.imgPerfilPP img').attr('src', base_url + perfil.cuerpo_completo);
+            if(perfil.verificado == true){
+                $('.nombrePerfilPP').append('<i class="icon-ok-circled"></i>');
+            }
+            $('#banderaNacionalidad').attr('src', base_url + 'img/banderas/' + perfil.id_pais_nac + '.svg' );
+            $('#nacionalidadPerfil').text(  cod_paises(perfil.id_pais_nac) );
+
+            $('#banderaLocalidad').attr('src', base_url + 'img/banderas/' + perfil.id_pais_nac + '.svg' );
+            $('#localidadPerfil').text(  cod_paises(perfil.id_pais_res) + ' - ' + perfil.ciudad );
+
+            $('#perfilNacimiento').text(perfil.fecha_nacimiento);
+
+            $('#alturaPerfil').text((perfil.altura != 'N/A')? perfil.altura + " m" : 'N/A');
+            $('#pesoPerfil').text((perfil.altura != 'N/A')? perfil.peso + " Kg" : 'N/A');
+
+            if(perfil.id_deporte == 1){
+                $('#imgDeportePerfil').attr('src', base_url + 'img/Deportes/futbol_b.png');
+                $('#deportePerfil').text('Futbol');
+
+                $('#clubPerfil').attr('src', (perfil.club == "N/A") ? base_url + 'img/clubes/sinclub.png' : base_url + 'img/clubes/' + perfil.club +'.png');
+                $('#clubPerfilNombre').text(perfil.club);
+                $('#perfilLiga').text(perfil.liga);
+                $('#golesYpartidosPerfil').text(perfil.goles + ' - ' + perfil.partidos);
+            }
+
+            $('.aboutMe').text(perfil.presentacion);
+            $('#presentacionLikes').text(perfil.presentacion_likes + " Likes");
+            $('#presentacionVisitas').text(perfil.presentacion_visitas + " Visitas");
+
+            if(perfil.mi_perfil == false){
+                $('.perfilSocialOption').append('<div class="btnOpcionFollow">Seguir</div>');
+            }
+            else{
+                $('.perfilSocialOption').append('<div class="btnOpcionFollow" id="editarMiPerfil">Editar perfil</div>');
+            }
+
+            if(perfil.tipo_cuenta == 2 || perfil.tipo_cuenta == 3){
+                $('.perfilSocialOption').append('<div class="btnOpcionFollow">Scout</div>');
+            }
+        }
+
+
+        function cod_paises(_int) {
+            switch (_int) {
+                case '12': return 'Argentina';break;
+                case '44': return 'Chile';break;
+            }
         }
 
         function cargar_seccion( _seccion ) {
@@ -901,7 +947,13 @@
                     });
 
                     $('#btnOlvideCuenta').on('click', function () {
-                        alert('se redirecionaria a cambiar contraseña')
+                        alert('despues de terminar todas las fasetas de deportista se hara esta parte.')
+                    });
+
+                    /* ######### Funciones login ######### */
+                    $('#btnIniciarSesion').on('click',function () {
+                        var datos = { url: base_url + 'login/login' , form: $('#inputsLogin').serialize() };
+                        ajax_call('login_verificar' , datos);
                     });
 
                     /* ######### Funciones registro ######### */
@@ -922,6 +974,16 @@
                 case 'perfil':
                     //slider
                     animarItemMouseEnter('.imgPerfilAnimated' , 'rubberBand');
+
+
+                    var _usuario = window.location.pathname.split("/").pop();
+                    if(_usuario != 'undefined'){
+                        datosPerfil = ajax_call( 'formatearPerfil',{url: base_url + 'datosperfil', data: {usuario: _usuario}});
+                    }
+                    else{
+                        modalImin('El usuario que buscas no existe','error');
+                    }
+
                     ordenarGrid();
                     opcionesBuscador();
                     menusYchatPP();
@@ -995,6 +1057,10 @@
             menus_iniciales();
             cargar_seccion(seccion_actual);
             $('#toolbarContainer').remove();
+        });
+
+        $(window).on("load", function() {
+            carga_completa();
         });
 
         window.addEventListener('popstate', function(event) {

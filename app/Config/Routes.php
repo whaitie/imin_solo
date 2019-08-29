@@ -80,7 +80,13 @@ $routes->add('/resetpassword/(:any)/(:any)', 'Login::actualizar_password/$1/$2')
 
 //Perfil
 
-$routes->add('/perfil', 'Perfil::index');
+$routes->add('/perfil/(:any)', 'Perfil::index/$1');
+$routes->add('/miperfil', 'Perfil::MiPerfil');
+$routes->add('/datosperfil', 'Perfil::DatosPerfil');
+$routes->add('/cookie', 'Perfil::DatosCookie');
+
+
+
 $routes->add('/scout', 'Scout::index');
 
 $routes->add('/deportes2', 'Home::deportes2');

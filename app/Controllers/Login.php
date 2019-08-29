@@ -51,7 +51,7 @@ class Login extends BaseController
 
                         $users->ultimo_logueo($datos_cookie['id']);
 
-                        $this->rAJAX('Usuario Logueado');
+                        $this->rAJAX(array('usuario' => $data['usuario'] , 'mensaje' => 'login correcto'));
                     }
                 }
             }
