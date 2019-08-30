@@ -137,6 +137,20 @@
                     <input type="text" class="inputGenerico inputTextDoble" placeholder="Ciudad" name="ciudad">
                     <input type="text" class="inputGenerico inputTextDoble" placeholder="Calle" name="calle">
                     <input type="text" class="inputGenerico inputTextDoble" placeholder="Número" name="numero">
+
+                    <div class="filtroSliderMiPerfil">
+                        <div class="pretencionSlider">Altura:</div>
+                        <div class="miSliderMenu">
+                            <input type="text" id="alturaReg" name="altura" value="" />
+                        </div>
+                    </div>
+                    <div class="filtroSliderMiPerfil" style="margin-bottom: 30px;">
+                        <div class="pretencionSlider">Peso:</div>
+                        <div class="miSliderMenu">
+                            <input type="text" id="pesoReg" name="peso" value="" />
+                        </div>
+                    </div>
+
                     <input type="text" class="inputGenerico " placeholder="E-mail" name="email">
                     <input type="text" class="inputGenerico " placeholder="Usuario" name="usuario">
                     <input type="password" class="inputGenerico " placeholder="Contraseña" name="password">

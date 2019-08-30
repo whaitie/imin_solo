@@ -157,14 +157,6 @@
         </div>
     </div>
 
-    <!--
-    <i class="icon-cog"></i>
-            <span>Configuración</span>
-            -->
-
-
-
-
     <div class="menuDesplegable">
         <div class="infoPerfil1" id="">
             <div>
@@ -190,7 +182,7 @@
                 <i class="icon-star-3"></i>
                 <span>Mis objetivos</span>
             </div>
-            <div class="btnMenuIz" target="modalCracteristicas">
+            <div class="btnMenuIz" target="modalCaracteristicas">
                 <i class="icon-chart-1"></i>
                 <span>Mis caracteristicas</span>
             </div>
@@ -209,7 +201,7 @@
                 <span>Configuración</span>
             </div>
 
-            <div class="btnMenuIz cerrarCuenta">
+            <div class="btnMenuIz cerrarCuenta" target="modalCerrarCuenta">
                 <i class="icon-user-delete"></i>
                 <span>Cerrar cuenta</span>
             </div>
@@ -219,7 +211,7 @@
                 <span>Estadisticas</span>
             </div>
 
-            <div class="btnMenuIz">
+            <div class="btnMenuIz" target="modalSugerencias">
                 <i class="icon-chat-2"></i>
                 <span>Reportes y Sugerencias</span>
             </div>
@@ -276,6 +268,8 @@
             </div>
         </div>
     </div>
+
+
 
     <div class="modalPerfil" id="modalObjetivos">
         <div class="contModalOptons">
@@ -380,6 +374,166 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </div>
+
+    <div class="modalPerfil" id="modalCaracteristicas">
+        <div class="contModalOptons">
+            <div class="tituloModal">
+                <i class="icon-angle-circled-left" id="volverTipoRegistro" loc="menu"></i>
+                <h2 class="colorPP" id="headerReg"> <i class="icon-chart-1"></i>Mis caracteristicas</h2>
+                <div class="lineaModal"></div>
+            </div>
+            <div class="cerrarMoldaPerfil">
+                <i class="icon-cancel"></i>
+            </div>
+            <div class="contModalOptonsB">
+                <div class="tabsGeneric">
+                    <div class="tabGenericOptionSelected" target="contPresentacion">Presentación</div>
+                    <div class="tabGenericOption" target="contDatosPersonales">Datos personales</div>
+                    <div class="tabGenericOption" target="contCualidades">Cualidades fisicas</div>
+                    <div class="tabGenericOption" target="contClubActual">Club</div>
+                </div>
+                <div class="contModalOptionsTabs" id="contPresentacion">
+                    <div class="contModalContiguo">
+                        <span class="modalSpanBlock">Mis fotos principales:</span>
+
+                        <div class="contImgDelPerfil">
+                            <div class="OAimgCuerpoCompleto ">
+                                <img src="" alt="" id="OAimgCP">
+                            </div>
+                            <h4>Cuerpo completo</h4>
+                            <div class="btnOAm">Actualizar</div>
+                        </div>
+                        <div class="contImgDelPerfil">
+                            <div class="OAimgCuerpoMedio">
+                                <img src="<?= base_url('img/cuerpo_medio.png')?>" alt="" id="OAimgCM">
+
+                            </div>
+                            <h4>Cuerpo medio</h4>
+                            <div class="btnOAm">Actualizar</div>
+                        </div>
+                        <div class="contImgDelPerfil">
+                            <div class="OAimgSocial">
+                                <img src="<?= base_url('img/no-profile.png')?>" alt="" id="OAimgS">
+                            </div>
+                            <h4>Imagen social</h4>
+                            <div class="btnOAm">Actualizar</div>
+                        </div>
+                        <span class="modalSpanBlock">Mi presentación textual:</span>
+
+                        <textarea class="objCarrera" cols="30" rows="10" maxlength="250" placeholder="Describe tu personalidad y tu forma de ser dentro las canchas en 250 caracteres"></textarea>
+                        <div class="btnOAm w150">Actualizar</div>
+                        <span class="modalSpanBlock">Mi video presentación:</span>
+                        <div class="videoPresentacion">
+                            <div class="sinVideoMarco">
+                                <p>Sin video presentación</p>
+                            </div>
+                        </div>
+                        <div class="btnOAm w150">Actualizar</div>
+                    </div>
+                </div>
+                <div class="contModalOptionsTabs" id="contDatosPersonales">
+                    <form id="formActDatosPersonales" class="formsMiPerfil">
+                        <input type="text" class="inputGenerico inputTextDoble" placeholder="Nombres" name="nombre">
+                        <input type="text" class="inputGenerico inputTextDoble" placeholder="Apellidos" name="apellido">
+                        <input type="text" class="inputGenerico" placeholder="DNI" name="dni">
+                        <input type="date" class="inputGenerico" placeholder="Fecha de Nacimiento" name="fecha_nacimiento">
+                        <select class="selectGenerico" name="genero">
+                            <option value="" selected>Sexo</option>
+                            <option value="1">Hombre</option>
+                            <option value="2">Mujer</option>
+                        </select>
+                        <select class="selectGenerico contenedor_option_deporte" name="id_deporte" >
+                        </select>
+                        <select class="selectGenerico contenedor_option_nacionalidad" name="id_pais_nac" >
+                        </select>
+                        <select class="selectGenerico contenedor_option_residencia" name="id_pais_res" >
+                        </select>
+                        <input type="text" class="inputGenerico inputTextDoble" placeholder="Provincia" name="provincia">
+                        <input type="text" class="inputGenerico inputTextDoble" placeholder="Ciudad" name="ciudad">
+                        <input type="text" class="inputGenerico inputTextDoble" placeholder="Calle" name="calle">
+                        <input type="text" class="inputGenerico inputTextDoble" placeholder="Número" name="numero">
+                        <div class="filtroSliderMiPerfil">
+                            <div class="pretencionSlider">Altura:</div>
+                            <div class="miSliderMenu">
+                                <input type="text" id="miAltura" name="altura" value="" />
+                            </div>
+                        </div>
+                        <div class="filtroSliderMiPerfil">
+                            <div class="pretencionSlider">Peso:</div>
+                            <div class="miSliderMenu">
+                                <input type="text" id="miPeso" name="peso" value="" />
+                            </div>
+                        </div>
+                        <div class="btnOAmDisponible w150" style="margin-top: 20px" id="actMiAltura">Actualizar</div>
+                    </form>
+                </div>
+                <div class="contModalOptionsTabs" id="contCualidades">
+                    <form id="formMisCualidades" class="formsMiPerfil">
+                        <input type="number" class="inputGenerico inputTextDoble" placeholder="Ataque" name="ataque" step="1" min="30" max="99" onKeyPress="return check(event,value)" onInput="checkLength(2,this)">
+                        <input type="number" class="inputGenerico inputTextDoble" placeholder="Defensa" name="defensa" step="1" min="30" max="99" onKeyPress="return check(event,value)" onInput="checkLength(2,this)">
+                        <input type="number" class="inputGenerico inputTextDoble" placeholder="Disparo" name="disparo" step="1" min="30" max="99" onKeyPress="return check(event,value)" onInput="checkLength(2,this)">
+                        <input type="number" class="inputGenerico inputTextDoble" placeholder="Pase" name="pase" step="1" min="30" max="99" onKeyPress="return check(event,value)" onInput="checkLength(2,this)">
+                        <input type="number" class="inputGenerico inputTextDoble" placeholder="Resistencia" name="resistencia" step="1" min="30" max="99" onKeyPress="return check(event,value)" onInput="checkLength(2,this)">
+                        <input type="number" class="inputGenerico inputTextDoble" placeholder="Dribleo" name="dribling" step="1" min="30" max="99" onKeyPress="return check(event,value)" onInput="checkLength(2,this)">
+
+                        <select class="selectGenerico" name="posicion">
+                            <option value="" selected>Posicion</option>
+                            <option value="DC">Delantero Central</option>
+                            <option value="SD">Segundo Delantero</option>
+                            <option value="EXD">Extremo Derecho</option>
+                            <option value="EXI">Extremo Izquierdo</option>
+                            <option value="MO">Medio Ofensivo</option>
+                            <option value="MDI">Medio Izquierdo</option>
+                            <option value="MDD">Medio Derecho</option>
+                            <option value="MC">Mediocampista Central</option>
+                            <option value="MCD">Mediocampista defensivo</option>
+                            <option value="CAR">Carrilero</option>
+                            <option value="LI">Lateral Izquierdo</option>
+                            <option value="LD">Lateral Derecho</option>
+                            <option value="DC">Defensor Central</option>
+                            <option value="PT">Portero</option>
+                        </select>
+                        <select class="selectGenerico" name="pie">
+                            <option value="" selected>Pierna habil</option>
+                            <option value="1">Derecha</option>
+                            <option value="2">Izquierda</option>
+                            <option value="3">Ambidiestro</option>
+                        </select>
+                        <div class="btnOAmDisponible w150">Actualizar</div>
+                    </form>
+                </div>
+                <div class="contModalOptionsTabs" id="contClubActual">
+                    <p>Soy Club</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modalPerfil" id="modalCerrarCuenta">
+        <div class="contModalOptons">
+            <div class="tituloModal">
+                <i class="icon-angle-circled-left" id="volverTipoRegistro" loc="menu"></i>
+                <h2 class="colorPP" id="headerReg"> <i class="icon-user-delete"></i>Cerrar cuenta</h2>
+                <div class="lineaModal"></div>
+            </div>
+            <div class="cerrarMoldaPerfil">
+                <i class="icon-cancel"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="modalPerfil" id="modalSugerencias">
+        <div class="contModalOptons">
+            <div class="tituloModal">
+                <i class="icon-angle-circled-left" id="volverTipoRegistro" loc="menu"></i>
+                <h2 class="colorPP" id="headerReg"> <i class="icon-chat-2"></i>Reportes y sugerencias</h2>
+                <div class="lineaModal"></div>
+            </div>
+            <div class="cerrarMoldaPerfil">
+                <i class="icon-cancel"></i>
             </div>
         </div>
     </div>
@@ -511,6 +665,7 @@
         var chatMenuAbierto = false;
         var menuPP = false;
         var notificacionesAbierto = false;
+        var inputsNacYdeporteCargadosMenu = false;
 
         var datosPerfil = [{}];
 
@@ -821,11 +976,17 @@
             $('#presentacionLikes').text(perfil.presentacion_likes + " Likes");
             $('#presentacionVisitas').text(perfil.presentacion_visitas + " Visitas");
 
+            $('.perfilSocialOption').html();
             if(perfil.mi_perfil == false){
                 $('.perfilSocialOption').append('<div class="btnOpcionFollow">Seguir</div>');
             }
             else{
                 $('.perfilSocialOption').append('<div class="btnOpcionFollow" id="editarMiPerfil">Editar perfil</div>');
+                $('#editarMiPerfil').on('click',function () {
+                    $('#btnMenuIz').click();
+                    $('.btnMenuIz[target="modalCaracteristicas"]').click();
+                });
+                $('#OAimgCP').attr('src', base_url + perfil.cuerpo_completo);
             }
 
             if(perfil.tipo_cuenta == 2 || perfil.tipo_cuenta == 3){
@@ -841,22 +1002,47 @@
             }
         }
 
+        function tabsGenericos(){
+            $('.tabGenericOptionSelected').each(function () {
+               var _target = $(this).attr('target');
+               $('#' + _target).css('display', 'block');
+            });
+
+            $('.tabGenericOption , .tabGenericOptionSelected').on('click', function () {
+                $('.contModalOptionsTabs').css('display','none');
+                var _target = $(this).attr('target');
+                $('#' + _target).css('display', 'block');
+                console.log('#' + _target);
+                $('.tabGenericOptionSelected').attr('class','tabGenericOption');
+                $(this).attr('class','tabGenericOptionSelected');
+            });
+
+            if(!inputsNacYdeporteCargadosMenu && seccion_actual != 'home'){
+                deporteYnacionalidadSelects();
+            }
+        }
+
+        function deporteYnacionalidadSelects() {
+            setTimeout(function(){
+                var datos = { url: base_url + 'deportes' };
+                ajax_call('cargar_inpu_deportes', datos);
+            }, 1000);
+
+            setTimeout(function(){
+                var datos = { url: base_url + 'paises' };
+                ajax_call('cargar_inpu_paises', datos);
+            }, 2000);
+        }
+
         function cargar_seccion( _seccion ) {
 
             console.log('estas en la seccion ' + _seccion);
+
             cargar_contenido(_seccion);
             switch (_seccion){
                 case 'home':
-                    setTimeout(function(){
-                        var datos = { url: base_url + 'deportes' };
-                        ajax_call('cargar_inpu_deportes', datos);
-                    }, 1000);
 
-                    setTimeout(function(){
-                        var datos = { url: base_url + 'paises' };
-                        ajax_call('cargar_inpu_paises', datos);
-                    }, 2000);
-
+                    deporteYnacionalidadSelects();
                     opcionesBuscador();
 
                     $('#fotoUsuario').on('click',function () {
@@ -969,12 +1155,36 @@
 
                     });
 
+                    $("#alturaReg").ionRangeSlider({
+                        type: "single",
+                        grid: false,
+                        hide_min_max: false,
+                        hide_from_to: false,
+                        min: 0.5,
+                        max: 2.3,
+                        step: 0.01,
+                        from: 1.7,
+                        postfix: " m"
+                    });
+
+                    $("#pesoReg").ionRangeSlider({
+                        type: "single",
+                        grid: false,
+                        hide_min_max: false,
+                        hide_from_to: false,
+                        min: 45,
+                        max: 110,
+                        step: 1,
+                        from: 55,
+                        postfix: " Kg"
+                    });
+
 
                 break;
                 case 'perfil':
                     //slider
                     animarItemMouseEnter('.imgPerfilAnimated' , 'rubberBand');
-
+                    deporteYnacionalidadSelects();
 
                     var _usuario = window.location.pathname.split("/").pop();
                     if(_usuario != 'undefined'){
@@ -1000,11 +1210,36 @@
                         padre.find('.btnAccionPub span').css('display', 'none').css('opacity', '0');
                     });
 
+                    $("#miAltura").ionRangeSlider({
+                        type: "single",
+                        grid: false,
+                        hide_min_max: false,
+                        hide_from_to: false,
+                        min: 0.5,
+                        max: 2.3,
+                        step: 0.01,
+                        from: 1.7,
+                        postfix: " m"
+                    });
+
+                    $("#miPeso").ionRangeSlider({
+                        type: "single",
+                        grid: false,
+                        hide_min_max: false,
+                        hide_from_to: false,
+                        min: 45,
+                        max: 110,
+                        step: 1,
+                        from: 55,
+                        postfix: " Kg"
+                    });
+
                 break;
 
                 case 'scout':
                     opcionesBuscador();
                     menusYchatPP();
+                    deporteYnacionalidadSelects();
 
                     $("#pretencionEconomicaFiltro").ionRangeSlider({
                         type: "double",
@@ -1041,7 +1276,6 @@
                         to: 150,
                         postfix: " Km"
                     });
-                    
                     break;
 
                 case 'logout':
@@ -1055,6 +1289,7 @@
         $(document).ready(function () {
             seccion_actual = '<?= $seccion ?>';
             menus_iniciales();
+            tabsGenericos();
             cargar_seccion(seccion_actual);
             $('#toolbarContainer').remove();
         });
