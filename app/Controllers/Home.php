@@ -42,6 +42,8 @@ class Home extends BaseController
                 'provincia' => 'required',
                 'calle' => 'required',
                 'numero' => 'required',
+                'altura' => 'required',
+                'peso' => 'required',
                 'email' => 'required|valid_email|is_unique[usuarios.email]',
                 'usuario' => 'required|is_unique[usuarios.usuario]',
                 'password' => 'required',

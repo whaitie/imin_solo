@@ -85,7 +85,8 @@ $routes->add('/miperfil', 'Perfil::MiPerfil');
 $routes->add('/datosperfil', 'Perfil::DatosPerfil');
 $routes->add('/cookie', 'Perfil::DatosCookie');
 
-
+//Publicaciones
+$routes->add('/publicar', 'Publicaciones::index');
 
 $routes->add('/scout', 'Scout::index');
 

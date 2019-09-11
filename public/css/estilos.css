@@ -19,6 +19,7 @@ li{
     list-style: none;
 }
 
+
 .bginicio{
     background-image: url("../img/bg.jpg");
     background-repeat: no-repeat;
@@ -102,6 +103,12 @@ li{
     cursor: pointer;
 }
 
+.letraChicaObjetivos{
+    font-size: 0.9em;
+    color: #937e2d;
+    padding: 10px;
+}
+
 .especBuscador{
     width: 300px;
     height: 50px;
@@ -112,7 +119,7 @@ li{
     top: 0;
     border: 1px solid #008077;
     text-align: center;
-    z-index: 3;
+    z-index: 10;
 }
 
 .logoPatrocinadorMenu{
@@ -310,15 +317,43 @@ li{
     width: 244px;
     height: 350px;
     text-align: center;
+    position: relative;
+}
+
+.hoverCambiar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 128, 119, 0.47);
+    padding-top: calc(50% - 0.6em);
+}
+
+.hoverCambiar span{
+    font-size: 1.2em;
+    width: 100%;
+    display: block;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+}
+
+.hoverCambiar:hover{
+    opacity: 1;
+    cursor: pointer;
 }
 
 .OAimgCuerpoMedio{
+    position: relative;
     width: 244px;
     height: 244px;
     text-align: center;
 }
 
 .OAimgSocial{
+    position: relative;
     width: 100px;
     height: 100px;
     text-align: center;
@@ -327,6 +362,7 @@ li{
 #OAimgCP , #OAimgCM , #OAimgS{
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .btnOAm , .btnOAmDisponible{
@@ -339,6 +375,8 @@ li{
     margin: 6px;
     border-radius: 3px;
     opacity: 0.5;
+    width: 150px;
+    margin-left: calc(50% - 75px);
 }
 
 .btnOAmDisponible{
@@ -403,6 +441,8 @@ li{
     font-weight: bold;
 }
 
+
+
 .objCarrera{
     display: block;
     width: 422px;
@@ -466,6 +506,16 @@ li{
 .boxElegido{
     font-size: 1.5em;
     color: #71ffbe;
+}
+
+.bloqueModalGenerico{
+    width: 100%;
+    max-width: 425px;
+}
+
+.miVideoPresentacionEdit{
+    width: 100%;
+    max-width: 590px;
 }
 
 /* ########## Menu Inferior ######## */
@@ -1057,7 +1107,7 @@ li{
     border-radius: 100%;
 }
 
-.btnOpcionFollow , .btnTimeline{
+.btnOpcionFollow , .btnTimeline , .btnCrearPub{
     height: 35px;
     border-radius: 3px;
     background: #1dbd7b;
@@ -1071,9 +1121,18 @@ li{
     margin-right: 14px;
 }
 
-.btnOpcionFollow:hover {
+.btnOpcionFollow:hover , .btnCrearPub:hover{
     background: #648bc8;
     transform: scale(1.1);
+}
+
+.btnCrearPub{
+    width: auto;
+    max-width: 187px;
+    float: none;
+    display: block;
+    padding: 4px;
+    line-height: 28px;
 }
 
 .btnTimeline{
@@ -1135,6 +1194,14 @@ li{
 .pubsUser{
     padding: 8px;
     padding-left: 25px;
+}
+
+/* ############ Publicaciones #############*/
+
+.contCrearPublicacion{
+    width: 100%;
+    min-height: 500px;
+    margin-top: 50px;
 }
 
 .tabPubUserOption , .tabPubUserOptionSelected , .tabGenericOption, .tabGenericOptionSelected{
@@ -1877,18 +1944,123 @@ and (orientation : portrait) {
     /* STYLES GO HERE */
 }
 
-/* Smartphones (portrait and landscape) ----------- */
 @media only screen
-and (min-device-width : 320px)
-and (max-device-width : 480px) {
-    /* STYLES GO HERE */
+and (max-device-width : 665px) {
+
+    .sobrePerfil {
+        width: 100%;
+        margin-left: -5%;
+    }
+
+    .sinVideoMarco {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .videoPresentacion {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .contModalContiguo .videoPresentacion{
+        padding-top: 10px;
+    }
+
+    .chatsDesplegables {
+        display: none;
+    }
+
+    .menuInferior {
+        width: 100%;
+        left: -1px;
+    }
+
+    .btnMenuInf {
+        width: 19%;
+        margin-left: 0.3%;
+    }
+
+    .btnMenuInf .userChat {
+        margin-left: calc(50% - 21px);
+    }
+
+    .notificaciones {
+        width: 85%;
+        left: 7.5%;
+    }
+
+    .clubSelector{
+        text-align: center;
+    }
+
+    .tabsGeneric {
+        width: 100%;
+    }
+    .tabGenericOption ,.tabGenericOptionSelected{
+        width: 49%;
+        text-align: center;
+    }
+
+    .formsMiPerfil{
+        width: 100%;
+        padding: 5%;
+        margin: 0;
+    }
+
+    .contImgDelPerfil{
+        display: block;
+        text-align: center;
+        margin-left: calc(50% - 122px);
+    }
+
+    .contModalContiguo span{
+        text-align: center;
+        margin: 7px;
+    }
+    .objCarrera{
+        width: 95%;
+        margin: 2%;
+    }
+
+    .contModalOptonsB{
+        text-align: center;
+    }
+    .pretencionesDeportista{
+        display: block;
+    }
+
+    .objetivosAsks{
+        width: 100%;
+    }
+    .objetivosAsks .selectGenerico{
+        margin-left: 27%;
+    }
+
 }
+
 
 /* iPhone 5 (portrait &amp; landscape)----------- */
 @media only screen
-and (min-device-width : 320px)
+and (min-device-width : 0)
 and (max-device-width : 568px) {
-    /* STYLES GO HERE */
+    .bginicio{
+        background-image: url("../img/bg_m.jpg");
+    }
+
+    .logoMin{
+        display: none;
+    }
+
+    .buscdorMenu{
+        width: calc(100% - 86px);
+    }
+
+    .contenidoModal{
+        width: 95%;
+        margin-left: 2.5%;
+    }
+
+
 }
 
 /* iPhone 5 (landscape)----------- */
@@ -1897,6 +2069,80 @@ and (min-device-width : 320px)
 and (max-device-width : 568px)
 and (orientation : landscape) {
     /* STYLES GO HERE */
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 0)
+and (max-device-width : 480px) {
+
+    .especBuscador{
+        left: calc(50% - 140px);
+    }
+    .buscdorMenu{
+        width: 100%;
+        padding: 4% 1%;
+    }
+    .logoPatrocinadorMenu{
+        display: none;
+    }
+
+    .centroHome{
+        width: 95%;
+        margin-left: 2.5%;
+    }
+
+    .buscdorMenu input{
+        width: calc(100% - 45px);
+    }
+
+    .item-tipo-cuenta{
+        width: 113px;
+        height: 113px;
+        padding-top: 29px;
+        margin: 2%;
+    }
+    .item-tipo-cuenta i{
+        font-size: 1.7em;
+    }
+
+    .btnOpcionFollow{
+        float: none;
+        display: block;
+        width: 150px;
+        margin: 19px 0;
+        margin-left: calc(50% - 75px);
+    }
+
+    .btnTimeline{
+        width: 85%;
+        margin-left: 12.5%;
+        float: none;
+    }
+
+    .sinVideoMarco{
+        height: 210px;
+    }
+
+    .sinVideoMarco p{
+        line-height: 218px;
+    }
+    .btnMenuInf{
+        margin-left: 0.1%;
+    }
+
+    .miVideoPresentacionEdit .videoPresentacion{
+        min-height: 0;
+    }
+
+    .item-tipo-cuenta span {
+        font-size: smaller;
+    }
+
+    .tituloModal h2{
+        font-size: 1.6em;
+    }
 }
 
 /* iPhone 5 (portrait)----------- */
@@ -1913,9 +2159,58 @@ and (min-width : 321px) {
     /* STYLES GO HERE */
 }
 
+/* Smartphones special (portrait) ----------- */
+@media only screen
+and (max-width : 380px) {
+    .tabGenericOption, .tabGenericOptionSelected{
+        font-size: small;
+    }
+
+    .cerrarMoldaPerfil i{
+        font-size: 1.6em;
+    }
+
+    .tituloModal h2{
+        font-size: 1.3em!important;
+    }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 360px) {
+    #btnsLogin *{
+        display: block!important;
+    }
+
+    #btnOlvideCuenta , #btnIniciarSesion{
+        float: none;
+        width: 240px;
+        margin-left: calc(50% - 120px);
+        margin-bottom: 14px;
+    }
+
+    #headerReg{
+        font-size: 1.8em;
+    }
+
+    .btnMenuInf {
+        width: 18%;
+    }
+
+    .btnMenuInf span{
+        display: none;
+    }
+
+    .btnMenuInf i{
+        font-size: 1.5em;
+    }
+}
+
 /* Smartphones (portrait) ----------- */
 @media only screen
 and (max-width : 320px) {
-    /* STYLES GO HERE */
+    .tabGenericOption, .tabGenericOptionSelected{
+        font-size: smaller;
+    }
 }
 

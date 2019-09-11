@@ -1,7 +1,7 @@
 <div class="contenedor_superior">
     <div class="menu moverDer">
         <a class="logoMin" href="<?= base_url() ?>">
-            <img src="<?= base_url('img/logo_min2.png')?>" alt="">
+            <img src="<?= base_url('img/logo_n_cont.png')?>" alt="">
         </a>
         <div class="buscdorMenu">
             <input type="search" placeholder="Buscar" class="inputGenerico" id="buscadorTop">
@@ -26,7 +26,7 @@
 <content class="contenedor hidden" id="contenedor_home">
     <div class="bginicio">
         <div class="centroHome">
-            <img src="<?= base_url('img/logo.png') ?>" alt="" class="logoHome">
+            <img src="<?= base_url('img/logo_n_cont.png') ?>" alt="" class="logoHome">
             <div class="btnsHome" id="btnLogin">Login</div>
             <div class="btnsHome" id="btnRegistro">Registrarse</div>
         </div>
@@ -374,28 +374,6 @@
         <div class="footerModal">
             <i class="icon-up-big colorPP volverInicio" ></i>
         </div>
-    </div>
-
-    <!-- Modal Cropper Avatar -->
-    <div class="modal animated jackInTheBox fadeout" id="modalCropperAvatar" role="dialog">
-      <div class="modal-dialog modal-login">
-        <div class="modal-content">
-          <div class="modal-body">
-            <span class="close-btn" data-dismiss="modal"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
-            <div class="log-box">
-                <h4 class="modal-title">Imágen Perfil</h4>
-            </div>
-            <input type="file" name="image" id="image" onChange="readURL(this);" accept="image/jpeg">
-            <div class="image_container">
-                <center><img id="image-avatar" src="" style="max-width: 350px; max-height: 100%"></center>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-cust" id="crop_button">Seleccionar</button>
-            <button type="button" class="btn btn-cust" data-dismiss="modal">Cancelar</button>
-          </div>
-        </div>
-      </div>
     </div>
 
     <div class="modalCentral animated jackInTheBox fadeIn">

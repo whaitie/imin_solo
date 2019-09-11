@@ -37,6 +37,8 @@ class Usuario_model extends Model
             'provincia' => $data['provincia'],
             'calle' => $data['calle'],
             'numero' => $data['numero'],
+            'altura' => $data['altura'],
+            'peso' => $data['peso'],
             'id_deporte' => $data['id_deporte'],
             'tipo_cuenta' => $data['tipo_cuenta'],
             );

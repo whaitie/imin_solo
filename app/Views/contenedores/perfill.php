@@ -145,7 +145,146 @@
 
                 <div class="pubsContainer">
                     <div class="grid">
+                        <!--
                         <p class="sinPubs">No hay publicaciones</p>
+                        <div class="btnCrearPub link_asinc" seccion="publicar" href="<?= base_url('/publicar')?>" >Crear publicacion</div>
+                        -->
+                            <!-- ############# Estado ############ -->
+                            <div class="grid-item">
+                                <div class="grid-contenido" data-tipo="estado">
+                                    <div class="estadoPrep">
+                                        <div class="estadoPrep_a">"</div>
+                                    </div>
+                                    <p class="estadoTxt">
+                                        Dadasd adad asd ad asd ass dadasd adad asd ad asd ass dadasd adad asd ad asd ass dadasd adad asd ad asd ass dadasd adad asd ad asd ass dadasd adad asd ad asd assdadasd adad asd ad asd ass dadasd adad asd ad asd ass dadasd adad asd ad asd ass
+                                    </p>
+                                    <div class="hashTags">
+                                        <a href="#tag" class="hashTagPub">#Futbol</a>
+                                        <a href="#tag" class="hashTagPub">#Pelota</a>
+                                        <a href="#tag" class="hashTagPub">#Messi</a>
+                                    </div>
+                                    <div class="perfilPub">
+                                        <div>
+                                            <img src="img/perfilMessi.jpg" alt="" class="fotoPerfilPP">
+                                        </div>
+                                        <h3>Lionel Messi</h3>
+                                        <div class="btnOpcionFollow btnFollowPub">Seguir</div>
+                                    </div>
+                                    <div class="btnAccionesPub">
+                                        <div class="btnAccionPub ">
+                                            <i class="icon-heart-empty"></i>
+                                            <span>504</span>
+                                            <span>Likes</span>
+                                        </div>
+                                        <div class="btnAccionPub ">
+                                            <i class="icon-folder-4"></i>
+                                            <span>15</span>
+                                            <span>Guardar</span>
+                                        </div>
+                                        <div class="btnAccionPub">
+                                            <i class="icon-menu" style="margin-bottom: 19px;"></i>
+                                            <span>Opciones</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ############# Imagen ############ -->
+                            <div class="grid-item">
+                                <div class="grid-contenido" data-tipo="imagen">
+                                    <div class="pubImg">
+                                        <img src="<?= base_url('img/foto_pubs/messi1.jpeg'); ?> " alt="">
+                                    </div>
+
+                                    <div class="estadoPrep">
+                                        <div class="estadoPrep_a">"</div>
+                                    </div>
+                                    <p class="estadoTxt">
+                                        Dadasd adad asd ad asd ass dadasd adad asd ad asd ass dadasd adad asd ad asd ass dadasd adad asd ad asd ass dadasd adad asd ad asd ass dadasd adad asd ad asd assdadasd adad asd ad asd ass dadasd adad asd ad asd ass dadasd adad asd ad asd ass
+                                    </p>
+                                    <div class="hashTags">
+                                        <a href="#tag" class="hashTagPub">#Futbol</a>
+                                        <a href="#tag" class="hashTagPub">#Pelota</a>
+                                        <a href="#tag" class="hashTagPub">#Messi</a>
+                                    </div>
+                                    <div class="perfilPub">
+                                        <div>
+                                            <img src="img/perfilMessi.jpg" alt="" class="fotoPerfilPP">
+                                        </div>
+                                        <h3>Lionel Messi</h3>
+                                        <div class="btnOpcionFollow btnFollowPub">Seguir</div>
+                                    </div>
+                                    <div class="btnAccionesPub">
+                                        <div class="btnAccionPub ">
+                                            <i class="icon-heart-empty"></i>
+                                            <span>504</span>
+                                            <span>Likes</span>
+                                        </div>
+                                        <div class="btnAccionPub ">
+                                            <i class="icon-folder-4"></i>
+                                            <span>15</span>
+                                            <span>Guardar</span>
+                                        </div>
+                                        <div class="btnAccionPub">
+                                            <i class="icon-menu" style="margin-bottom: 19px;"></i>
+                                            <span>Opciones</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ############# Video ############ -->
+                            <div class="grid-item">
+                                <div class="grid-contenido" data-tipo="video">
+                                    <div class="pubVid">
+                                        <video src="<?= base_url('video/messi.webm'); ?>" poster="<?= base_url('video/messi_cover.jpg'); ?>" controls></video>
+                                    </div>
+
+                                    <div class="estadoPrep">
+                                        <div class="estadoPrep_a">"</div>
+                                    </div>
+                                    <p class="estadoTxt">
+                                        Dadasd adad asd ad asd ass dadasd adad asd ad asd ass dadasd adad asd ad asd ass dadasd adad asd ad asd ass dadasd adad asd ad asd ass dadasd adad asd ad asd assdadasd adad asd ad asd ass dadasd adad asd ad asd ass dadasd adad asd ad asd ass
+                                    </p>
+                                    <div class="hashTags">
+                                        <a href="#tag" class="hashTagPub">#Futbol</a>
+                                        <a href="#tag" class="hashTagPub">#Pelota</a>
+                                        <a href="#tag" class="hashTagPub">#Messi</a>
+                                    </div>
+                                    <div class="perfilPub">
+                                        <div>
+                                            <img src="img/perfilMessi.jpg" alt="" class="fotoPerfilPP">
+                                        </div>
+                                        <h3>Lionel Messi</h3>
+                                        <div class="btnOpcionFollow btnFollowPub">Seguir</div>
+                                    </div>
+                                    <div class="btnAccionesPub">
+                                        <div class="btnAccionPub ">
+                                            <i class="icon-heart-empty"></i>
+                                            <span>504</span>
+                                            <span>Likes</span>
+                                        </div>
+                                        <div class="btnAccionPub ">
+                                            <i class="icon-folder-4"></i>
+                                            <span>15</span>
+                                            <span>Guardar</span>
+                                        </div>
+                                        <div class="btnAccionPub">
+                                            <i class="icon-menu" style="margin-bottom: 19px;"></i>
+                                            <span>Opciones</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <script type="text/javascript">
+                        $('.grid').masonry({
+                            // options
+                            itemSelector: '.grid-item',
+                            columnWidth: 350,
+                            gutter: 15
+                        });
+                    </script>
                     </div> <!-- Fin del grid -->
                  </div>
             </div>

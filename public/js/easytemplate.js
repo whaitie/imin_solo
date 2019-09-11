@@ -107,7 +107,7 @@ function ajax_link() {
             window.location.href = html;
         }
         history.pushState({}, '', html);
-        window.location.target = html;
+        //window.location.target = html;
         seccion_actual = $(this).attr('seccion');
         cargar_seccion(seccion_actual);
     });
@@ -339,11 +339,11 @@ function tooltip(_id , _ubicacion){
     });
 }
 
-function previsualizarIMGinputFile(input) {
+function previsualizarIMGinputFile(input , selector) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
         reader.onload = function(e) {
-            $('.fotoPerfilActual').attr('src', e.target.result);
+            $(selector).attr('src', e.target.result);
         }
         reader.readAsDataURL(input.files[0]);
 
@@ -353,6 +353,35 @@ function previsualizarIMGinputFile(input) {
 const capitalize = (s) => {
     if (typeof s !== 'string') return ''
     return s.charAt(0).toUpperCase() + s.slice(1)
+}
+
+
+function comprimir_imagen(e , _ancho) {
+    const fileName = e.target.files[0].name;
+    const reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    reader.onload = event => {
+        const img = new Image();
+        img.src = event.target.result;
+        img.onload = () => {
+            const elem = document.createElement('canvas');
+            const width = _ancho;
+            const scaleFactor = width / img.width;
+            elem.width = width;
+            elem.height = img.height * scaleFactor;
+
+            const ctx = elem.getContext('2d');
+
+            ctx.drawImage(img, 0, 0, width, img.height * scaleFactor);
+            ctx.canvas.toBlob((blob) => {
+                const file = new File([blob], fileName, {
+                    type: 'image/jpeg',
+                    lastModified: Date.now()
+                });
+            }, 'image/jpeg', 1);
+        },
+            reader.onerror = error => console.log(error);
+    };
 }
 
 /* ########### Validacion ########### */

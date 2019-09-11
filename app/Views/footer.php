@@ -6,7 +6,7 @@
     </div>
     <div class="modal-loading"></div>
     <div class="menuInferior">
-        <div class="btnMenuInf">
+        <div class="btnMenuInf link_asinc" seccion="publicar" href="<?= base_url('/publicar')?>">
             <i class="icon-pencil"></i>
             <span>Publicar</span>
         </div>
@@ -282,15 +282,22 @@
                 <i class="icon-cancel"></i>
             </div>
             <div class="contModalOptonsB">
+                <div class="letraChicaObjetivos">
+                    *Tus objetivos solo pueden verlos Procuradores/Scouts
+                </div>
                 <div class="objetivosAsks">
                     <span>Pretención economica anual:</span>
-                    <div class="monedaPretenciones">U$D</div>
-                    <input type="number" class="inputGenerico w150">
+                    <div class="pretencionesDeportista">
+                        <div class="monedaPretenciones">U$D</div>
+                        <input type="number" class="inputGenerico w150">
+                    </div>
+                    <div class="btnOAm ">Actualizar</div>
                 </div>
                 
                 <div class="objetivosAsks">
                     <span>Objetivos de tu carrera:</span>
                     <textarea class="objCarrera" cols="30" rows="10" maxlength="250" placeholder="Describe en 250 caracteres tus objetivos principales y por que deben tenerte en cuenta"></textarea>
+                    <div class="btnOAm ">Actualizar</div>
                 </div>
                 <div class="clubesSelection">
                     <div class="objetivosAsks">
@@ -369,9 +376,8 @@
                                 <i class="icon-check-empty boxNeutro" id="check-7"></i>
                             </div>
                         </div>
-
-
                     </div>
+                    <div class="btnOAm ">Actualizar</div>
                 </div>
 
             </div>
@@ -401,37 +407,56 @@
 
                         <div class="contImgDelPerfil">
                             <div class="OAimgCuerpoCompleto ">
-                                <img src="" alt="" id="OAimgCP">
+                                <div class="hoverCambiar" target="OAimgCP" idinput="foto_cuerpo_completo_edit">
+                                    <span>Cambiar foto</span>
+                                </div>
+                                <img src="<?= base_url('img/cuerpo_completo.png')?>" alt="" id="OAimgCP">
+                                <input type="file" class="hidden" id="foto_cuerpo_completo_edit" accept="image/x-png,image/gif,image/jpeg" target="OAimgCM">
+                                <input type="text" class="hidden" name="cuerpo_completo" id="foto_cuerpo_completo_edit_final">
                             </div>
                             <h4>Cuerpo completo</h4>
-                            <div class="btnOAm">Actualizar</div>
+                            <div class="btnOAm ">Actualizar</div>
                         </div>
                         <div class="contImgDelPerfil">
                             <div class="OAimgCuerpoMedio">
+                                <div class="hoverCambiar" target="OAimgCM"  idinput="foto_cuerpo_medio_edit">
+                                    <span>Cambiar foto</span>
+                                </div>
                                 <img src="<?= base_url('img/cuerpo_medio.png')?>" alt="" id="OAimgCM">
-
+                                <input type="file" class="hidden" id="foto_cuerpo_medio_edit" accept="image/x-png,image/gif,image/jpeg" target="OAimgCM">
+                                <input type="text" class="hidden" name="cuerpo_medio" id="foto_cuerpo_medio_edit_final">
                             </div>
                             <h4>Cuerpo medio</h4>
-                            <div class="btnOAm">Actualizar</div>
+                            <div class="btnOAm " id="actualizar_cuerpo_completo">Actualizar</div>
                         </div>
                         <div class="contImgDelPerfil">
                             <div class="OAimgSocial">
+                                <div class="hoverCambiar" target="OAimgS" idinput="foto_avatar_edit">
+                                    <span>Cambiar foto</span>
+                                </div>
                                 <img src="<?= base_url('img/no-profile.png')?>" alt="" id="OAimgS">
+                                <input type="file" class="hidden" id="foto_avatar_edit" accept="image/x-png,image/gif,image/jpeg" target="OAimgCM">
+                                <input type="text" class="hidden" name="avatar" id="foto_avatar_edit_final">
                             </div>
                             <h4>Imagen social</h4>
-                            <div class="btnOAm">Actualizar</div>
+                            <div class="btnOAm ">Actualizar</div>
                         </div>
-                        <span class="modalSpanBlock">Mi presentación textual:</span>
+                        <div class="bloqueModalGenerico">
+                            <span class="modalSpanBlock">Mi presentación textual:</span>
 
-                        <textarea class="objCarrera" cols="30" rows="10" maxlength="250" placeholder="Describe tu personalidad y tu forma de ser dentro las canchas en 250 caracteres"></textarea>
-                        <div class="btnOAm w150">Actualizar</div>
-                        <span class="modalSpanBlock">Mi video presentación:</span>
-                        <div class="videoPresentacion">
-                            <div class="sinVideoMarco">
-                                <p>Sin video presentación</p>
-                            </div>
+                            <textarea class="objCarrera" cols="30" rows="10" maxlength="250" placeholder="Describe tu personalidad y tu forma de ser dentro las canchas en 250 caracteres"></textarea>
+                            <div class="btnOAm ">Actualizar</div>
                         </div>
-                        <div class="btnOAm w150">Actualizar</div>
+                        <div class="miVideoPresentacionEdit">
+                            <span class="modalSpanBlock">Mi video presentación:</span>
+                            <div class="videoPresentacion">
+                                <div class="sinVideoMarco">
+                                    <p>Sin video presentación</p>
+                                </div>
+                            </div>
+                            <div class="btnOAm ">Actualizar</div>
+                        </div>
+
                     </div>
                 </div>
                 <div class="contModalOptionsTabs" id="contDatosPersonales">
@@ -522,7 +547,16 @@
             <div class="cerrarMoldaPerfil">
                 <i class="icon-cancel"></i>
             </div>
+            <div class="bloqueModalGenerico">
+                <div class="letraChicaObjetivos">
+                    Ten en cuenta que al cerrar tu cuenta, desaparecera del publico y privados, como si no existieses, pero tu cuenta y todo lo que hayas ingresado en ella seguira existiendo en nuestras base de datos, y podras solicitar una re-habilitacion via E-mail.
+                </div>
+                <input type="password" placeholder="Tu contraseña" class="inputGenerico" name="password">
+                <input type="password" placeholder="Repite contraseña" class="inputGenerico" name="re-password">
+                <div class="btnOAm ">Enviar</div>
+            </div>
         </div>
+
     </div>
 
     <div class="modalPerfil" id="modalSugerencias">
@@ -534,6 +568,17 @@
             </div>
             <div class="cerrarMoldaPerfil">
                 <i class="icon-cancel"></i>
+            </div>
+            <div class="bloqueModalGenerico">
+                <select class="selectGenerico">
+                    <option value="reporte">Reporte</option>
+                    <option value="sugerencia">Sugerencia</option>
+                    <option value="error">Error/Bug</option>
+                    <option value="opinion">Opinion</option>
+                </select>
+                <input type="text" class="inputGenerico" placeholder="titulo de tu sugerencia">
+                <textarea class="objCarrera" cols="30" rows="10" maxlength="65000" placeholder="Puedes escribir un texto bastante descriptivo de todo lo que quieras aportar"></textarea>
+                <div class="btnOAm ">Enviar</div>
             </div>
         </div>
     </div>
@@ -666,6 +711,7 @@
         var menuPP = false;
         var notificacionesAbierto = false;
         var inputsNacYdeporteCargadosMenu = false;
+        var menuPPseteado = false;
 
         var datosPerfil = [{}];
 
@@ -812,8 +858,12 @@
             });
         }
 
+
         function  menusYchatPP() {
 
+            if(menuPPseteado){
+                return;
+            }
             $('.menuInferior , .chatsDesplegables').show();
 
             var userScroll = 0;
@@ -913,7 +963,14 @@
             $('.btnMenuIz').on('click', function () {
                 var target =   $(this).attr('target');
                 $('.modalPerfil').css("left","-100%");
-                $('#' + target).css("left","300px");
+                if(window.innerWidth > 680){
+                    $('#' + target).css("left","300px");
+                }
+                else{
+                    cerrarMenuPP();
+                    $('.moverDer').css({transform: 'translateX(0)'});
+                    $('#' + target).css({left: 0, width: '100%'});
+                }
             });
 
             $('.cerrarMoldaPerfil').on('click',function () {
@@ -935,6 +992,35 @@
                     $('#nombreClub-' + id).css({"color": "#000"});
                 }
             });
+
+            $('.hoverCambiar').on('click', function () {
+               var _target = $(this).attr('target');
+               var _input = $(this).attr('idinput');
+               var file = $('#'+ _input);
+               var img = $('#'+ _target);
+                /*
+                img.on('change', function () {
+                    console.log($(this).attr('src'));
+                });*/
+
+                img.unbind('load').on('load', function () {
+                    console.log($(this).attr('src'));
+                    //console.log(imageToDataUri(this, $(this).width() , $(this).height , 0.8));
+                });
+               file.unbind('change').on('change',function (e) {
+                   //readURL(file, '#'+ _target)
+                   previsualizarIMGinputFile(this, '#'+ _target , 400);
+               });
+               file.click();
+
+
+               /*
+                $('#' + _input + '_final').on('change',function () {
+                   console.log($(this).val());
+                });*/
+            });
+
+            menuPPseteado = true;
         }
 
         function formatearPerfil(datosPerfil) {
@@ -1034,6 +1120,35 @@
             }, 2000);
         }
 
+        function carruselHome(){
+
+            var _patrocinadores = $('.patrocinadores').width();
+            var _totalSelectores = 0;
+
+            $('.pat-item').each(function () {
+                _totalSelectores += $(this).width();
+            });
+
+            var totalPatSelectores = Math.ceil(_totalSelectores / _patrocinadores);
+
+            for(var i = 0;i < totalPatSelectores;i++){
+
+                var _html = (i == 0) ? '<div class=\"pat-selector pat-elegidos\" num=\"' + i + '\"></div>': '<div class=\"pat-selector\" num=\"' + i + '\" ></div>' ;
+
+                $('.pat-list').append(_html);
+            }
+
+            $('.pat-selector').on('click' , function () {
+                $('.pat-selector').attr('class','pat-selector');
+                $(this).addClass('pat-elegidos');
+                var index = $(this).attr('num');
+                console.log(index);
+                $('.patrocinadores').stop().animate({
+                    scrollLeft: index * _patrocinadores
+                }, 1000);
+            });
+        }
+
         function cargar_seccion( _seccion ) {
 
             console.log('estas en la seccion ' + _seccion);
@@ -1045,40 +1160,19 @@
                     deporteYnacionalidadSelects();
                     opcionesBuscador();
 
+                    $(window).on('load',function(){
+                        carruselHome();
+                    });
+
                     $('#fotoUsuario').on('click',function () {
                         $('#foto_deportista').click();
                     });
 
                     $(".fotoPerfil").change(function() {
-                        previsualizarIMGinputFile(this);
+                        previsualizarIMGinputFile(this , '.fotoPerfilActual');
                     });
 
-                    //Carrusel de patrocinadores
-                    var _patrocinadores = $('.patrocinadores').width();
-                    var _totalSelectores = 0;
 
-                    $('.pat-item').each(function () {
-                        _totalSelectores += $(this).width();
-                    });
-
-                    var totalPatSelectores = Math.ceil(_totalSelectores / _patrocinadores);
-
-                    for(var i = 0;i < totalPatSelectores;i++){
-
-                        var _html = (i == 0) ? '<div class=\"pat-selector pat-elegidos\" num=\"' + i + '\"></div>': '<div class=\"pat-selector\" num=\"' + i + '\" ></div>' ;
-
-                        $('.pat-list').append(_html);
-                    }
-
-                    $('.pat-selector').on('click' , function () {
-                        $('.pat-selector').attr('class','pat-selector');
-                        $(this).addClass('pat-elegidos');
-                        var index = $(this).attr('num');
-                        console.log(index);
-                        $('.patrocinadores').stop().animate({
-                            scrollLeft: index * _patrocinadores
-                        }, 1000);
-                    });
 
                     $('.formRegistro').hide();
 
@@ -1281,6 +1375,10 @@
                 case 'logout':
                     window.location.href = '/logout'
                     break;
+                case 'publicar':
+                    opcionesBuscador();
+                    menusYchatPP();
+                    break;
                 default:
                     console.log('se hace default');
             }
@@ -1291,6 +1389,7 @@
             menus_iniciales();
             tabsGenericos();
             cargar_seccion(seccion_actual);
+            ajax_link();
             $('#toolbarContainer').remove();
         });
 

@@ -140,34 +140,14 @@ function cargar_inpu_paises(msj){
 }
 
 /*** CAMBIAR IMAGEN ***/
-function readURL(input) {
+function readURL(input , _id) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
         reader.onload = function (e) {
-            $('#image-avatar').attr('src', e.target.result)
+            $('#' + _id).attr('src', e.target.result)
         };
         reader.readAsDataURL(input.files[0]);
-		setTimeout(initCropper, 1000);
     }
-}
-
-function initCropper(){
-	/*
-  	var image = document.getElementById('image-avatar');
-  	var cropper = new Cropper(image, {
-    	aspectRatio: 1 / 1,
-  	});
-
-  	document.getElementById('crop_button').addEventListener('click', function(){
-      	var imgurl =  cropper.getCroppedCanvas().toDataURL();
-      	var img = document.createElement("img");
-      	img.src = imgurl;
-
-      	var imagen_base64 = cropper.getCroppedCanvas().toDataURL();
-
-      	$("#imagenAvatar").attr("src", imagen_base64);
-		$('#modalCropperAvatar').modal('hide');
-  	});*/
 }
 
 function montoAPagar() {
@@ -198,4 +178,22 @@ function checkLength(len,ele){
 function setearIonSlider(_id , _valor) {
 	var instance = $(_id).data("ionRangeSlider");
 	instance.update({from: _valor});
+}
+
+function imageToDataUri(img, width, height , quality) {
+
+	// create an off-screen canvas
+	var canvas = document.createElement('canvas'),
+		ctx = canvas.getContext('2d');
+
+	// set its dimension to target size
+	canvas.width = width;
+	canvas.height = height;
+
+	// draw source image into the off-screen canvas:
+	ctx.drawImage(img, 0, 0, width, height);
+
+	// encode image to data-uri with base64 version of compressed image
+	var img_data = canvas.toDataURL('image/jpeg', quality);
+	return img_data;
 }
