@@ -79,7 +79,11 @@ $routes->add('/logout', 'Login::logout');
 $routes->add('/resetpassword/(:any)/(:any)', 'Login::actualizar_password/$1/$2');
 
 //Perfil
-
+$routes->add('/fotoCuerpoCompleto', 'Perfil::fotoCuerpoCompleto');
+$routes->add('/fotoPresentacion', 'Perfil::fotoPresentacion');
+$routes->add('/fotoAvatar', 'Perfil::fotoAvatar');
+$routes->add('/descripcionPerfil', 'Perfil::descripcionPerfil');
+$routes->add('/videoPresentacion', 'Perfil::videoPresentacion');
 $routes->add('/perfil/(:any)', 'Perfil::index/$1');
 $routes->add('/miperfil', 'Perfil::MiPerfil');
 $routes->add('/datosperfil', 'Perfil::DatosPerfil');
@@ -87,6 +91,7 @@ $routes->add('/cookie', 'Perfil::DatosCookie');
 
 //Publicaciones
 $routes->add('/publicar', 'Publicaciones::index');
+$routes->add('/subir_imagen', 'Publicaciones::subirImagen');
 
 $routes->add('/scout', 'Scout::index');
 

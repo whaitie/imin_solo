@@ -17,4 +17,13 @@ class Publicaciones extends BaseController
             }
         }
     }
+
+    public function subirImagen()
+    {
+        if($this->request->isAJAX()){
+
+        } else {
+
+        }
+    }
 }

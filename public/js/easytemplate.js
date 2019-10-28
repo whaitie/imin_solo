@@ -103,7 +103,7 @@ function ajax_link() {
     $('.link_asinc').off('click').on('click', function (event) {
         event.preventDefault();
         var html = $(this).attr("href");
-        if($(this).attr('redirect','on')){
+        if($(this).attr('redirect') == "on"){
             window.location.href = html;
         }
         history.pushState({}, '', html);
@@ -172,6 +172,25 @@ function ajax_call(_nombre_metodo , _argumentos) {
     });
 }
 
+function subir_imagen(_id_file_input , url) {
+    var file_data = $(_id_file_input).prop('files')[0];
+    var form_data = new FormData();
+    form_data.append('file', file_data);
+    console.log(form_data);
+    $.ajax({
+        url: url, // point to server-side PHP script
+        dataType: 'text',  // what to expect back from the PHP script, if anything
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,
+        type: 'post',
+        success: function(respuesta){
+            console.log(respuesta);
+        }
+    });
+}
+
 function datos_ajax(_argumentos) {
     var data = {};
     var url = '';
@@ -209,6 +228,8 @@ function datos_ajax(_argumentos) {
         data: data ,
         cache: false,
         dataType: 'json',
+        processData: false, // Don't process the files
+        contentType: false, // Set content type to false as jQuery will tell the server its a query string request
         error: function(msj) {
             error = true;
             console.log(msj);

@@ -186,6 +186,10 @@
                 <i class="icon-chart-1"></i>
                 <span>Mis caracteristicas</span>
             </div>
+            <div class="btnMenuIz" target="modalPropuestas">
+                <i class="icon-doc-text-inv"></i>
+                <span>Propuestas recibidas</span>
+            </div>
             <div class="btnMenuIz">
                 <i class="icon-back-in-time"></i>
                 <span>Mi Time-line</span>
@@ -407,19 +411,19 @@
 
                         <div class="contImgDelPerfil">
                             <div class="OAimgCuerpoCompleto ">
-                                <div class="hoverCambiar" target="OAimgCP" idinput="foto_cuerpo_completo_edit">
+                                <div class="hoverCambiar" target="OAimgCP" idinput="foto_cuerpo_completo_edit" btn="subir_foto_completa" link="fotoCuerpoCompleto">
                                     <span>Cambiar foto</span>
                                 </div>
                                 <img src="<?= base_url('img/cuerpo_completo.png')?>" alt="" id="OAimgCP">
                                 <input type="file" class="hidden" id="foto_cuerpo_completo_edit" accept="image/x-png,image/gif,image/jpeg" target="OAimgCM">
-                                <input type="text" class="hidden" name="cuerpo_completo" id="foto_cuerpo_completo_edit_final">
+
                             </div>
                             <h4>Cuerpo completo</h4>
-                            <div class="btnOAm ">Actualizar</div>
+                            <div class="btnOAm " id="subir_foto_completa">Actualizar</div>
                         </div>
                         <div class="contImgDelPerfil">
                             <div class="OAimgCuerpoMedio">
-                                <div class="hoverCambiar" target="OAimgCM"  idinput="foto_cuerpo_medio_edit">
+                                <div class="hoverCambiar" target="OAimgCM"  idinput="foto_cuerpo_medio_edit" btn="subir_cuerpo_medio" link="fotoPresentacion">
                                     <span>Cambiar foto</span>
                                 </div>
                                 <img src="<?= base_url('img/cuerpo_medio.png')?>" alt="" id="OAimgCM">
@@ -427,11 +431,11 @@
                                 <input type="text" class="hidden" name="cuerpo_medio" id="foto_cuerpo_medio_edit_final">
                             </div>
                             <h4>Cuerpo medio</h4>
-                            <div class="btnOAm " id="actualizar_cuerpo_completo">Actualizar</div>
+                            <div class="btnOAm " id="subir_cuerpo_medio">Actualizar</div>
                         </div>
                         <div class="contImgDelPerfil">
                             <div class="OAimgSocial">
-                                <div class="hoverCambiar" target="OAimgS" idinput="foto_avatar_edit">
+                                <div class="hoverCambiar" target="OAimgS" idinput="foto_avatar_edit"  btn="subir_avatar_perfil" link="fotoAvatar">
                                     <span>Cambiar foto</span>
                                 </div>
                                 <img src="<?= base_url('img/no-profile.png')?>" alt="" id="OAimgS">
@@ -439,22 +443,32 @@
                                 <input type="text" class="hidden" name="avatar" id="foto_avatar_edit_final">
                             </div>
                             <h4>Imagen social</h4>
-                            <div class="btnOAm ">Actualizar</div>
+                            <div class="btnOAm " id="subir_avatar_perfil">Actualizar</div>
                         </div>
-                        <div class="bloqueModalGenerico">
+                        <div class="bloqueModalGenerico" >
                             <span class="modalSpanBlock">Mi presentación textual:</span>
 
-                            <textarea class="objCarrera" cols="30" rows="10" maxlength="250" placeholder="Describe tu personalidad y tu forma de ser dentro las canchas en 250 caracteres"></textarea>
-                            <div class="btnOAm ">Actualizar</div>
+                            <textarea class="objCarrera" id="actualizarDescripcionPerfil" cols="30" rows="10" maxlength="250" placeholder="Describe tu personalidad y tu forma de ser dentro las canchas en 250 caracteres"></textarea>
+                            <div class="btnOAm " id="btnActualizarDescripcionPerfil">Actualizar</div>
                         </div>
                         <div class="miVideoPresentacionEdit">
                             <span class="modalSpanBlock">Mi video presentación:</span>
                             <div class="videoPresentacion">
-                                <div class="sinVideoMarco">
+                                <div class="sinVideoMarco" id="sinVideoPusuario">
+                                    <div class="hoverCambiarVideo" id="cambiarVPU">
+                                        <span>Cambiar video</span>
+                                    </div>
                                     <p>Sin video presentación</p>
                                 </div>
+                                <div class="videoPresentacion" id="previewVideoUser">
+                                    <video src="  <?= base_url('video/messi.webm') ?>  " id="previewVideoUserShow" controls></video>
+                                    <span id="advertenciaUpVideo">Advertencia: Los navegadores actuales, por temas de seguridad no permiten previsualizar completamente el video, solo el audio, pero al subirse al servidor, este llegara como video al 100%, y una vez finalizada la carga correctamente, se actualizara a la versión final subida.Hay un limite de 100mb por video.</span>
+                                    <div class="btnOAm " id="btnActualizarVP">Actualizar</div>
+                                </div>
                             </div>
-                            <div class="btnOAm ">Actualizar</div>
+                            <form id="formUVP" enctype="multipart/form-data" method="post" name="formUVP" action="<?= base_url() ?>videoPresentacion">
+                                <input type="file" class="hidden" id="upVideoPresentacion" accept="video/mp4,video/x-m4v,video/webm" target="videoPresentacionPreUp" name="video">
+                            </form>
                         </div>
 
                     </div>
@@ -554,6 +568,142 @@
                 <input type="password" placeholder="Tu contraseña" class="inputGenerico" name="password">
                 <input type="password" placeholder="Repite contraseña" class="inputGenerico" name="re-password">
                 <div class="btnOAm ">Enviar</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modalPerfil" id="modalPropuestas">
+        <div class="contModalOptons">
+            <div class="tituloModal">
+                <i class="icon-angle-circled-left" id="volverTipoRegistro" loc="menu"></i>
+                <h2 class="colorPP" id="headerReg"> <i class="icon-doc-text-inv"></i>Propuestas recibidas</h2>
+                <div class="lineaModal"></div>
+            </div>
+            <div class="cerrarMoldaPerfil">
+                <i class="icon-cancel"></i>
+            </div>
+            <div class="bloqueModalTabla">
+                <div class="tablaGenerica">
+                    <div class="filaInfo">
+                        <div class="TGusuario">Usuario</div>
+                        <div class="TGasunto">Asunto</div>
+                        <div class="TGopciones">Opciones</div>
+                    </div>
+                    <div class="containerFilas">
+                        <div class="filaGenerica">
+                            <div class="TGusuario">
+                                <div class="userChat">
+                                    <img src="https://imin.whaitie.tk/img/perfil2.jpg" alt="">
+                                </div>
+                                <span>Steven Prob</span>
+                            </div>
+                            <div class="TGasunto">  <span>Propuesta de contrato para el Club Newell's old boys</span> </div>
+                            <div class="TGopciones">
+                                <div class="btnTable">
+                                    <i class="icon-search cVerAsunto" target="modalPropuesta"></i>
+                                </div>
+                                <div class="btnTable">
+                                    <i class="icon-ok cAceptarAsunto"></i>
+                                </div>
+                                <div class="btnTable">
+                                    <i class="icon-cancel cCancelarAsunto"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filaGenericaBG">
+                            <div class="TGusuario">
+                                <div class="userChat">
+                                    <img src="https://imin.whaitie.tk/img/perfil2.jpg" alt="">
+                                </div>
+                                <span>Steven Prob</span>
+                            </div>
+                            <div class="TGasunto">  <span>Propuesta de contrato para el Club Newell's old boys</span> </div>
+                            <div class="TGopciones">
+                                <div class="btnTable">
+                                    <i class="icon-search cVerAsunto" target="modalPropuesta"></i>
+                                </div>
+                                <div class="btnTable">
+                                    <i class="icon-ok cAceptarAsunto"></i>
+                                </div>
+                                <div class="btnTable">
+                                    <i class="icon-cancel cCancelarAsunto"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filaGenerica">
+                            <div class="TGusuario">
+                                <div class="userChat">
+                                    <img src="https://imin.whaitie.tk/img/perfil2.jpg" alt="">
+                                </div>
+                                <span>Steven Prob</span>
+                            </div>
+                            <div class="TGasunto">  <span>Propuesta de contrato para el Club Newell's old boys</span> </div>
+                            <div class="TGopciones">
+                                <div class="btnTable">
+                                    <i class="icon-search cVerAsunto" target="modalPropuesta"></i>
+                                </div>
+                                <div class="btnTable">
+                                    <i class="icon-ok cAceptarAsunto"></i>
+                                </div>
+                                <div class="btnTable">
+                                    <i class="icon-cancel cCancelarAsunto"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="modalPerfil" id="modalPropuesta">
+        <div class="contModalOptons">
+            <div class="tituloModal">
+                <i class="icon-angle-circled-left" id="volverTipoRegistro" loc="menu"></i>
+                <h2 class="colorPP" id="headerReg"> <i class="icon-doc-text-inv"></i>Propuesta de scouting</h2>
+                <div class="lineaModal"></div>
+            </div>
+            <div class="cerrarMoldaPerfil">
+                <i class="icon-cancel"></i>
+            </div>
+            <div class="contenidoPropuestaFinal">
+                <div class="PropuestaUser">
+                    <div class="userChat">
+                        <img src="https://imin.whaitie.tk/img/perfil2.jpg" alt="">
+                    </div>
+                    <span>Steven Prob</span>
+                </div>
+                <br>
+                <span id="tituloAsuntoPropuesta">Propuesta de contrato para el Club Newell's old boys</span>
+                <br>
+                <p id="txtAsuntoPropuesta">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent consectetur magna arcu, id laoreet dolor tincidunt id. Interdum et malesuada fames ac ante ipsum primis in faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis dolor nec mi egestas vulputate a in dolor. Aliquam auctor mauris non urna mattis sagittis. Nam nec eros nisl. Donec quis neque dignissim, accumsan magna non, imperdiet ipsum. Donec quis pretium mi, eu porta nisi. Sed quis consequat mi. Nulla ac varius mauris. Proin non scelerisque quam. Donec tincidunt sit amet dui id facilisis.
+
+                    Ut sapien turpis, elementum sed dapibus a, consequat et felis. Phasellus accumsan ligula a diam maximus volutpat vitae ac mi. Nam commodo vestibulum nibh, sit amet rutrum metus tempor vel. Praesent a scelerisque neque, in bibendum massa. Integer a cursus dolor. Maecenas consectetur lacinia ornare. Donec congue, justo ac faucibus condimentum, lectus nisi luctus nulla, at eleifend lacus ipsum euismod justo. Duis dapibus ligula ipsum, non cursus nisl maximus in. Maecenas dignissim ex ullamcorper, condimentum arcu sed, posuere lacus. Nulla ullamcorper at erat vel rhoncus. Morbi et pretium mauris. Quisque luctus lectus non massa consequat, ut pretium nibh lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras ultricies ante eleifend risus vehicula, vel accumsan mi tempor.
+
+                    Proin placerat enim et magna fermentum volutpat. In at rhoncus felis. Sed id lectus leo. Sed eu elit leo. Pellentesque vitae porta erat. Praesent ut ante erat. Mauris posuere, enim quis suscipit pretium, neque arcu pretium sem, at accumsan quam urna non urna. Maecenas non semper purus, sed porta metus. Nulla bibendum tellus quis turpis convallis, sed mollis lacus luctus. Cras tincidunt malesuada dolor, at volutpat justo semper eu. Suspendisse potenti. Mauris eget quam eu orci molestie sodales vitae sed sem. Duis rutrum, erat sed finibus interdum, mi nibh dignissim metus, id auctor nibh ligula vitae ex.
+
+                    Donec eget consectetur dui, quis aliquam magna. Nam interdum magna a vulputate bibendum. Nunc dui risus, consequat in arcu maximus, ornare dapibus mauris. Quisque felis lorem, sagittis ut elit ac, consectetur molestie sapien. Nullam risus est, tempor egestas magna at, porta pellentesque sem. Curabitur sed rutrum libero. Proin tincidunt consequat arcu, sit amet maximus est. Suspendisse et volutpat lacus.
+
+                    Donec gravida, lorem sollicitudin imperdiet dignissim, arcu diam feugiat felis, nec fermentum nisl nulla in ex. Nullam volutpat neque in massa venenatis tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras non lacinia arcu. Sed suscipit velit quis ex dignissim laoreet. Donec mollis turpis vitae leo tristique, hendrerit tincidunt arcu malesuada. Nulla varius erat id ex iaculis lacinia.
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent consectetur magna arcu, id laoreet dolor tincidunt id. Interdum et malesuada fames ac ante ipsum primis in faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis dolor nec mi egestas vulputate a in dolor. Aliquam auctor mauris non urna mattis sagittis. Nam nec eros nisl. Donec quis neque dignissim, accumsan magna non, imperdiet ipsum. Donec quis pretium mi, eu porta nisi. Sed quis consequat mi. Nulla ac varius mauris. Proin non scelerisque quam. Donec tincidunt sit amet dui id facilisis.
+
+                    Ut sapien turpis, elementum sed dapibus a, consequat et felis. Phasellus accumsan ligula a diam maximus volutpat vitae ac mi. Nam commodo vestibulum nibh, sit amet rutrum metus tempor vel. Praesent a scelerisque neque, in bibendum massa. Integer a cursus dolor. Maecenas consectetur lacinia ornare. Donec congue, justo ac faucibus condimentum, lectus nisi luctus nulla, at eleifend lacus ipsum euismod justo. Duis dapibus ligula ipsum, non cursus nisl maximus in. Maecenas dignissim ex ullamcorper, condimentum arcu sed, posuere lacus. Nulla ullamcorper at erat vel rhoncus. Morbi et pretium mauris. Quisque luctus lectus non massa consequat, ut pretium nibh lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras ultricies ante eleifend risus vehicula, vel accumsan mi tempor.
+
+                    Proin placerat enim et magna fermentum volutpat. In at rhoncus felis. Sed id lectus leo. Sed eu elit leo. Pellentesque vitae porta erat. Praesent ut ante erat. Mauris posuere, enim quis suscipit pretium, neque arcu pretium sem, at accumsan quam urna non urna. Maecenas non semper purus, sed porta metus. Nulla bibendum tellus quis turpis convallis, sed mollis lacus luctus. Cras tincidunt malesuada dolor, at volutpat justo semper eu. Suspendisse potenti. Mauris eget quam eu orci molestie sodales vitae sed sem. Duis rutrum, erat sed finibus interdum, mi nibh dignissim metus, id auctor nibh ligula vitae ex.
+
+                    Donec eget consectetur dui, quis aliquam magna. Nam interdum magna a vulputate bibendum. Nunc dui risus, consequat in arcu maximus, ornare dapibus mauris. Quisque felis lorem, sagittis ut elit ac, consectetur molestie sapien. Nullam risus est, tempor egestas magna at, porta pellentesque sem. Curabitur sed rutrum libero. Proin tincidunt consequat arcu, sit amet maximus est. Suspendisse et volutpat lacus.
+
+                    Donec gravida, lorem sollicitudin imperdiet dignissim, arcu diam feugiat felis, nec fermentum nisl nulla in ex. Nullam volutpat neque in massa venenatis tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras non lacinia arcu. Sed suscipit velit quis ex dignissim laoreet. Donec mollis turpis vitae leo tristique, hendrerit tincidunt arcu malesuada. Nulla varius erat id ex iaculis lacinia.
+
+
+
+                </p>
             </div>
         </div>
 
@@ -667,27 +817,34 @@
         </div>
     </div>
 
+    <div class="modalCentral animated jackInTheBox fadeIn">
+        <div class="simbolo">
+            <i class="icon-ok-circled modalC-ok"></i>
+        </div>
+        <p>Soy un texto de prueba</p>
+        <div class="btnModalCentral" id="btnCerrarModal">Ok</div>
+    </div>
+
+    <form id="form_auxiliar"></form>
+
     </body>
 
     <!-- jQuery -->
     <script type="application/javascript" src="<?= base_url('plugins/jquery/jquery-3.2.1.js')?>"></script>
-    <!-- Bootstrap -->
-    <script type="application/javascript" src="<?= base_url('plugins/bootstrap/js/bootstrap.min.js')?>" ></script>
     <!-- EasyTemplate -->
     <script type="application/javascript" src="<?= base_url('js/easytemplate.js')?>"></script>
-    <!-- SweetAlert -->
-    <script type="application/javascript" src="<?= base_url('plugins/sweetalert/sweetalert.min.js')?>"></script>
-    <!-- Cropper -->
-    <script type="application/javascript" src="<?= base_url('plugins/cropper/cropper.min.js') ?>"></script>
     <!-- Smooth Scroll -->
     <script type="application/javascript" src="<?= base_url('js/smoothScroll.js') ?>"></script>
     <!-- Tippy -->
     <script type="application/javascript" src="<?= base_url('js/tippy.min.js') ?>"></script>
     <!-- Knob -->
     <script type="application/javascript" src="<?= base_url('js/knob.js') ?>"></script>
-    <!-- Autosize -->
-    <script type="application/javascript" src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
+    <!-- Dropzone -->
+    <script type="application/javascript" src="<?= base_url('js/dropzone.js') ?>"></script>
 
+    <!-- Autosize
+    <script type="application/javascript" src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
+    -->
     <!-- ion slider -->
     <script type="application/javascript" src="<?= base_url('js/ion.rangeSlider.min.js') ?>"></script>
 
@@ -696,6 +853,7 @@
     <script type="application/javascript" src="<?= base_url('js/functions.js') ?>"></script>
 
     <script type="application/javascript" src="<?= base_url('js/masonry.js') ?>"></script>
+
 
     <script type="text/javascript">
         var base_url = '<?= base_url() ?>';
@@ -712,6 +870,9 @@
         var notificacionesAbierto = false;
         var inputsNacYdeporteCargadosMenu = false;
         var menuPPseteado = false;
+
+        var contadorHashTag = 0;
+
 
         var datosPerfil = [{}];
 
@@ -833,7 +994,7 @@
                 }
 
                 if(menuPP){
-                    container = $('.menuDesplegable, .modalPerfil');
+                    container = $('.menuDesplegable, .modalPerfil , .modalCentral');
                     if (!container.is(e.target) && container.has(e.target).length === 0)
                     {
                         cerrarMenuPP();
@@ -841,7 +1002,7 @@
                 }
 
                 if(chatMenuAbierto){
-                    container = $('.menuChatDerecho ');
+                    container = $('.menuChatDerecho , .modalCentral ');
                     if (!container.is(e.target) && container.has(e.target).length === 0)
                     {
                         cerrarChat();
@@ -849,7 +1010,7 @@
                 }
 
                 if(notificacionesAbierto){
-                    container = $('.notificaciones ');
+                    container = $('.notificaciones  , .modalCentral');
                     if (!container.is(e.target) && container.has(e.target).length === 0)
                     {
                         cerrarNotificaciones();
@@ -960,7 +1121,7 @@
                 $(this).addClass('btnMenuIzSelected');
             });
 
-            $('.btnMenuIz').on('click', function () {
+            $('.btnMenuIz , .cVerAsunto').on('click', function () {
                 var target =   $(this).attr('target');
                 $('.modalPerfil').css("left","-100%");
                 if(window.innerWidth > 680){
@@ -998,29 +1159,195 @@
                var _input = $(this).attr('idinput');
                var file = $('#'+ _input);
                var img = $('#'+ _target);
-                /*
-                img.on('change', function () {
-                    console.log($(this).attr('src'));
-                });*/
-
+               var btn = $('#' + $(this).attr('btn'));
+               var _link = $(this).attr('link');
                 img.unbind('load').on('load', function () {
                     console.log($(this).attr('src'));
-                    //console.log(imageToDataUri(this, $(this).width() , $(this).height , 0.8));
                 });
                file.unbind('change').on('change',function (e) {
-                   //readURL(file, '#'+ _target)
                    previsualizarIMGinputFile(this, '#'+ _target , 400);
                });
                file.click();
-
-
-               /*
-                $('#' + _input + '_final').on('change',function () {
-                   console.log($(this).val());
-                });*/
+               btn.attr('class','btnOAmDisponible');
+               btn.unbind('click').on('click', function () {
+                   var data = $('#form_auxiliar').serializeArray();
+                   data.push({name: 'img', value: img.attr('src')});
+                   ajax_call('subidaDeImagen',{ url: base_url + _link , data: data });
+               });
             });
 
+            $('#actualizarDescripcionPerfil').keyup(function () {
+                var _l = $(this).val().length;
+                if( _l > 10 && _l <= 250){
+                    $('#btnActualizarDescripcionPerfil').attr('class','btnOAmDisponible').unbind('click').on('click', function () {
+                        var form = {descripcion: $('#actualizarDescripcionPerfil').val()};
+                        ajax_call('msjUpdate',{ url: base_url + 'descripcionPerfil' , data: form });
+                    });
+                }
+                else{
+                    $('#btnActualizarDescripcionPerfil').attr('class','btnOAm').unbind('click');
+                }
+            });
+
+            $('#cambiarVPU').on('click', function () {
+                $('#upVideoPresentacion').click();
+            });
+
+            // Variable to store your files
+
+            
+            $('#upVideoPresentacion').on('change',function (e) {
+                /*
+                console.log(this.files[0].size);
+                if(this.files[0].size > 102400000){
+                    modalImin('El tamaño maximo del video es 100mb!' , 'error');
+                    this.value = "";
+                    return;
+                };*/
+                $('#sinVideoPusuario').hide();
+                $('#previewVideoUser').show();
+                var video = $('#previewVideoUserShow');
+                video.attr('src', URL.createObjectURL(this.files[0]));
+
+                var files;
+                files = e.target.files;
+                //var form = $('#formUVP').serialize();
+                //var form = new FormData($('#formUVP')[0]);
+
+                $('#btnActualizarVP').attr('class','btnOAmDisponible').on('click', function () {
+                    /*
+                    console.log(form);
+                    ajax_call('msjUpdate',{ url: base_url + 'videoPresentacion' , data: form });
+                    */
+                    console.log('ahora deberia de empezar a subirse los archivos');
+
+                    var fd = new FormData( document.getElementById("formUVP"));
+                    //fd.append("CustomField", "This is some extra data");
+                    $.ajax({
+                        url: base_url + 'videoPresentacion',
+                        type: 'POST',
+                        data: fd,
+                        error: function(data){
+                            console.log(data);
+                        },
+                        success:function(data){
+                            console.log(data);
+                        },
+                        cache: false,
+                        contentType: false,
+                        processData: false
+                    });
+/*
+                    this.start_process = 0;
+                    $.each($('#upVideoPresentacion')[0].files, function(i,o){
+                        var files = new FormData();
+                        files.append(1, o);
+                    });
+
+                    console.log(files);
+                    $.ajax({
+                        url: base_url + 'videoPresentacion',
+                        method:"POST",
+                        contentType:false,
+                        processData: false,
+                        data: files,
+                        async: true,
+                        xhr: function()
+                        {
+                            if(window.XMLHttpRequest)
+                            {   var xhr = new window.XMLHttpRequest();
+                                //Upload progress
+                                xhr.upload.addEventListener("progress", function(evt){
+                                    if (evt.lengthComputable) {
+                                        var percentComplete = evt.loaded / evt.total;
+                                        console.log( percentComplete + '%');
+                                    }
+                                }, false);
+                            }
+                            else{
+                                console.log('posiblemente no se este subiendo nada.');
+                            }
+                        },
+                        success:function(data){
+                            console.log('subido:' + data.responseText);
+                        },
+                        error: function (data) {
+                            console.log('error: ' + data.responseText);
+                        }
+                    });*/
+                });
+            });
+            
+            
+            /*  $.ajax({
+                    xhr: function() {
+                        var xhr = new window.XMLHttpRequest();
+                        xhr.upload.addEventListener("progress", function(evt) {
+                            if (evt.lengthComputable) {
+                                var percentComplete = evt.loaded / evt.total;
+                                console.log(percentComplete + "%");
+                                //upload progress
+                            }
+                        }, false);
+                        xhr.addEventListener("progress", function(evt) {
+                            if (evt.lengthComputable) {
+                                var percentComplete = evt.loaded / evt.total;
+                                console.log(percentComplete + "%");
+                                //download progress
+                            }
+                        }, false);
+
+                        return xhr;
+                    },
+                    type: 'POST',
+                    url: base_url + 'videoPresentacion',
+                    data: form,
+                    success: function(data){
+                        console.log("Terminado!");
+                    }
+                });
+            });
+
+            <div class="miVideoPresentacionEdit">
+                            <span class="modalSpanBlock">Mi video presentación:</span>
+                            <div class="videoPresentacion">
+                                <div class="sinVideoMarco" id="sinVideoPusuario">
+                                    <div class="hoverCambiarVideo" id="cambiarVPU">
+                                        <span>Cambiar video</span>
+                                    </div>
+                                    <p>Sin video presentación</p>
+                                </div>
+                                <div class="videoPresentacion" id="previewVideoUser">
+                                    <video src="  <?= base_url('video/messi.webm') ?>"  id="previewVideoUserShow" controls></video>
+                                    <div class="btnOAm " id="btnActualizarVP">Actualizar</div>
+                                </div>
+                            </div>
+                            <input type="file" class="hidden" id="upVideoPresentacion" accept="video/mp4,video/x-m4v,video/webm" target="videoPresentacionPreUp">
+                        </div>
+            * */
             menuPPseteado = true;
+        }
+
+        function subidaDeImagen(args) {
+            var mensaje = args.responseJSON;
+            var status = args.status;
+            if(status == 200){
+                modalImin(mensaje.mensaje,'exito');
+            }
+            else if(status == 300){
+                modalImin(mensaje,'error');
+            }
+        }
+
+        function msjUpdate(args) {
+            var mensaje = args.responseJSON;
+            var status = args.status;
+            if(status == 200){
+                modalImin(mensaje.mensaje,'exito');
+            }
+            else if(status == 300){
+                modalImin(mensaje,'error');
+            }
         }
 
         function formatearPerfil(datosPerfil) {
@@ -1073,6 +1400,8 @@
                     $('.btnMenuIz[target="modalCaracteristicas"]').click();
                 });
                 $('#OAimgCP').attr('src', base_url + perfil.cuerpo_completo);
+                $('#OAimgCM').attr('src', base_url + perfil.cuerpo_medio);
+                $('#OAimgS').attr('src', base_url + perfil.avatar);
             }
 
             if(perfil.tipo_cuenta == 2 || perfil.tipo_cuenta == 3){
@@ -1220,12 +1549,6 @@
                         $('#pagoCon' + target).show(250);
                     });
 
-                    $('#btnCerrarModal').on('click', function () {
-                        $('.modalCentral').removeClass('jackInTheBox fadeIn').addClass('fadeOut').one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
-                            $(this).css('display', 'none');
-                        });
-                    });
-
                     $('#btnOlvideCuenta').on('click', function () {
                         alert('despues de terminar todas las fasetas de deportista se hara esta parte.')
                     });
@@ -1328,6 +1651,13 @@
                         postfix: " Kg"
                     });
 
+                    $('.grid').masonry({
+                        // options
+                        itemSelector: '.grid-item',
+                        columnWidth: 350,
+                        gutter: 15
+                    });
+
                 break;
 
                 case 'scout':
@@ -1378,11 +1708,41 @@
                 case 'publicar':
                     opcionesBuscador();
                     menusYchatPP();
+
+                    $('#crearHashtag').on('click',function () {
+                        var txt = $('.inputTxtPublicar').val();
+
+                        if(txt.length < 3){
+                            modalImin('El hashtag debe poseer al menos 3 caracteres','error');
+                        }
+                        else{
+                            $('.hashtagFinales').append(' <a href="'+ base_url +'hashtag/' + txt +'" class="hashTagPub" id="hashtagCreado_' + contadorHashTag +'">#' + txt +'</a> <div class="hashtagRemovable"><i class="icon-cancel-circle removeHashtag" data-id="' + contadorHashTag + '"></i></div>');
+                            $('.inputTxtPublicar').val('');
+                            $('.inputTxtPublicar').focus();
+                            contadorHashTag++;
+                            $('.removeHashtag').unbind('click').on('click',function () {
+                                var _id = $(this).attr('data-id');
+                                $('#hashtagCreado_' + _id).remove();
+                                $(this).remove();
+                                console.log('funcionando el de quitar');
+                            });
+                        }
+
+
+                    });
+
+                    $('#borrarHagtag').on('click',function () {
+                        $('.inputTxtPublicar').val('');
+                        $('.inputTxtPublicar').focus();
+                    });
+
                     break;
                 default:
                     console.log('se hace default');
             }
         }
+
+
 
         $(document).ready(function () {
             seccion_actual = '<?= $seccion ?>';
@@ -1390,6 +1750,11 @@
             tabsGenericos();
             cargar_seccion(seccion_actual);
             ajax_link();
+            $('#btnCerrarModal').on('click', function () {
+                $('.modalCentral').removeClass('jackInTheBox fadeIn').addClass('fadeOut').one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
+                    $(this).css('display', 'none');
+                });
+            });
             $('#toolbarContainer').remove();
         });
 

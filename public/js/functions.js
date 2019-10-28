@@ -11,7 +11,16 @@ function modalImin(_msj , _tipo){
 	$('.modalCentral').stop().removeClass('fadeOut').addClass('jackInTheBox fadeIn').show().one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
 		$(this).css('display', 'block');
 	});
+
 }
+
+$(document).ready(function () {
+	$('#btnCerrarModal').on('click', function () {
+		$('.modalCentral').removeClass('jackInTheBox fadeIn').addClass('fadeOut').one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
+			$(this).css('display', 'none');
+		});
+	});
+});
 
 
 function registro_crear(msj){
@@ -109,6 +118,7 @@ function login_verificar(msj){
 			error = msj.responseJSON;
 		}
 		modalImin('Los datos para iniciar sesión son erroneos.','error');
+		console.log('los datos son incorrectos');
 		$body.removeClass("loading");
 	} else {
 		console.log(msj);

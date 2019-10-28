@@ -1,6 +1,6 @@
 <div class="contenedor_superior">
     <div class="menu moverDer">
-        <a class="logoMin" href="<?= base_url() ?>">
+        <a class="logoMin " href="<?= base_url() ?>">
             <img src="<?= base_url('img/logo_n_cont.png')?>" alt="">
         </a>
         <div class="buscdorMenu">
@@ -376,12 +376,6 @@
         </div>
     </div>
 
-    <div class="modalCentral animated jackInTheBox fadeIn">
-        <div class="simbolo">
-            <i class="icon-ok-circled modalC-ok"></i>
-        </div>
-        <p>Soy un texto de prueba</p>
-        <div class="btnModalCentral" id="btnCerrarModal">Ok</div>
-    </div>
+
     <!--// Modal Cropper Avatar -->
 </content>

@@ -320,7 +320,7 @@ li{
     position: relative;
 }
 
-.hoverCambiar{
+.hoverCambiar , .hoverCambiarVideo{
     position: absolute;
     top: 0;
     left: 0;
@@ -331,7 +331,7 @@ li{
     padding-top: calc(50% - 0.6em);
 }
 
-.hoverCambiar span{
+.hoverCambiar span , .hoverCambiarVideo span{
     font-size: 1.2em;
     width: 100%;
     display: block;
@@ -340,7 +340,7 @@ li{
     margin: 0;
 }
 
-.hoverCambiar:hover{
+.hoverCambiar:hover , .hoverCambiarVideo{
     opacity: 1;
     cursor: pointer;
 }
@@ -516,6 +516,10 @@ li{
 .miVideoPresentacionEdit{
     width: 100%;
     max-width: 590px;
+}
+
+#previewVideoUser{
+    display: none;
 }
 
 /* ########## Menu Inferior ######## */
@@ -986,7 +990,12 @@ li{
 }
 .tabsMetodos .tabPubUserOption i {font-size: 2em;}
 
-
+#advertenciaUpVideo{
+    width: 100%;
+    text-align: center;
+    color: #c3aa14;
+    font-size: small;
+}
 /* ############## perfil ##############*/
 
 .perfilPP{
@@ -1178,6 +1187,10 @@ li{
     height: 300px;
     position: relative;
     border: 2px solid #ccc;
+}
+
+.hoverCambiarVideo{
+    padding-top: 30%;
 }
 
 .sinVideoMarco p{
@@ -1380,6 +1393,105 @@ li{
 
 .pubImg img , .pubVid video{
     width: 100%;
+}
+
+/* ############## Crear publicacion ##############*/
+
+.contCrearPublicacion {
+    width: 500px;
+    min-height: 500px;
+    margin-top: 50px;
+    margin-left: 15px;
+}
+
+.agregarIMGpub{
+    width: 100%;
+    min-height: 50px;
+    display: block;
+    text-align: center;
+    padding: 5px;
+    vertical-align: middle;
+    border: 2px dashed #68e1ba;
+    margin-top: 67px;
+}
+
+.agregarIMGpub span{
+    line-height: 100px;
+}
+
+#txt_publicar{
+    margin: 5px 0px;
+    width: 100%;
+    height: 100px;
+    outline: 0;
+    resize: none;
+}
+
+.hashTagContainers{
+    width: 100%;
+    min-height: 80px;
+}
+
+.quienPuedeVerPub{
+    width: 100%;
+    display: block;
+}
+
+
+.inputTxtPublicar{
+    border: none;
+    border-bottom: 1px solid #5e5e5e;
+    min-width: 150px;
+    outline: 0;
+    margin: 6px 2px;
+    font-size: 0.98em;
+}
+
+.inputTxtPublicar:hover{
+    border-bottom: 1px solid #1dbd7b;
+}
+
+.btnHashtagMaker{
+    padding: 7px;
+    background: #1dbd7b;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btnHashtagMaker:hover , .removeHashtag:hover{
+    transform: scale(1.05);
+}
+
+.btnHashtagMaker * , .hashTagContainers *{
+    display: inline-block;
+}
+
+.hashtagFinales{
+    display: block;
+}
+
+.hashtagRemovable{
+
+}
+
+.hashtagMaker{
+    margin: 10px 0;
+}
+
+.removeHashtag{
+    color: #d0962b;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    cursor: pointer;
+}
+
+.pubEsPara{
+    display: block;
+}
+
+.aclaracionNuevoPub{
+    font-size: small;
+    color: #bca23d;
 }
 
 /* ############## Notificaciones ##############*/
@@ -1640,6 +1752,7 @@ li{
 
 .filtrosScout{
     display: block;
+    margin-top: 52px;
 }
 
 .filtrosScout * , .filtroUnCont * ,.sliderInputs , .filtroSlider{
@@ -1709,6 +1822,155 @@ li{
     width: 16px;
 }
 
+.jugadoresScouting{
+    display: block;
+    width: 100%;
+    padding: 15px;
+}
+
+.jugadorScout {
+    width: 244px;
+    min-height: 350px;
+    box-shadow: 0 0 15px #3f5742;
+    margin: 10px;
+    cursor: pointer;
+    padding-bottom: 12px;
+}
+
+.jugadorScout:hover{
+    transform: scale(1.05);
+}
+
+.jugadorScout img{
+    width: 100%;
+}
+
+.JSestadisticas{
+    display: block;
+    width: 100%;
+    margin: 7px 0;
+}
+
+.JSI{
+    display: block;
+}
+
+.JSI h4{
+    width: 100%;
+    color: #1db383;
+    text-align: center;
+}
+
+.JSI span{
+    display: inline-block;
+    width: 32%;
+    font-size: 0.85em;
+    text-align: center;
+}
+
+.JSE{
+    width: 49%;
+    display: inline-block;
+    text-align: center;
+    margin: 3px 0;
+    font-weight: bold;
+}
+
+.JSE span{
+    display: inline-block;
+}
+
+.JSE_pre{
+    width: 66%;
+    text-align: right;
+}
+
+.JSE_60{color: #bc814b}
+.JSE_70{color: #c5b331}
+.JSE_80{color: #a7bc49}
+.JSE_90{color: #36a41d}
+.JSE_95{color: #1dbfa3}
+
+.aptitudesBasicas{
+    display: block;
+    width: 100%;
+    padding: 5px;
+}
+
+.JSEposU{
+    width: 45%;
+}
+
+.JSEpos{
+    width: 72px;
+    text-align: center;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: bold;
+    height: 24px;
+    vertical-align: top;
+}
+
+.cDelantero{background: #c2533e;}
+.cMediocampista{background: #5bc27e;}
+.cDefensor{background: #2375c2;}
+.cPortero{background: #c2ae39;}
+
+.JSEpie{
+    width: 116px;
+    text-align: center;
+    background: #29a0c2;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: bold;
+    height: 24px;
+    vertical-align: top;
+}
+
+.pretencionesJugador{
+    display: block;
+}
+
+.pretencionesJugador *{
+    width: 100%;
+    text-align: center;
+}
+
+.PEconomica{
+    width: 100%;
+    text-align: center;
+    color: #59b356;
+    font-weight: bold;
+    display: block;
+}
+
+/* ################ Tabla propuestas ############ */
+
+.bloqueModalTabla , .contenidoPropuestaFinal{
+    width: 100%;
+    display: block;
+    vertical-align: top;
+}
+
+.PropuestaUser{
+
+}
+
+.PropuestaUser .userChat {
+    display: inline-block;
+}
+
+#tituloAsuntoPropuesta{
+    padding: 15px 33px;
+    font-size: 1.3em;
+    color: #1db383;
+}
+
+#txtAsuntoPropuesta{
+    padding: 15px 33px;
+}
+
+
 /* ################ Partes genericas ############ */
 
 .contenedotGeneral{
@@ -1717,6 +1979,77 @@ li{
     background: #ffffff;
     padding-top: 50px;
 }
+
+.tablaGenerica , .filaGenerica , .filaGenericaBG , .filaInfo , .containerFilas{
+    display: block;
+    width: 100%;
+}
+
+.filaGenerica , .filaGenericaBG , .filaInfo{
+    background: #f3f3f3;
+    min-height: 50px;
+    line-height: 32px;
+}
+
+.filaInfo{
+    background: #1db383;
+}
+.filaGenericaBG{
+    background: #1db38373;
+}
+
+.TGusuario{
+    width: 250px;
+    display: inline-block;
+}
+
+.TGasunto{
+    width: calc(80% - 180px);
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+}
+
+.TGopciones{
+    width: 150px;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+}
+
+.filaInfo .TGusuario{
+    width: 250px;
+    display: inline-block;
+    text-align: center;
+    line-height: 47px;
+    color: #FFF;
+}
+
+.TGusuario * , .TGasunto * , .TGopciones *{
+    display: inline-block;
+}
+
+.TGusuario span , .TGasunto span {
+    color: #797886;
+    margin-left: 5px;
+}
+
+.btnTable{
+    cursor: pointer;
+}
+
+.btnTable:hover{
+    transform: scale(1.5);
+}
+
+.cVerAsunto{color: #00a097 }
+.cAceptarAsunto{color: #00c542
+}
+.cCancelarAsunto{color: #c75646
+}
+
+
+
 
 
 /* ############## Formulario genericos ##############*/
@@ -1786,6 +2119,7 @@ li{
     max-width: 475px;
     padding: 10px;
     text-align: center;
+    z-index: 9999;
 }
 
 .simbolo i{
@@ -1810,7 +2144,7 @@ li{
     left: 100%;//calc(100% - 200px);
     width: 180px;
     text-align: center;
-    z-index: 999;
+    z-index: 9999;
     background: #008077;
     color: #fff;
     padding: 7px 10px;
